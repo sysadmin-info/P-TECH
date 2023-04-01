@@ -15,5 +15,5 @@ series:
 -
 categories:
 - general
-image:
+image: images/2023-thumbs/linux-cli.webp
 ---
