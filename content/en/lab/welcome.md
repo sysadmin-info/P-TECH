@@ -6,7 +6,7 @@ draft: false
 hideToc: false
 enableToc: true
 enableTocContent: false
-author: adrian
+author: admin
 authorEmoji: 🐧
 pinned: true
 tags:
