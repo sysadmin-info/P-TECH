@@ -4,7 +4,7 @@ date:  2023-04-01T08:08:59+00:00
 description: "Welcome to the P-TECH website. The lab section contains exercises and the theory needed to complete the exercises. As opportunities arise, the site will be expanded to include more workshops, exercises and theory."
 draft: false
 hideToc: false
-enableToc: true
+enableToc: false
 enableTocContent: false
 author: admin
 authorEmoji: 🐧

@@ -4,7 +4,7 @@ date:  2023-04-01T08:08:59+00:00
 description: "Witaj na stronie P-TECH. W dziale lab znajdują się ćwiczenia oraz teoria potrzebna do realizacji ćwiczeń. W miarę możliwości strona będzie rozbudowywana o kolejne warsztaty, ćwiczenia i teorię."
 draft: false
 hideToc: false
-enableToc: true
+enableToc: false
 enableTocContent: false
 author: admin
 authorEmoji: 🐧

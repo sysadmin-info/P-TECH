@@ -18,7 +18,7 @@ categories:
 image: images/2023-thumbs/linux-cli.webp
 ---
 
-##### OpenSSH : KeyBoard-Intereractive Auth
+#### OpenSSH : KeyBoard-Intereractive Auth
 
 OpenSSH is already installed by default, so it's not necessarry to install new packages. You can login with KeyBoard-Intereractive Authentication by default, but change some settings for security like follows.
 
@@ -29,7 +29,7 @@ PermitRootLogin no
 linux:~ # systemctl restart sshd
 ```
 
-##### Install firewalld
+#### Install firewalld
 
 {{< tabs SLES Debian RedHat >}}
   {{< tab >}}
@@ -84,7 +84,7 @@ linux:~ # firewall-cmd --reload
 success
 ```
 
-###### Configure SSH Client
+#### Configure SSH Client
 Connect to SSH server with a common user.
 
 ```
@@ -98,8 +98,75 @@ Password:          # login user's password
 adrian@example.com:~>    # just logined
 ```
 
-##### SSH Key-Pair Authentication
+#### SSH Key-Pair Authentication
 
 Configure SSH server to login with Key-Pair Authentication. Create a private key for client and a public key for server to do it.
 
 Create Key-Pair for each user, so login with a common user on SSH Server Host and work like follows.
+
+```
+# create key-pair on a client
+ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/adrian/.ssh/id_rsa): /home/adrian/.ssh/p-tech
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/adrian/.ssh/p-tech
+Your public key has been saved in /home/adrian/.ssh/p-tech.pub
+The key fingerprint is:
+SHA256:IPtApVZ/8o6mCY3lKSvcfEtkD6wzHJ0LzKeHFm3qbxs adrian@G02PLXN05963
+The key's randomart image is:
++---[RSA 4096]----+
+|      o          |
+|     + .         |
+|    = . o .      |
+|   = * o +       |
+|    O % S .      |
+|   . ^ = o       |
+| . o& E + .      |
+|  oooOo=         |
+|   .o+*o         |
++----[SHA256]-----+
+
+# to generate a passphrase you can use the following command in a separate CLI window
+hexdump -vn16 -e'4/4 "%08X" 1 "\n"' /dev/urandom
+
+# list the key-pair
+adrian@linux:~> ll ~/.ssh/p-tech*
+-rw------- 1 adrian adrian 3.4K Apr  1 16:44 /home/adrian/.ssh/p-tech
+-rw-r--r-- 1 adrian adrian  745 Apr  1 16:44 /home/adrian/.ssh/p-tech.pub
+
+# copy the public key from the client to the server
+ssh-copy-id -i ~/.ssh/p-tech.pub student@IP-ADDRRESS
+
+# provide a password
+
+# login with the key to the server
+ssh -i ~/.ssh/p-tech student@IP-ADDRRESS
+
+# provide a passphrase
+```
+
+#### Secure SSH
+
+Edit /etc/ssh/sshd_config
+
+```
+sudo vi /etc/ssh/sshd_config
+
+# uncomment these lines and change to [no]
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+
+# Add Protocol2
+Protocol 2
+#      Protocol
+#             Specifies the protocol versions sshd(8) supports.  The possible
+#             values are `1' and `2'.  Multiple versions must be comma-
+#             separated.  The default is `2'.  Protocol 1 suffers from a number
+#             of cryptographic weaknesses and should not be used.  It is only
+#             offered to support legacy devices.
+
+# Restart SSH service
+sudo systemctl restart sshd
+```

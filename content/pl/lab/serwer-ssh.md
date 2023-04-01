@@ -19,7 +19,7 @@ draft: false
 image: images/2023-thumbs/linux-cli.webp
 ---
 
-##### OpenSSH : KeyBoard-Intereractive Auth
+#### OpenSSH : KeyBoard-Intereractive Auth
 
 OpenSSH jest już domyślnie zainstalowany, więc nie ma potrzeby instalowania nowych pakietów. Domyślnie możesz logować się za pomocą KeyBoard-Interactive Authentication, ale zmień niektóre ustawienia dla bezpieczeństwa jak poniżej.
 
@@ -30,7 +30,7 @@ PermitRootLogin no
 linux:~ # systemctl restart sshd
 ```
 
-##### Instalacja firewalld
+#### Instalacja firewalld
 
 {{< tabs SLES Debian RedHat >}}
   {{< tab >}}
@@ -85,7 +85,7 @@ linux:~ # firewall-cmd --reload
 success
 ```
 
-###### Konfiguracja klienta SSH 
+#### Konfiguracja klienta SSH 
 
 Połącz się z serwerem SSH za pomocą zwykłego użytkownika.
 
@@ -100,8 +100,75 @@ Password:          # login user's password
 adrian@example.com:~>    # just logined
 ```
 
-##### Uwierzytelnianie parą kluczy SSH
+#### Uwierzytelnianie parą kluczy SSH
 
 Skonfiguruj serwer SSH do logowania za pomocą Key-Pair Authentication. Utwórz klucz prywatny dla klienta i klucz publiczny dla serwera, aby to zrobić.
 
 Utwórz Key-Pair dla każdego użytkownika, więc zaloguj się wspólnym użytkownikiem na SSH Server Host i pracuj jak poniżej.
+
+```
+# utwórz parę kluczy na kliencie
+ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/adrian/.ssh/id_rsa): /home/adrian/.ssh/p-tech
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/adrian/.ssh/p-tech
+Your public key has been saved in /home/adrian/.ssh/p-tech.pub
+The key fingerprint is:
+SHA256:IPtApVZ/8o6mCY3lKSvcfEtkD6wzHJ0LzKeHFm3qbxs adrian@G02PLXN05963
+The key's randomart image is:
++---[RSA 4096]----+
+|      o          |
+|     + .         |
+|    = . o .      |
+|   = * o +       |
+|    O % S .      |
+|   . ^ = o       |
+| . o& E + .      |
+|  oooOo=         |
+|   .o+*o         |
++----[SHA256]-----+
+
+# aby wygenerować passphrase możesz użyć następującego polecenia w osobnym oknie CLI
+hexdump -vn16 -e'4/4 "%08X" 1 "\n"' /dev/urandom
+
+# wylistuj parę kluczy
+adrian@linux:~> ll ~/.ssh/p-tech*
+-rw------- 1 adrian adrian 3.4K Apr  1 16:44 /home/adrian/.ssh/p-tech
+-rw-r--r-- 1 adrian adrian  745 Apr  1 16:44 /home/adrian/.ssh/p-tech.pub
+
+# skopiuj klucz publiczny z klienta na serwer
+ssh-copy-id -i ~/.ssh/p-tech.pub student@IP-ADDRRESS
+
+# podaj hasło
+
+# zaloguj się z kluczem do serwera
+ssh -i ~/.ssh/p-tech student@IP-ADDRRESS
+
+# podaj passphrase
+```
+
+#### Zabezpieczanie SSH
+
+Edytuj /etc/ssh/sshd_config
+
+```
+sudo vi /etc/ssh/sshd_config
+
+# odkomentuj te linie i zmień na [no]
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+
+# Dodaj Protocol2
+Protocol 2
+#      Protocol
+#             Określa wersje protokołu, które obsługuje sshd(8).  Możliwe
+#             wartości to '1' i '2'.  Wiele wersji musi być rozdzielonych przecinkami.
+#             Domyślnie jest to '2'.  Protokół 1 cierpi na szereg
+#             słabości kryptograficznych i nie powinien być używany.  Jest on jedynie
+#             oferowany w celu wsparcia starszych urządzeń.
+
+# Zrestartuj usługę SSH
+sudo systemctl restart sshd
+```
