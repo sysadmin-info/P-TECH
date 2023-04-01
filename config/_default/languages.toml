@@ -1,0 +1,13 @@
+[en]
+  title = "P-TECH"
+  languageName = "English"
+  weight = 1
+  languagedir = "ltr"
+  contentdir = "content/en"
+
+[pl]
+  title = "P-TECH"
+  languageName = "Polski"
+  weight = 2
+  languagedir = "ltr"
+  contentdir = "content/pl"

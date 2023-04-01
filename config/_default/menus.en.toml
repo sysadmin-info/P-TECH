@@ -1,0 +1,11 @@
+[[main]]
+  identifier = "lab"
+  name = "Lab"
+  url = "lab"
+  weight = 1
+
+[[main]]
+  identifier = "archive"
+  name = "Archive"
+  url = "archive"
+  weight = 2
