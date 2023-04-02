@@ -15,7 +15,7 @@ series:
 -
 categories:
 - 
-image: images/2023-thumbs/linux-cli.webp
+image: images/2023-thumbs/ssh.webp
 ---
 
 #### OpenSSH : KeyBoard-Intereractive Auth
