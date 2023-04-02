@@ -129,25 +129,36 @@ The key's randomart image is:
 |  oooOo=         |
 |   .o+*o         |
 +----[SHA256]-----+
+```
 
-# aby wygenerować passphrase możesz użyć następującego polecenia w osobnym oknie CLI
+Aby wygenerować passphrase możesz użyć następującego polecenia w osobnym oknie CLI
+```
 hexdump -vn16 -e'4/4 "%08X" 1 "\n"' /dev/urandom
+```
 
-# wylistuj parę kluczy
+Wylistuj parę kluczy
+
+```
 adrian@linux:~> ll ~/.ssh/p-tech*
 -rw------- 1 adrian adrian 3.4K Apr  1 16:44 /home/adrian/.ssh/p-tech
 -rw-r--r-- 1 adrian adrian  745 Apr  1 16:44 /home/adrian/.ssh/p-tech.pub
-
-# skopiuj klucz publiczny z klienta na serwer
-ssh-copy-id -i ~/.ssh/p-tech.pub student@IP-ADDRRESS
-
-# podaj hasło
-
-# zaloguj się z kluczem do serwera
-ssh -i ~/.ssh/p-tech student@IP-ADDRRESS
-
-# podaj passphrase
 ```
+
+Skopiuj klucz publiczny z klienta na serwer
+
+```
+ssh-copy-id -i ~/.ssh/p-tech.pub student@IP-ADDRRESS
+```
+
+Podaj hasło
+
+Zaloguj się z kluczem do serwera
+
+```
+ssh -i ~/.ssh/p-tech student@IP-ADDRRESS
+```
+
+Podaj passphrase
 
 #### Automatyzacja
 
@@ -169,15 +180,121 @@ sudo vi /etc/ssh/sshd_config
 PasswordAuthentication no
 ChallengeResponseAuthentication no
 
-# Dodaj Protocol2
-Protocol 2
-#      Protocol
-#             Określa wersje protokołu, które obsługuje sshd(8).  Możliwe
-#             wartości to '1' i '2'.  Wiele wersji musi być rozdzielonych przecinkami.
-#             Domyślnie jest to '2'.  Protokół 1 cierpi na szereg
-#             słabości kryptograficznych i nie powinien być używany.  Jest on jedynie
-#             oferowany w celu wsparcia starszych urządzeń.
+# Wyłącz puste hasła
+# Musisz zapobiec zdalnym logowaniom z kont z pustymi hasłami dla zwiększenia bezpieczeństwa.
 
-# Zrestartuj usługę SSH
+PermitEmptyPasswords no
+
+# Ograniczenie dostępu użytkowników do SSH
+# Aby zapewnić kolejną warstwę bezpieczeństwa, powinieneś ograniczyć logowanie do SSH 
+# tylko do niektórych użytkowników, którzy potrzebują zdalnego dostępu. 
+# W ten sposób zminimalizujesz wpływ posiadania użytkownika ze słabym hasłem.
+# Dodaj linię "AllowUsers", a następnie listę nazw użytkowników i oddziel je spacją:
+
+AllowUsers student adrian
+
+# Wyłączanie logowania roota
+# Jedną z najbardziej niebezpiecznych dziur w zabezpieczeniach, 
+# jakie możesz mieć w swoim systemie jest umożliwienie bezpośredniego logowania się 
+# do roota przez SSH. W ten sposób hakerzy próbujący złamać hasło roota mogą
+# hipotetycznie uzyskać dostęp do systemu; a jeśli się nad tym zastanowić,
+# root może wyrządzić dużo więcej szkód na maszynie niż zwykły użytkownik.
+# Aby wyłączyć logowanie przez SSH jako root, zmień linię na taką:
+
+PermitRootLogin no
+
+# Ostatecznie możesz pozwolić rootowi na logowanie się przez SSH przy użyciu pary kluczy.
+# Zrób to tylko jeśli serwer nie jest w DMZ (nie ma dostępu z Internetu)
+
+PermitRootLogin prohibit-password
+
+# Dodaj Protocol 2
+# SSH posiada dwa protokoły, których może używać. Protokół 1 jest starszy i mniej bezpieczny.
+# Protokół 2 jest tym, czego powinieneś używać, aby wzmocnić swoje bezpieczeństwo.
+# Jeśli chcesz, aby Twój serwer był zgodny z PCI, musisz wyłączyć protokół 1.
+
+Protocol 2
+
+# Protocol
+#  Określa wersje protokołu, które obsługuje sshd(8).  Możliwe.
+#  wartości to '1' i '2'.  Wiele wersji musi być oddzielonych przecinkami.
+#  Domyślnie jest to '2'.  Protokół 1 cierpi na szereg
+#  słabości kryptograficznych i nie powinien być używany.
+#  Jest oferowany tylko w celu wsparcia starszych urządzeń.
+#  Przykład: Protocol 2, 1
+
+# Użyj innego portu
+# Jedną z głównych korzyści ze zmiany portu i użycia niestandardowego portu
+# jest uniknięcie bycia widzianym przez przypadkowe skanowanie. Zdecydowana większość hakerów
+# szukających otwartych serwerów SSH będzie szukała portu 22, ponieważ domyślnie,
+# SSH nasłuchuje połączeń przychodzących na tym porcie.
+# Jeśli trudniej jest zeskanować Twój serwer SSH, to zmniejszają się Twoje szanse na atak.
+# Uruchom SSH na niestandardowym porcie powyżej portu 1024.
+
+Port 2025
+
+# Możesz wybrać dowolny nieużywany port, o ile nie jest on używany przez inną usługę.
+# Wiele osób może wybrać 222 lub 2222 jako swój port, ponieważ
+# jest to dość łatwe do zapamiętania, ale właśnie z tego powodu, hakerzy skanujący port 22
+# prawdopodobnie będą również próbować portów 222 i 2222. Spróbuj wybrać numer portu
+# który nie jest jeszcze używany, podążaj za tym linkiem, aby uzyskać listę numerów portów i ich znanych usług.
+
+# Konfiguracja interwału czasu bezczynności
+
+ClientAliveInterval 360
+ClientAliveCountMax 1
+
+# Wartość timeout jest obliczana przez pomnożenie
+# ClientAliveInterval i ClientAliveCountMax.
+# timeout interval = ClientAliveInterval * ClientAliveCountMax
+# Opcje OpenSSH ClientAliveInterval i ClientAliveCountMax
+# nie są używane do rozłączania nieaktywnych sesji.
+# W rzeczywistości zapobiegają one zamknięciu połączenia,
+# nawet na nieaktywnych sesjach, tak długo jak klient i łącze sieciowe jest żywe.
+# Jest to wewnętrzny mechanizm ssh, który wysyła pakiet "null
+# wewnątrz ustanowionego tunelu, i czeka na odpowiedź od klienta.
+# W tym przypadku wysyła jeden pakiet co 360 sekund, i rozłącza się po 1 brakującej odpowiedzi.
+# Chociaż te opcje są pomocne w wykrywaniu i czyszczeniu rozłączonych sesji klientów,
+# nie zabiją one sesji klientów, którzy nadal są połączeni, nawet jeśli są nieaktywni.
+# Chyba, że ich klient nie odpowie na pakiet null.
+```
+
+Aby odłączyć nieaktywnych klientów, jeśli używasz bash jako powłoki, możesz ustawić wartość TMOUT w ogólnosystemowym profilu domyślnym lub na użytkownika:
+
+```
+# TMOUT Jeśli ustawione na wartość większą od zera,
+# TMOUT traktowane jest jako domyślny timeout dla wbudowanego read.
+# Polecenie select kończy pracę jeśli wejście nie nadejdzie po
+# TMOUT sekund, gdy wejście pochodzi z terminala.
+# W powłoce interaktywnej, wartość ta interpretowana jest jako liczba
+# sekund oczekiwania na wiersz wejścia po wydaniu głównej zachęty.
+# Bash kończy pracę po odczekaniu tej liczby sekund
+# jeśli nie nadejdzie pełny wiersz wejścia.
+
+# Na przykład, dodanie następującej linii do `/etc/.bashrc`.
+# zamknie sesje bashowe nieaktywnego użytkownika po 5 minutach,
+# ale przeczytaj następujące ostrzeżenie przed włączeniem tego:
+
+`export TMOUT=300`
+
+# Ostrzeżenie: jako codzienny użytkownik powłoki, często pozwalam, 
+# aby jakiś terminal był otwarty podczas wielozadaniowości.
+# Osobiście uznałbym ten mechanizm TMOUT za bardzo denerwujący, 
+# jeśli ustawiony na niską wartość (nawet 10 minut).
+# Nie polecam go, chyba że jest przynajmniej ustawiony na bardzo wysoką wartość (co najmniej 1h).
+
+# Moja opinia jest taka, że opcje OpenSSH `ClientAliveInterval` i `ClientAliveCountMax`
+# (lub `ServerAliveInterval` i `ServerAliveCountMax`, ustawiane po stronie serwera)
+# wystarczą, aby pozbyć się zombie/rozłączonych klientów.
+# Używając ich masz już gwarancję, że aktywna sesja na serwerze 
+# odpowiada otwartemu terminalowi na podłączonym kliencie.
+# To jest wybór użytkownika, aby utrzymać swój terminal otwarty, 
+# podczas gdy rozumiem. że chcesz zamknąć rozłączonych klientów.
+# Nie widzę sensu zamykania sesji od legalnych użytkowników.
+```
+
+Zrestartuj usługę SSH
+
+```
 sudo systemctl restart sshd
 ```

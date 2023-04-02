@@ -127,25 +127,34 @@ The key's randomart image is:
 |  oooOo=         |
 |   .o+*o         |
 +----[SHA256]-----+
+```
 
-# to generate a passphrase you can use the following command in a separate CLI window
+To generate a passphrase you can use the following command in a separate CLI window
 hexdump -vn16 -e'4/4 "%08X" 1 "\n"' /dev/urandom
 
-# list the key-pair
+List the key-pair
+
+```
 adrian@linux:~> ll ~/.ssh/p-tech*
 -rw------- 1 adrian adrian 3.4K Apr  1 16:44 /home/adrian/.ssh/p-tech
 -rw-r--r-- 1 adrian adrian  745 Apr  1 16:44 /home/adrian/.ssh/p-tech.pub
+```
 
-# copy the public key from the client to the server
+Copy the public key from the client to the server
+```
 ssh-copy-id -i ~/.ssh/p-tech.pub student@IP-ADDRRESS
+```
 
-# provide a password
+The public key is saved into the ~/.ssh/authorized_keys
 
+Provide a password
+
+```
 # login with the key to the server
 ssh -i ~/.ssh/p-tech student@IP-ADDRRESS
-
-# provide a passphrase
 ```
+
+Provide a passphrase
 
 #### Automation
 
@@ -163,19 +172,126 @@ Edit /etc/ssh/sshd_config
 ```
 sudo vi /etc/ssh/sshd_config
 
-# uncomment these lines and change to [no]
+# Uncomment these lines and change to [no]
+
 PasswordAuthentication no
 ChallengeResponseAuthentication no
 
-# Add Protocol2
-Protocol 2
-#      Protocol
-#             Specifies the protocol versions sshd(8) supports.  The possible
-#             values are `1' and `2'.  Multiple versions must be comma-
-#             separated.  The default is `2'.  Protocol 1 suffers from a number
-#             of cryptographic weaknesses and should not be used.  It is only
-#             offered to support legacy devices.
+# Disable Empty Passwords
+# You need to prevent remote logins from accounts with empty passwords for added security. 
 
-# Restart SSH service
+PermitEmptyPasswords no
+
+# Limit Users’ SSH Access
+# To provide another layer of security, you should limit your SSH logins to only certain users 
+# who need remote access. This way, you will minimize the impact of having a user with a weak password.
+# Add an ‘AllowUsers’ line, followed by the list of usernames, and separate them with a space:
+
+AllowUsers student adrian
+
+# Disable Root Logins
+# One of the most dangerous security holes you can have in your system 
+# is to allow direct logging in to root through SSH. By doing so, 
+# any hackers attempting brute force on your root password could 
+# hypothetically access your system; and if you think about it, 
+# root can do a lot more damage on a machine than a standard user can do.
+# To disable logging in through SSH as root, change the line to this:
+
+PermitRootLogin no
+
+# Eventually you can allow root to login through SSH using a pair of keys. 
+# Do this only if the server is not in the DMZ (there is no access from the Internet)
+
+PermitRootLogin prohibit-password
+
+# Add Protocol2
+# SSH has two protocols that it can use. Protocol 1 is older and is less secure. 
+# Protocol 2 is what you should be using to harden your security. 
+# If you are looking for your server to become PCI compliant, then you must disable protocol 1.
+
+Protocol 2
+
+# Protocol
+#  Specifies the protocol versions sshd(8) supports.  The possible
+#  values are '1' and '2'.  Multiple versions must be comma-separated.  
+#  The default is '2'.  Protocol 1 suffers from a number 
+#  of cryptographic weaknesses and should not be used. 
+#  It is only offered to support legacy devices.
+#  Example: Protocol 2, 1
+
+# Use Another Port
+# One of the main benefits of changing the port and using a non-standard port 
+# is to avoid being seen by casual scans. The vast majority of hackers 
+# looking for any open SSH servers will look for port 22, since by default, 
+# SSH listens for incoming connections on that port. 
+# If it’s harder to scan for your SSH server, then your chances of being attacked are reduced.
+# Run SSH on a non standard port above port 1024.
+
+Port 2025
+
+# You can choose any unused port as long as it’s not used by another service. 
+# A lot of people might choose to use 222 or 2222 as their port since 
+# it’s pretty easy to remember, but for that very reason, hackers scanning port 22 
+# will likely also be trying ports 222 and 2222. Try and select a port number 
+# that is not already used, follow this link for a list of port numbers and their known services.
+
+# Configure Idle Timeout Interval
+
+ClientAliveInterval 360
+ClientAliveCountMax 1
+
+# The timeout value is calculated by multiplying 
+# ClientAliveInterval with ClientAliveCountMax.
+# timeout interval = ClientAliveInterval * ClientAliveCountMax
+# OpenSSH options ClientAliveInterval and ClientAliveCountMax 
+# are not used to disconnect inactive sessions. 
+# They are in fact preventing the connection from being closed, 
+# even on inactive sessions, as long as the client and the network link is alive.
+# This is an internal mechanism of ssh that send a null packet 
+# inside the established tunnel, and wait for an answer from the client.
+# In this case, it sends one packet every 360 seconds, and disconnect after 1 answer missed.
+# While these options are helpful to detect and cleanup disconnected client sessions, 
+# they will not kill sessions of clients who are still connected, even if inactive. 
+# Unless their client doesn't answer the null packet.
+```
+
+To disconnect inactive clients, if you are using bash as shell you could set the TMOUT value in a system-wide default or per-user profile:
+
+```
+# TMOUT  If  set to a value greater than zero, 
+# TMOUT is treated as the default timeout for the read builtin. 
+# The select command terminates if input does not arrive after 
+# TMOUT seconds when input is coming from a terminal. 
+# In an interactive shell, the value is interpreted as the number 
+# of seconds to wait for a line of input after issuing the primary prompt. 
+# Bash terminates after waiting for that number of seconds 
+# if a complete line of input does not arrive.
+
+# For example, adding the following line to `/etc/.bashrc` 
+# will close bash sessions of inactive user after 5 minutes, 
+# but read the following warning before enabling this:
+
+`export TMOUT=300`
+
+# Warning: as a daily user of shells, 
+# I often let some terminal open while multitasking. 
+# I would personally find this TMOUT mechanism very annoying 
+# if set to a low value (even the 10 minutes).
+# I would NOT recommend it unless it's at least 
+# set to a very high value (at least 1hour).
+
+# My opinion is that OpenSSH options `ClientAliveInterval` and `ClientAliveCountMax` 
+# (or `ServerAliveInterval` and `ServerAliveCountMax`, set on the server-side) 
+# are enough to get rid of zombies/disconnected clients. 
+
+# When using them you are already guaranteed that an active session 
+# on the server does match an open terminal on a connected client. 
+# It's the user's choice to keep their terminal open, while I understand 
+# you want to close disconnected clients.
+# I don't see the point of closing sessions from legitimate users.
+```
+
+Restart SSH service
+```
 sudo systemctl restart sshd
 ```
