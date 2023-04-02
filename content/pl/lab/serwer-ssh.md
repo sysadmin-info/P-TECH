@@ -151,9 +151,7 @@ ssh -i ~/.ssh/p-tech student@IP-ADDRRESS
 
 #### Automatyzacja
 
-Dodaj poniższe wpisy do pliku .bashrc lub .zshrc znajdującego się w katalogu /home/user.
-Pierwszy wpis uruchamia agenta ssh, a drugi ładuje do niego Twój klucz prywatny. Jeśli ustawiłeś passphrase na swoim kluczu, agent zapyta o jego wpisanie.
-Możesz dodać więcej niż jeden klucz. Należy pamiętać, że za każdym razem, gdy Bash lub Zsh uruchomi proces restartu lub rozruchu systemu operacyjnego, w CLI poprosi o podanie passphrase.
+Dodaj poniższe wpisy do pliku .bashrc lub .zshrc znajdującego się w katalogu /home/user. Pierwszy wpis uruchamia agenta ssh, a drugi ładuje do niego Twój klucz prywatny. Jeśli ustawiłeś passphrase na swoim kluczu, agent zapyta o jego wpisanie. Możesz dodać więcej niż jeden klucz. Należy pamiętać, że za każdym razem, gdy Bash lub Zsh uruchomi proces restartu lub rozruchu systemu operacyjnego, w CLI poprosi o podanie passphrase.
 
 ```
 eval $(ssh-agent -s)
