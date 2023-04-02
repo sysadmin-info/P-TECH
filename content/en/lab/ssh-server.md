@@ -147,6 +147,17 @@ ssh -i ~/.ssh/p-tech student@IP-ADDRRESS
 # provide a passphrase
 ```
 
+#### Automation
+
+Add below entries to .bashrc or .zshrc file located in your /home/user directory.
+First entry starts ssh agent and a second loads your private key to the agent. If you did set up a passphrase on your key it will ask for it.
+You can add more than one key. Bear in mind, that each time the Bash or Zsh starts aftyer a reboot or boot process of the operating system, in CLI it will ask you to provide a passphrase. 
+
+```
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/p-tech
+```
+
 #### Secure SSH
 
 Edit /etc/ssh/sshd_config
