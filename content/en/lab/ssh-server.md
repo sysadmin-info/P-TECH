@@ -235,6 +235,12 @@ Port 2025
 # will likely also be trying ports 222 and 2222. Try and select a port number 
 # that is not already used, follow this link for a list of port numbers and their known services.
 
+# If StrictModes is set to yes, then the below permissions are required.
+# sudo chmod 700 ~/.ssh
+# sudo chmod 600 ~/.ssh/authorized_keys
+
+StrictModes yes
+
 # Configure Idle Timeout Interval
 
 ClientAliveInterval 360
@@ -290,6 +296,24 @@ To disconnect inactive clients, if you are using bash as shell you could set the
 # you want to close disconnected clients.
 # I don't see the point of closing sessions from legitimate users.
 ```
+
+#### Secure Configuration of Ciphers/MACs/Kex available in SSH
+
+```
+MACs hmac-sha2-512
+Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+KexAlgorithms diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha256,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,curve25519-sha256,curve25519-sha256@libssh.org
+```
+
+Make sure your ssh client can use these ciphers, run:
+
+```
+ssh -Q cipher | sort -u
+to see the list
+```
+
+I recommend to read this article:
+[Secure Configuration of Ciphers/MACs/Kex available in SSH](https://security.stackexchange.com/questions/39756/secure-configuration-of-ciphers-macs-kex-available-in-ssh "Secure Configuration of Ciphers/MACs/Kex available in SSH")
 
 Restart SSH service
 ```

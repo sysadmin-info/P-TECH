@@ -239,6 +239,12 @@ Port 2025
 # prawdopodobnie będą również próbować portów 222 i 2222. Spróbuj wybrać numer portu
 # który nie jest jeszcze używany, podążaj za tym linkiem, aby uzyskać listę numerów portów i ich znanych usług.
 
+# Jeśli StrictModes jest ustawiony na tak, to wymagane są poniższe uprawnienia.
+# sudo chmod 700 ~/.ssh
+# sudo chmod 600 ~/.ssh/authorized_keys
+
+StrictModes yes
+
 # Konfiguracja interwału czasu bezczynności
 
 ClientAliveInterval 360
@@ -292,6 +298,24 @@ Aby odłączyć nieaktywnych klientów, jeśli używasz bash jako powłoki, moż
 # podczas gdy rozumiem. że chcesz zamknąć rozłączonych klientów.
 # Nie widzę sensu zamykania sesji od legalnych użytkowników.
 ```
+
+#### Bezpieczna konfiguracja szyfrów/MAC/Kex dostępnych w SSH 
+
+```
+MACs hmac-sha2-512
+Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+KexAlgorithms diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha256,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,curve25519-sha256,curve25519-sha256@libssh.org
+```
+
+Upewnij się, że twój klient ssh może używać tych szyfrów, uruchom:
+
+```
+ssh -Q cipher | sort -u
+to see the list
+```
+
+Polecam przeczytać ten artykuł::
+[Secure Configuration of Ciphers/MACs/Kex available in SSH](https://security.stackexchange.com/questions/39756/secure-configuration-of-ciphers-macs-kex-available-in-ssh "Secure Configuration of Ciphers/MACs/Kex available in SSH")
 
 Zrestartuj usługę SSH
 
