@@ -23,13 +23,6 @@ image: images/2023-thumbs/ssh.webp
 
 OpenSSH jest już domyślnie zainstalowany, więc nie ma potrzeby instalowania nowych pakietów. Domyślnie możesz logować się za pomocą KeyBoard-Interactive Authentication, ale zmień niektóre ustawienia dla bezpieczeństwa jak poniżej.
 
-```
-linux:~ # vi /etc/ssh/sshd_config
-# change (prohibit root login remotely)
-PermitRootLogin no
-linux:~ # systemctl restart sshd
-```
-
 #### Instalacja firewalld
 
 {{< tabs SLES Debian RedHat >}}
