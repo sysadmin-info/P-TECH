@@ -99,7 +99,7 @@ Create Key-Pair for each user, so login with a common user on SSH Server Host an
 
 ```
 # create key-pair on a client
-ssh-keygen -t rsa -b 4096
+ssh-keygen -t rsa -b 4096 -C "name and surname"
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/adrian/.ssh/id_rsa): /home/adrian/.ssh/p-tech
 Enter passphrase (empty for no passphrase):

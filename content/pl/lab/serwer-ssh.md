@@ -101,7 +101,7 @@ Utwórz Key-Pair dla każdego użytkownika, więc zaloguj się wspólnym użytko
 
 ```
 # utwórz parę kluczy na kliencie
-ssh-keygen -t rsa -b 4096
+ssh-keygen -t rsa -b 4096 -C "imię i nazwisko"
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/adrian/.ssh/id_rsa): /home/adrian/.ssh/p-tech
 Enter passphrase (empty for no passphrase):
