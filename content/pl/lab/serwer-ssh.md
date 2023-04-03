@@ -18,6 +18,16 @@ series:
 draft: false
 image: images/2023-thumbs/ssh.webp
 ---
+#### Ćwiczenia do wykonania:
+1. Wygeneruj parę kluczy RSA za pomocą ssh-keygen
+2. Wyeksportuj klucz publiczny z klienta do serwera za pomocą ssh-copy-id
+3. Zaloguj się za pomocą hasła poprzez ssh do serwera i przełącz na konto root za pomocą komendy sudo - su lub sudo -i
+4. Włącz logowanie kluczami i wyłącz logowanie hasłem. Zapisz zmiany i zrestartuj usługę ssh.
+5. Nie zamykaj bieżącej sesji. Otwórz nową sesję ssh i zaloguj się do serwera za pomocą klucza prywatnego. 
+6. Jeśli udało ci się zalogować, zabezpiecz serwer korzystając z poniższych informacji a następnie zrestartuj usługę ssh na drugiej sesji.
+7. Pamiętaj, by pierwszą sesję ssh cały czas mieć otwartą, by w razie potrzeby móc cofnąć zmiany.
+8. Zrestartuj usługę ssh i sprawdź, czy możesz zalogować się za pomocą trzeciej sesji do serwera. Jeśli tak, udało ci się poprawnie skonfigurować serwer ssh.
+9. Dla chętnych napisz skrypt z użyciem sed lub awk, który dokona zmian po stronie serwera w pliku sshd_config, aby nie trzeba było ręcznie nanosić zmian.
 
 #### OpenSSH : KeyBoard-Intereractive Auth
 

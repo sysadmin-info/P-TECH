@@ -17,6 +17,16 @@ categories:
 - 
 image: images/2023-thumbs/ssh.webp
 ---
+#### Exercises to complete:
+1. generate an RSA key pair using ssh-keygen
+2. export the public key from the client to the server using ssh-copy-id
+3. log in with the password via ssh to the server and switch to the root account using the sudo - su or sudo -i command
+4. enable key login and disable password login. Save the changes and restart the ssh service.
+5. do not close the current session. Open a new ssh session and log in to the server with your private key. 
+6. if you have successfully logged in, secure the server using the information below and then restart the ssh service on the second session.
+7. remember to keep the first ssh session open all the time so you can undo changes if necessary.
+8. restart the ssh service and check if you can log in with the third session to the server. If so, you have successfully configured the ssh server correctly.
+9. if you are willing, write a script using sed or awk to make server-side changes to the sshd_config file so that you don't have to manually apply the changes.
 
 #### OpenSSH : KeyBoard-Intereractive Auth
 
