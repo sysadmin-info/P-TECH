@@ -179,8 +179,8 @@ ChallengeResponseAuthentication no
 PermitEmptyPasswords no
 
 # Ograniczenie dostępu użytkowników do SSH
-# Aby zapewnić kolejną warstwę bezpieczeństwa, powinieneś ograniczyć logowanie do SSH 
-# tylko do niektórych użytkowników, którzy potrzebują zdalnego dostępu. 
+# Aby zapewnić kolejną warstwę bezpieczeństwa, powinieneś ograniczyć logowanie do SSH
+# tylko do niektórych użytkowników, którzy potrzebują zdalnego dostępu.
 # W ten sposób zminimalizujesz wpływ posiadania użytkownika ze słabym hasłem.
 # Dodaj linię "AllowUsers", a następnie listę nazw użytkowników i oddziel je spacją:
 
@@ -262,11 +262,15 @@ Aby odłączyć nieaktywnych klientów, jeśli używasz bash jako powłoki, moż
 
 ```
 # TMOUT Jeśli ustawione na wartość większą od zera,
-# TMOUT traktowane jest jako domyślny timeout dla wbudowanego read.
-# Polecenie select kończy pracę jeśli wejście nie nadejdzie po
-# TMOUT sekund, gdy wejście pochodzi z terminala.
+# TMOUT traktowane jest jako domyślny limit czasu (tiomeout) 
+# dla wbudowanego odczytu (read).
+#
+# Polecenie select kończy pracę jeśli nie otrzyma danych na wejściu 
+# z terminala po TMOUT sekund.
+#
 # W powłoce interaktywnej, wartość ta interpretowana jest jako liczba
 # sekund oczekiwania na wiersz wejścia po wydaniu głównej zachęty.
+#
 # Bash kończy pracę po odczekaniu tej liczby sekund
 # jeśli nie nadejdzie pełny wiersz wejścia.
 
@@ -276,17 +280,19 @@ Aby odłączyć nieaktywnych klientów, jeśli używasz bash jako powłoki, moż
 
 `export TMOUT=300`
 
-# Ostrzeżenie: jako codzienny użytkownik powłoki, często pozwalam, 
+# Ostrzeżenie: jako codzienny użytkownik powłoki, często pozwalam,
 # aby jakiś terminal był otwarty podczas wielozadaniowości.
-# Osobiście uznałbym ten mechanizm TMOUT za bardzo denerwujący, 
-# jeśli ustawiony na niską wartość (nawet 10 minut).
-# Nie polecam go, chyba że jest przynajmniej ustawiony na bardzo wysoką wartość (co najmniej 1h).
+# Osobiście uznałbym ten mechanizm TMOUT za bardzo denerwujący,
+# jeśli byłby ustawiony na niską wartość (nawet 10 minut).
+# Nie polecam tego, chyba że jest przynajmniej ustawiony
+# na bardzo wysoką wartość (co najmniej 1 godzinę - 3600 sekund).
 
 # Moja opinia jest taka, że opcje OpenSSH `ClientAliveInterval` i `ClientAliveCountMax`
-# (lub `ServerAliveInterval` i `ServerAliveCountMax`, ustawiane po stronie serwera)
+# (lub `ServerAliveInterval` i `ServerAliveCountMax`, ustawiane po stronie serwera),
 # wystarczą, aby pozbyć się zombie/rozłączonych klientów.
-# Używając ich masz już gwarancję, że aktywna sesja na serwerze 
+# Używając ich, masz już gwarancję, że aktywna sesja na serwerze
 # odpowiada otwartemu terminalowi na podłączonym kliencie.
+#
 # To jest wybór użytkownika, aby utrzymać swój terminal otwarty, 
 # podczas gdy rozumiem. że chcesz zamknąć rozłączonych klientów.
 # Nie widzę sensu zamykania sesji od legalnych użytkowników.

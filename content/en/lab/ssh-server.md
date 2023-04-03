@@ -259,10 +259,13 @@ To disconnect inactive clients, if you are using bash as shell you could set the
 ```
 # TMOUT  If  set to a value greater than zero, 
 # TMOUT is treated as the default timeout for the read builtin. 
+#
 # The select command terminates if input does not arrive after 
 # TMOUT seconds when input is coming from a terminal. 
+#
 # In an interactive shell, the value is interpreted as the number 
 # of seconds to wait for a line of input after issuing the primary prompt. 
+#
 # Bash terminates after waiting for that number of seconds 
 # if a complete line of input does not arrive.
 
@@ -272,12 +275,12 @@ To disconnect inactive clients, if you are using bash as shell you could set the
 
 `export TMOUT=300`
 
-# Warning: as a daily user of shells, 
-# I often let some terminal open while multitasking. 
-# I would personally find this TMOUT mechanism very annoying 
-# if set to a low value (even the 10 minutes).
-# I would NOT recommend it unless it's at least 
-# set to a very high value (at least 1hour).
+# Warning: as a daily user of shells,
+# I often let some terminal open while multitasking.
+# I would personally find this TMOUT mechanism very annoying
+# if set to a low value (even the 10 minutes). 
+# I would not recommend it unless it's at least
+# set to a very high value (at least 1 hour - 3600 seconds).
 
 # My opinion is that OpenSSH options `ClientAliveInterval` and `ClientAliveCountMax` 
 # (or `ServerAliveInterval` and `ServerAliveCountMax`, set on the server-side) 
@@ -285,6 +288,7 @@ To disconnect inactive clients, if you are using bash as shell you could set the
 
 # When using them you are already guaranteed that an active session 
 # on the server does match an open terminal on a connected client. 
+#
 # It's the user's choice to keep their terminal open, while I understand 
 # you want to close disconnected clients.
 # I don't see the point of closing sessions from legitimate users.
