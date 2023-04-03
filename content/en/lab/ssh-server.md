@@ -242,13 +242,16 @@ ClientAliveCountMax 1
 # The timeout value is calculated by multiplying 
 # ClientAliveInterval with ClientAliveCountMax.
 # timeout interval = ClientAliveInterval * ClientAliveCountMax
+#
 # OpenSSH options ClientAliveInterval and ClientAliveCountMax 
 # are not used to disconnect inactive sessions. 
 # They are in fact preventing the connection from being closed, 
 # even on inactive sessions, as long as the client and the network link is alive.
+#
 # This is an internal mechanism of ssh that send a null packet 
 # inside the established tunnel, and wait for an answer from the client.
 # In this case, it sends one packet every 360 seconds, and disconnect after 1 answer missed.
+#
 # While these options are helpful to detect and cleanup disconnected client sessions, 
 # they will not kill sessions of clients who are still connected, even if inactive. 
 # Unless their client doesn't answer the null packet.
