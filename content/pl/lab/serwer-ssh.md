@@ -248,7 +248,8 @@ ClientAliveCountMax 1
 # że te wiadomości nie będą wysyłane do klienta. Opcja dotyczy tylko protokołu w wersji 2.
 
 # ClientAliveCountMax - Wartość domyślna to 3. Jeśli ClientAliveInterval ustawiony jest na 15, a ClientAliveCountMax 
-# na wartość domyślną, to niereagujący klienci SSH będą rozłączani po około 45 sekundach. Opcja dotyczy tylko protokołu w wersji 2.
+# na wartość domyślną, to niereagujący klienci SSH będą rozłączani po około 45 sekundach. 
+# Opcja dotyczy tylko protokołu w wersji 2.
 
 # Wartość timeout jest obliczana przez pomnożenie
 # ClientAliveInterval i ClientAliveCountMax.
