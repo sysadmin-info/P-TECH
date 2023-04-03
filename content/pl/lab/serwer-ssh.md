@@ -243,9 +243,12 @@ StrictModes yes
 ClientAliveInterval 360
 ClientAliveCountMax 1
 
-# ClientAliveInterval - Ustawia interwał czasowy w sekundach, po którym, jeśli nie otrzymano żadnych danych od klienta, sshd wyśle wiadomość przez kanał szyfrowany, aby zażądać odpowiedzi od klienta. Domyślnie jest to 0, co oznacza, że te wiadomości nie będą wysyłane do klienta. Opcja dotyczy tylko protokołu w wersji 2.
+# ClientAliveInterval - Ustawia interwał czasowy w sekundach, po którym, jeśli nie otrzymano żadnych danych od klienta, 
+# sshd wyśle wiadomość przez kanał szyfrowany, aby zażądać odpowiedzi od klienta. Domyślnie jest to 0, co oznacza, 
+# że te wiadomości nie będą wysyłane do klienta. Opcja dotyczy tylko protokołu w wersji 2.
 
-# ClientAliveCountMax - Wartość domyślna to 3. Jeśli ClientAliveInterval (patrz poniżej) ustawiony jest na 15, a ClientAliveCountMax na wartość domyślną, to niereagujący klienci SSH będą rozłączani po około 45 sekundach. Opcja dotyczy tylko protokołu w wersji 2.
+# ClientAliveCountMax - Wartość domyślna to 3. Jeśli ClientAliveInterval ustawiony jest na 15, a ClientAliveCountMax 
+# na wartość domyślną, to niereagujący klienci SSH będą rozłączani po około 45 sekundach. Opcja dotyczy tylko protokołu w wersji 2.
 
 # Wartość timeout jest obliczana przez pomnożenie
 # ClientAliveInterval i ClientAliveCountMax.

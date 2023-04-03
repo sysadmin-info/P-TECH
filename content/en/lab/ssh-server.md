@@ -239,9 +239,13 @@ StrictModes yes
 ClientAliveInterval 360
 ClientAliveCountMax 1
 
-# ClientAliveInterval - Sets a timeout interval in seconds after which if no data has been received from the client, sshd will send a message through the encrypted channel to request a response from the client. The default is 0, indicating that these messages will not be sent to the client. This option applies to Protocol version 2 only.
+# ClientAliveInterval - Sets a timeout interval in seconds after which if no data has been received from the client, 
+# sshd will send a message through the encrypted channel to request a response from the client. The default is 0, 
+# indicating that these messages will not be sent to the client. This option applies to Protocol version 2 only.
 
-# ClientAliveCountMax - The default value is 3. If ClientAliveInterval (see below) is set to 15, and ClientAliveCountMax is left at the default, unresponsive SSH clients will be disconnected after approximately 45 seconds. This option applies to Protocol version 2 only.
+# ClientAliveCountMax - The default value is 3. If ClientAliveInterval is set to 15, and ClientAliveCountMax is left 
+# at the default, unresponsive SSH clients will be disconnected after approximately 45 seconds. 
+# This option applies to Protocol version 2 only.
 
 # The timeout value is calculated by multiplying 
 # ClientAliveInterval with ClientAliveCountMax.
