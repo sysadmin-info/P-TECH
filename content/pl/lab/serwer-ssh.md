@@ -30,7 +30,7 @@ image: images/2023-thumbs/ssh.webp
 8. Zrestartuj usługę ssh i sprawdź, czy możesz zalogować się za pomocą trzeciej sesji do serwera. Jeśli tak, udało ci się poprawnie skonfigurować serwer ssh.
 9. Dla chętnych napisz skrypt z użyciem sed lub awk, który dokona zmian po stronie serwera w pliku sshd_config, aby nie trzeba było ręcznie nanosić zmian.
 
-{{< asciinema key="server-ssh" rows="10" preload="1" >}}
+<script async id="asciicast-574590" src="https://asciinema.org/a/574590.js"></script>
 
 #### OpenSSH : KeyBoard-Intereractive Auth
 
