@@ -9,7 +9,7 @@ enableTocContent: false
 author: admin
 authorEmoji: 🐧
 pinned: false
-asciinema = true
+asciinema: true
 tags:
 - P-TECH
 series:
