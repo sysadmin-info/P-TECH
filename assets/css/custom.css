@@ -26,3 +26,13 @@
 	margin: 1.5rem 0 !important;
 	padding: 0.5rem 0 !important;
 }
+.summary-classic:not(:last-child) hr {
+    margin-bottom: 0.5rem !important;
+}
+
+element.style {
+}
+.single__contents h4 {
+    font-size: 1.5rem;
+    margin: 1rem 0 1rem;
+}
