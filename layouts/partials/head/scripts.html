@@ -24,6 +24,10 @@
 {{ $closest := resources.Get "js/helper/closest.js" | resources.Minify }}
 <script defer src="{{ $closest.RelPermalink }}"></script>
 
+{{ if .Params.asciinema }}
+    <script src="{{ .Site.BaseURL }}js/asciinema-player.js"></script>
+{{ end }}
+
 <script>
   "use strict";
 
