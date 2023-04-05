@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>general on P-TECH</title>
+    <link>https://p-tech-site.netlify.app/en/categories/general/</link>
+    <description>Recent content in general on P-TECH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2023, <a href="https://p-tech-site.netlify.app/">P-TECH</a> - All rights reserved</copyright>
+    <lastBuildDate>Sat, 01 Apr 2023 08:08:59 +0000</lastBuildDate>
+    
+        <atom:link href="https://p-tech-site.netlify.app/en/categories/general/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Welcome to the P-TECH website</title>
+        <link>https://p-tech-site.netlify.app/en/lab/welcome/</link>
+        <pubDate>Sat, 01 Apr 2023 08:08:59 +0000</pubDate>
+        
+        <atom:modified>Sat, 01 Apr 2023 08:08:59 +0000</atom:modified>
+        <guid>https://p-tech-site.netlify.app/en/lab/welcome/</guid>
+        <description>In class, we use virtual machines built from an AWS template. Why AWS and not Virtual Box virtual machines? For several reasons. First of all, it is very problematic to set up a web/www server on a virtual machine. For a simple reason. You need to know if it&amp;rsquo;s possible to put up a virtual machine using a virtual bridge hooked up to our network card to the world, and how to set up port forwarding on the router so that traffic from ports 80 and 443 is forwarded to our computer and then to the virtual machine.</description>
+        
+        <dc:creator>admin</dc:creator>
+        <media:content url="https://p-tech-site.netlify.app/images/2023-thumbs/linux-cli.webp" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>P-TECH</category>
+            
+          
+        
+        
+          
+            
+              <category>general</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

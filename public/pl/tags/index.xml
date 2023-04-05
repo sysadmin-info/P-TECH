@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Tags on P-TECH</title>
+    <link>https://p-tech-site.netlify.app/pl/tags/</link>
+    <description>Recent content in Tags on P-TECH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pl</language>
+    <copyright>©2023, <a href="https://p-tech-site.netlify.app/">P-TECH</a> - All rights reserved</copyright>
+    <lastBuildDate>Sat, 01 Apr 2023 14:50:34 +0200</lastBuildDate>
+    
+        <atom:link href="https://p-tech-site.netlify.app/pl/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>P-TECH</title>
+        <link>https://p-tech-site.netlify.app/pl/tags/p-tech/</link>
+        <pubDate>Sat, 01 Apr 2023 14:50:34 +0200</pubDate>
+        
+        
+        <guid>https://p-tech-site.netlify.app/pl/tags/p-tech/</guid>
+        <description></description>
+        
+        
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>index</title>
+        <link>https://p-tech-site.netlify.app/pl/tags/index/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        
+        <guid>https://p-tech-site.netlify.app/pl/tags/index/</guid>
+        <description></description>
+        
+        
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
