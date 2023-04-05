@@ -28,7 +28,7 @@ image: images/2023-thumbs/ssh.webp
 8. restart the ssh service and check if you can log in with the third session to the server. If so, you have successfully configured the ssh server correctly.
 9. if you are willing, write a script using sed or awk to make server-side changes to the sshd_config file so that you don't have to manually apply the changes.
 
-{{< asciinema key="a8zEvqMO2MgMM0CpfPjVOiozs" preload="1" >}}
+{{< asciinema key="ZKHZHbC6tuZ7JBN8ACqb3qQ1r" preload="1" >}}
 
 #### OpenSSH : KeyBoard-Intereractive Auth
 
