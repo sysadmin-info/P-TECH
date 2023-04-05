@@ -320,9 +320,14 @@ To disconnect inactive clients, if you are using bash as shell you could set the
 #### Secure Configuration of Ciphers/MACs/Kex available in SSH
 
 ```
-MACs hmac-sha2-512
-Ciphers aes256-ctr,aes192-ctr,aes128-ctr
 KexAlgorithms diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha256,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,curve25519-sha256,curve25519-sha256@libssh.org
+Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512
+
+# Less secure but working:
+KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
 ```
 
 Make sure your ssh client can use these ciphers, run:
