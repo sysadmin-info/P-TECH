@@ -25,7 +25,7 @@ image: images/2023-thumbs/apache2.webp
 4. Utwórz prostą stronę internetową
 5. Sprawdź czy strona wyświetla się poprawnie przy użyciu adresu IP
 
-<!---<script async id="asciicast-574590" src="https://asciinema.org/a/574590.js"></script>-->
+<script async id="asciicast-575077" src="https://asciinema.org/a/575077.js"></script>
 
 #### Zainstaluj Apache2
 
