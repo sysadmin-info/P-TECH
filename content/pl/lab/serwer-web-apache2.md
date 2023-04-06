@@ -118,6 +118,8 @@ curl http://IP-ADDRESS
 
 #### Zarządzanie logami Apache2
 
+<script async id="asciicast-575108" src="https://asciinema.org/a/575108.js"></script>
+
 Jeśli chcesz wyświetlić i monitorować zapytania o dostęp do strony serwera Apache2 w czasie rzeczywistym, wpisz polecenie:
 
 {{< tabs SLES Debian RedHat >}}

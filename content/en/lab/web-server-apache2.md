@@ -117,6 +117,8 @@ curl http://IP-ADDRESS
 
 #### Manage Apache2 logs
 
+<script async id="asciicast-575108" src="https://asciinema.org/a/575108.js"></script>
+
 If you want to display the real-time request of Apache access logs and monitor the realtime log request, type command:
 
 {{< tabs SLES Debian RedHat >}}
