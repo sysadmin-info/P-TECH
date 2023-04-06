@@ -112,5 +112,6 @@ echo 'Podstawy Linux - laboratorium' | sudo tee -a /srv/www/htdocs/index.html
 #### Sprawdź czy strona wyświetla się poprawnie przy użyciu adresu IP
 
 ```
+curl http://checkip.amazonaws.com
 curl http://IP-ADDRESS
 ```
