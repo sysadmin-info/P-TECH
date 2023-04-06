@@ -114,3 +114,79 @@ echo 'Linux fundamentals - lab' | sudo tee -a /srv/www/htdocs/index.html
 curl http://checkip.amazonaws.com
 curl http://IP-ADDRESS
 ```
+
+#### Manage Apache2 logs
+
+If you want to display the real-time request of Apache access logs and monitor the realtime log request, type command:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  ```
+  sudo tail -f /var/log/apache2/access_log
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  ```
+  sudo tail -f /var/log/apache2/access.log
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  ```
+  sudo tail -f /etc/httpd/logs/access_log
+  sudo tail -f /var/log/httpd/access_log
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
+
+If you want to check your Apache2 error logs, type command:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  ```
+  sudo tail -f /var/log/apache2/error_log
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  ```
+  sudo tail -f /var/log/apache2/error.log
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  ```
+  sudo tail -f /etc/httpd/logs/error_log
+  sudo tail -f /var/log/httpd/error_log
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
+
+You can limit the number of lines to display from your logs (e.g 100), by using the command -n option.
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  ```
+  sudo tail -n 100 /var/log/apache2/access_log
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  ```
+  sudo tail -n 100 /var/log/apache2/access.log
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  ```
+  sudo tail -n 100 /etc/httpd/logs/error_log
+  sudo tail -n 100 /var/log/httpd/error_log
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
+
+Note: The logs view starts at the end of the line and is printed to the standard output.
