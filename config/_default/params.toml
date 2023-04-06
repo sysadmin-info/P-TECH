@@ -214,3 +214,9 @@ commento = false
 [[footerLinks]]
   name = ""
   link = ""
+
+[asciinema.defaults]
+theme = "solarized-light"
+loop = true
+autoPlay = false
+speed = 1.0
