@@ -18,7 +18,7 @@ categories:
 - 
 image: images/2023-thumbs/apache2.webp
 ---
-#### Ćwiczenia do uzupełnienia:
+#### Ćwiczenia do wykonania:
 1. Zainstaluj Apache2.
 2. Włącz i uruchom Apache2
 3. Dodaj port do firewalld
