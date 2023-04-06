@@ -84,12 +84,32 @@ OpenSSH jest już domyślnie zainstalowany, więc nie ma potrzeby instalowania n
 
 Domyślnie firewalld po instalacji ma zaimplementowaną usługę SSH jako dozwoloną. Jeśli nie, zawsze możesz zezwolić na usługę SSH.
 
-```
-linux:~ # firewall-cmd --add-service=ssh --permanent
-success
-linux:~ # firewall-cmd --reload
-success
-```
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  ```
+  linux:~ # sudo firewall-cmd --add-service=ssh --permanent
+  success
+  linux:~ # sudo firewall-cmd --reload
+  success
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  ```
+  sudo ufw allow 'SSH'
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  ```
+  linux:~ # sudo firewall-cmd --add-service=ssh --permanent
+  success
+  linux:~ # sudo firewall-cmd --reload
+  success
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
 
 #### Konfiguracja klienta SSH 
 

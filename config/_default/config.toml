@@ -1,6 +1,6 @@
 baseURL = "https://p-tech-site.netlify.app/" 
 title = "P-TECH"
-theme = ["zzo", "gohugo-asciinema"]
+theme = ["zzo"]
 
 enableInlineShortcodes = true
 

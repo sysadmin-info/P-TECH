@@ -83,12 +83,32 @@ OpenSSH is already installed by default, so it's not necessarry to install new p
 
 By default the firewalld after installation has SSH service implemented as allowed. If not, you can always allow SSH service.
 
-```
-linux:~ # firewall-cmd --add-service=ssh --permanent
-success
-linux:~ # firewall-cmd --reload
-success
-```
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  ```
+  linux:~ # sudo firewall-cmd --add-service=ssh --permanent
+  success
+  linux:~ # sudo firewall-cmd --reload
+  success
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  ```
+  sudo ufw allow 'SSH'
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  ```
+  linux:~ # sudo firewall-cmd --add-service=ssh --permanent
+  success
+  linux:~ # sudo firewall-cmd --reload
+  success
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
 
 #### Configure SSH Client
 Connect to SSH server with a common user.
