@@ -1,0 +1,27 @@
+{{- if eq (.Page.Scratch.Get "GoHugoAsciinemaPlayerShortcode") nil }}
+    {{- $js := resources.Get "js/asciinema-player.min.js" }}
+    {{- $js = $js | resources.Fingerprint "md5" }}
+    <script src="{{ $js.Permalink }}"></script>
+    {{- $css := resources.Get "css/asciinema-player.css" }}
+    {{- $css = $css | resources.Minify }}
+    {{- $css = $css | resources.Fingerprint "md5" }}
+    <link rel="stylesheet" type="text/css" href="{{ $css.Permalink }}" />
+
+    {{- .Page.Scratch.Set "GoHugoAsciinemaPlayerShortcode" 0 }}
+{{- end }}
+{{- $time := .Page.Scratch.Get "GoHugoAsciinemaPlayerShortcode" }}
+{{- $time := add $time 1 }}
+{{- .Page.Scratch.Set "GoHugoAsciinemaPlayerShortcode" $time }}
+{{- $mergedParams := merge $.Site.Params.asciinema.defaults .Params -}}
+
+<div id="demo{{ $time }}"></div>
+<script>
+AsciinemaPlayer.create({{ .Get "src" }}, document.getElementById('demo{{ $time }}'), {
+{{ range $key, $value := $mergedParams }}
+    {{- if ne $key "src" }}
+        {{- $key }}: {{ $value }},
+    {{- end }}
+{{- end }}
+});
+</script>
+<noscript><blockquote><p>To run this asciicast without javascript, use <code>asciinema play {{.Get "src" | absURL }}</code> with <a href="https://asciinema.org/">Asciinema</a></p></blockquote></noscript>
