@@ -89,6 +89,8 @@ image: images/2023-thumbs/apache2.webp
   ### Debian
   ```
   sudo ufw allow 'WWW'
+  or
+  sudo ufw allow 'Apache'
   ```
   {{< /tab >}}
   {{< tab >}}
