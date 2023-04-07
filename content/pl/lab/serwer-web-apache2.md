@@ -117,3 +117,65 @@ echo 'Podstawy Linux - laboratorium' | sudo tee -a /srv/www/htdocs/index.html
 curl http://checkip.amazonaws.com
 curl http://IP-ADDRESS
 ```
+
+#### Dodatkowe moduły
+
+Po uruchomieniu serwera Apache można włączyć dodatkowe moduły, aby uzyskać rozszerzoną funkcjonalność.
+
+Aby sprawdzić lsitę dodatkowych modułów, należy zajrzeć do katalogu ```/etc/apache2/mods-available``` lub ```/etc/httpd/conf.modules.d```.
+
+Załóżmy, że chcesz zainstalować moduł uwierzytelniania MySQL. Możesz to zrobić, uruchamiając następujące polecenie:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  ```
+  sudo zypper -n in libapr1-util1-dbd-mysql
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  ```
+  sudo apt install libapr1-util1-dbd-mysql
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  ```
+  sudo yum install apache-mod_authn_dbd
+  or
+  sudo dnf install apache-mod_authn_dbd
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
+
+Po zainstalowaniu moduł należy włączyć za pomocą poniższej komendy:
+
+```
+sudo a2enmod authn_dbd
+```
+
+Należy przeczytać: [Różnice w sposobie włączania modułów serwera Apache między SLES/OpenSUSE, Debian/Ubuntu a RedHat/Fedora/CentOS](https://serverfault.com/questions/56394/how-do-i-enable-apache-modules-from-the-command-line-in-redhat)
+
+Następnie należy zrestartować serwer Apache, aby włączyć uaktywnić wprowadzone zmiany:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  ```
+  sudo systemctl restart apache2
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  ```
+  sudo systemctl restart apache2
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  ```
+  sudo systemctl restart httpd
+  ```
+  {{< /tab >}}
+{{< /tabs >}}

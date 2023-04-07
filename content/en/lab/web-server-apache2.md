@@ -116,3 +116,65 @@ echo 'Linux fundamentals - lab' | sudo tee -a /srv/www/htdocs/index.html
 curl http://checkip.amazonaws.com
 curl http://IP-ADDRESS
 ```
+
+#### Additional modules
+
+Once the Apache server is up and running, additional modules can be enabled for extended functionality.
+
+To check the lsite of additional modules, look in the ```/etc/apache2/mods-available``` directory or ```/etc/httpd/conf.modules.d``` directory.
+
+Suppose you want to install the MySQL authentication module. You can do that by running the following command:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  ```
+  sudo zypper -n in libapr1-util1-dbd-mysql
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  ```
+  sudo apt install libapr1-util1-dbd-mysql
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  ```
+  sudo yum install apache-mod_authn_dbd
+  or
+  sudo dnf install apache-mod_authn_dbd
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
+
+After installation, the module should be turned on using the following command:
+
+```
+sudo a2enmod authn_dbd
+```
+
+Must read: [Differences in the way Apache server modules are enabled between SLES/OpenSUSE, Debian/Ubuntu and RedHat/Fedora/CentOS](https://serverfault.com/questions/56394/how-do-i-enable-apache-modules-from-the-command-line-in-redhat)
+
+Then restart the Apache server to enable activating the changes made:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  ```
+  sudo systemctl restart apache2
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  ```
+  sudo systemctl restart apache2
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  ```
+  sudo systemctl restart httpd
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
