@@ -35,6 +35,102 @@ image: images/2023-thumbs/ssh.webp
 
 OpenSSH is already installed by default, so it's not necessarry to install new packages. You can login with KeyBoard-Intereractive Authentication by default, but change some settings for security like follows.
 
+If OpenSSH, however, is not yet installed you can install it with the following command:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  To install OpenSSH type:
+  ```
+  # refresh repositories
+  sudo zypper ref
+  # install OpenSSH
+  sudo zypper -n in openssh
+  # enable OpenSSH on boot
+  sudo systemctl enable sshd
+  # start openSSH
+  sudo systemctl start sshd
+  # enable firewalld rule for ssh
+  sudo firewall-cmd --permanent --add-service=ssh
+  success
+  # Reload firewalld rules
+  sudo firewall-cmd --reload
+  success
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  To install OpenSSH type:
+  ```
+  # refresh repositories
+  sudo apt update
+  # install OpenSSH
+  sudo apt -y install openssh-server
+  # enable OpenSSH on boot
+  sudo systemctl enable sshd
+  # start OpenSSH
+  sudo systemctl start sshd
+  # enable ufw firewall rule for ssh
+  sudo ufw allow 'SSH'
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  To install OpenSSH type:
+  ```
+  sudo yum install openssh-server -y
+  lub
+  sudo dnf install openssh-server -y
+  # enable OpenSSH on boot
+  sudo systemctl enable sshd
+  # start OpenSSH
+  sudo systemctl start sshd
+  # enable firewalld rule for ssh
+  sudo firewall-cmd --permanent --add-service=ssh
+  success
+  # Reload firewalld rules
+  sudo firewall-cmd --reload
+  success
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
+
+Then, on the Linux machine with which you intend to connect to the server, you need to install the appropriate client:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  To install OpenSSH type:
+  ```
+  # refresh repositories
+  sudo zypper ref
+  # install OpenSSH
+  sudo zypper -n in openssh-clients
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  To install OpenSSH type:
+  ```
+  # refresh repositories
+  sudo apt update
+  # install OpenSSH
+  sudo apt -y install openssh-client
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  To install OpenSSH type:
+  ```
+  sudo yum install openssh-clients -y
+  or
+  sudo dnf install openssh-clients -y
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
+
+
+
 #### Install firewalld
 
 {{< tabs SLES Debian RedHat >}}

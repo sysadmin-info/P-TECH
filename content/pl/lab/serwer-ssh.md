@@ -36,6 +36,100 @@ image: images/2023-thumbs/ssh.webp
 
 OpenSSH jest już domyślnie zainstalowany, więc nie ma potrzeby instalowania nowych pakietów. Domyślnie możesz logować się za pomocą KeyBoard-Interactive Authentication, ale zmień niektóre ustawienia dla bezpieczeństwa jak poniżej.
 
+Jeśli OpenSSH jednak nie jest jeszcze zainstalowany możesz go zainstalować za pomocą następującego polecenia:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  Aby zainstalować OpenSSH wpisz:
+  ```
+  # odśwież repozytoria
+  sudo zypper ref
+  # zainstaluj OpenSSH
+  sudo zypper -n in openssh
+  # włącz OpenSSH podczas boot-owania
+  sudo systemctl enable sshd
+  # wystartuj openSSH
+  sudo systemctl start sshd
+  # włącz regułę w firewalld dla ssh
+  sudo firewall-cmd --permanent --add-service=ssh
+  success
+  # Przeładuj reguły firewalld
+  sudo firewall-cmd --reload
+  success
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  Aby zainstalować OpenSSH wpisz:
+  ```
+  # odśwież repozytoria
+  sudo apt update
+  # zainstaluj OpenSSH
+  sudo apt -y install openssh-server
+  # włącz OpenSSH podczas boot-owania
+  sudo systemctl enable sshd
+  # wystartuj OpenSSH
+  sudo systemctl start sshd
+  # włącz regułę w ufw firewall dla ssh
+  sudo ufw allow 'SSH'
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  Aby zainstalować OpenSSH wpisz:
+  ```
+  sudo yum install openssh-server -y
+  lub
+  sudo dnf install openssh-server -y
+  # włącz OpenSSH podczas boot-owania
+  sudo systemctl enable sshd
+  # wystartuj OpenSSH
+  sudo systemctl start sshd
+  # włącz regułę w firewalld dla ssh
+  sudo firewall-cmd --permanent --add-service=ssh
+  success
+  # Przeładuj reguły firewalld
+  sudo firewall-cmd --reload
+  success
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
+
+Następnie na maszynie z Linux, za pomocą której zamierzasz łączyć się do serwera, musisz zainstalować odpowiedniego klienta:
+
+{{< tabs SLES Debian RedHat >}}
+  {{< tab >}}
+  ### SLES
+  Aby zainstalować OpenSSH wpisz:
+  ```
+  # odśwież repozytoria
+  sudo zypper ref
+  # zainstaluj OpenSSH
+  sudo zypper -n in openssh-clients
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Debian
+  Aby zainstalować OpenSSH wpisz:
+  ```
+  # odśwież repozytoria
+  sudo apt update
+  # zainstaluj OpenSSH
+  sudo apt -y install openssh-client
+  ```
+  {{< /tab >}}
+  {{< tab >}}
+  ### Red Hat
+  Aby zainstalować OpenSSH wpisz:
+  ```
+  sudo yum install openssh-clients -y
+  lub
+  sudo dnf install openssh-clients -y
+  ```
+  {{< /tab >}}
+{{< /tabs >}}
+
 #### Instalacja firewalld
 
 {{< tabs SLES Debian RedHat >}}
