@@ -52,3 +52,4 @@ image: images/2023-thumbs/apache2.webp
 
 #### Instalacja certyfikatu SSL:
 
+1. Dodaj certyfikat
