@@ -26,13 +26,13 @@ image: images/2023-thumbs/network.webp
 * DNS: 10.10.0.100
 2. Skonfiguruj interfejsy sieciowe serwera w systemie Linux i stacji roboczej w systemie Linux:
 * na serwerze skonfiguruj interfejs sieciowy podłączony do routera:
-- adres IP: 10.10.10.2/24
-- brama domyślna: 10.10.10.1
-- serwer DNS: 10.10.10.1
+-- adres IP: 10.10.10.2/24
+-- brama domyślna: 10.10.10.1
+-- serwer DNS: 10.10.10.1
 * na stacji roboczej skonfiguruj interfejs sieci bezprzewodowej:
-- adres IP: 10.10.10.3/24
-- brama domyślna: 10.10.10.1
-- serwer DNS: 10.10.10.1
+-- adres IP: 10.10.10.3/24
+-- brama domyślna: 10.10.10.1
+-- serwer DNS: 10.10.10.1
 3. Wykonaj test komunikacji serwera z routerem, routera z serwerem i stacją roboczą.
 4. Przeprowadź na serwerze w systemie Linux diagnostykę podzespołów i systemu: 
 * Za pomocą dostępnych narzędzi systemowych sprawdź parametry systemu operacyjnego oraz pamięci RAM.
