@@ -34,32 +34,10 @@ image: images/2023-thumbs/network.webp
 -- brama domyślna: 10.10.10.1
 -- serwer DNS: 10.10.10.1
 3. Wykonaj test komunikacji serwera z routerem, routera z serwerem i stacją roboczą.
-4. Zainstaluj apache na serwerze.
-* W katalogu /srv/www utwórz plik o nazwie index.html z zawartością:
-
-```
-<html>
-  <body>
-    <p>Strona testowa</p>
-  </body>
-</html>
-```
-
-* ustaw prawa do katalogu /www na 555
-* ustaw prawa 444 do pliku index.html
-* z konfiguracji serwera HTTP odczytaj użytkownika i grupę, na prawach których działa serwer HTTP
-* ustaw właściciela i grupę, na prawach których działa serwer HTTP
--- dla katalogu /www
--- dla pliku index.html
-* zmień port, na którym działa serwer HTTP na 8080
-* zmień lokalizację głównej witryny Web na /www
-* sprawdź na stacji roboczej, czy przy użyciu adresu IP interfejsu WAN rutera wyświetla się udostępniona witryna
 
 Zadanie 1 i 2:
 <script async id="asciicast-577289" src="https://asciinema.org/a/577289.js"></script>
 Zadanie 3:
 <script async id="asciicast-577291" src="https://asciinema.org/a/577291.js"></script>
-Zadanie 4:
-<script async id="asciicast-577321" src="https://asciinema.org/a/577321.js"></script>
-Jako dokumentację wykonaj zrzut ekranu lub przekierowanie stdout uruchomionych poleceń do plików tekstowych so oraz ram (wykorzystaj script).
+Jako dokumentację wykonaj zrzut ekranu lub przekierowanie stdout uruchomionych poleceń do plików tekstowych (wykorzystaj script).
 <script async id="asciicast-577292" src="https://asciinema.org/a/577292.js"></script>
