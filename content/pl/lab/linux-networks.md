@@ -34,9 +34,7 @@ image: images/2023-thumbs/network.webp
 -- brama domyślna: 10.10.10.1
 -- serwer DNS: 10.10.10.1
 3. Wykonaj test komunikacji serwera z routerem, routera z serwerem i stacją roboczą.
-4. Przeprowadź na serwerze w systemie Linux diagnostykę podzespołów i systemu: 
-* Za pomocą dostępnych narzędzi systemowych sprawdź parametry systemu operacyjnego oraz pamięci RAM.
-5. Zainstaluj apache nba serwerze.
+4. Zainstaluj apache na serwerze.
 * W katalogu /srv/www utwórz plik o nazwie index.html z zawartością:
 
 ```
@@ -62,8 +60,6 @@ Zadanie 1 i 2:
 Zadanie 3:
 <script async id="asciicast-577291" src="https://asciinema.org/a/577291.js"></script>
 Zadanie 4:
-<script async id="asciicast-577290" src="https://asciinema.org/a/577290.js"></script>
-Zadanie 5:
 <script async id="asciicast-577321" src="https://asciinema.org/a/577321.js"></script>
 Jako dokumentację wykonaj zrzut ekranu lub przekierowanie stdout uruchomionych poleceń do plików tekstowych so oraz ram (wykorzystaj script).
 <script async id="asciicast-577292" src="https://asciinema.org/a/577292.js"></script>
