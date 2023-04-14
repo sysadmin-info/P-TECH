@@ -148,3 +148,4 @@ Ustaw użytkownika serwera WWW, <em><strong>www-data</strong></em>, jako właśc
   {{< /tab >}}
 {{< /tabs >}}
 
+### Zainstaluj certyfikat
