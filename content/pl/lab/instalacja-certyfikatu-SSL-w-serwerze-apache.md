@@ -168,13 +168,13 @@ sudo systemctl restart apache2.service
   {{< tab >}}
   ##### Debian
   ```
-  sudo chown -R www-data:www-data /var/www/example.com.pl/
+  sudo chown -R root:root /var/www/example.com.pl/
   ```
   {{< /tab >}}
   {{< tab >}}
   ##### Red Hat
   ```
-  sudo chown -R apache:apache /var/www/example.com.pl/
+  sudo chown -R root:root /var/www/example.com.pl/
   ```
   {{< /tab >}}
 {{< /tabs >}}
