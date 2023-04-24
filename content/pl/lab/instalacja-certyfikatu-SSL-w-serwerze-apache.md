@@ -35,7 +35,7 @@ Użyj podkatalogów /srv/www lub /var/www (zależnie od dystrybucji) do umieszcz
 Domyślnie w pliku /etc/apache2/httpd.conf zabroniony jest dostęp do całego systemu plików. Nie powinieneś nigdy nadpisywać tych dyrektyw, ale specjalnie umożliwić dostęp do wszystkich katalogów, które Apache powinien móc czytać. Szczegóły w sekcji 24.2.2.1.3, "Podstawowa konfiguracja hosta wirtualnego". Upewnij się przy tym, że żadne krytyczne pliki, takie jak hasła czy pliki konfiguracyjne systemu, nie mogą być odczytane z zewnątrz.
 {{< /notice >}}
 
-<script async id="asciicast-JAO6VVNuygdgcwYgcpRlwki39" src="https://asciinema.org/a/JAO6VVNuygdgcwYgcpRlwki39.js"></script>
+<script async id="asciicast-578630" src="https://asciinema.org/a/578630.js"></script>
 
 #### Konfiguracja wirtualnego hosta
 
