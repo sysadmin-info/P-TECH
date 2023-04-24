@@ -23,6 +23,8 @@ image: images/2023-thumbs/vsftpd.webp
 2. Włącz i uruchom Vsftpd
 3. Dodaj port do firewalld
 
+<script async id="asciicast-580161" src="https://asciinema.org/a/580161.js"></script>
+
 #### Zainstaluj Vsftpd
 
 {{< tabs SLES Debian RedHat >}}
