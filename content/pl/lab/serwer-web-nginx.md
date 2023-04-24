@@ -25,8 +25,9 @@ image: images/2023-thumbs/nginx.webp
 4. Utwórz prostą stronę internetową
 5. Sprawdź czy strona wyświetla się poprawnie przy użyciu adresu IP
 
-<script async id="asciicast-z0Fck8shNDqiClEXPh8DE3lem" src="https://asciinema.org/a/z0Fck8shNDqiClEXPh8DE3lem.js"></script>
-<script async id="asciicast-1xGlDfTTcLZeth4kNQQS6lqoW" src="https://asciinema.org/a/1xGlDfTTcLZeth4kNQQS6lqoW.js"></script>
+<script async id="asciicast-579041" src="https://asciinema.org/a/579041.js"></script>
+<script async id="asciicast-579046" src="https://asciinema.org/a/579046.js"></script>
+
 #### Zainstaluj Nginx
 
 {{< tabs SLES Debian RedHat >}}
