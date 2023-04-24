@@ -161,10 +161,10 @@ pasv_max_port=21010
 #### Dodaj użytkowników
 
 ```
-sudo useradd ftp1
+sudo useradd -d /srv/www/ftp1 ftp1
 sudo passwd ftp1
 
-sudo useradd ftp2
+sudo useradd -d /srv/www/ftp2 ftp2
 sudo passwd ftp2
 ```
 
