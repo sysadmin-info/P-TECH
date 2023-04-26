@@ -279,7 +279,8 @@ Pamiętaj, aby dodać certyfikat SSL do swojego serwera VSFTP, aby lepiej go zab
 
 Dla pewności poniżej konfiguracja, która jest przetestowana i działa. Jeszcze bez SSL. Konfiguracja SSL będzie opisana osobno.
 
-```
+
+{{< highlight Shell "linenos=table" >}}
 # Example config file /etc/vsftpd.conf
 #
 # The default compiled in settings are fairly paranoid. This sample file
@@ -521,4 +522,4 @@ user_config_dir=/etc/vsftpd_user_config_dir/
 
 #restrict FTP users to their /home directory and allow them to write there
 allow_writeable_chroot=YES
-```
+{{< /highlight >}}
