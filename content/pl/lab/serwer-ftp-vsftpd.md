@@ -499,9 +499,6 @@ pasv_max_port=21010
 # https://bugzilla.novell.com
 seccomp_sandbox=NO
 
-# specify root directory if need
-# if not specify, users' home directory become FTP home directory
-
 # use local time
 use_localtime=YES
 
