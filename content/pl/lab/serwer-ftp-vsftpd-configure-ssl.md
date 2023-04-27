@@ -139,7 +139,7 @@ Email Address []: admin's e-mail
   {{< tab >}}
   ### Red Hat
   ```
-  sudo vim vim /etc/vsftpd/vsftpd.conf
+  sudo vim /etc/vsftpd/vsftpd.conf
   ssl_enable=YES
   rsa_cert_file=/etc/ssl/private/vsftpd.pem
   rsa_private_key_file=/etc/ssl/private/vsftpd.pem
