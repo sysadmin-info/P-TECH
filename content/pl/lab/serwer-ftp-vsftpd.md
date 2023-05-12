@@ -111,20 +111,12 @@ image: images/2023-thumbs/vsftpd.webp
 sudo vim /etc/vsftpd.conf
 # linia 19: zmień
 write_enable=YES
-# linia 36: odkomentuj
-ls_recurse_enable=YES
 # linia 53: odkomentuj (Pozwól lokalnym użytkownikom zalogować się do FTP, jeśli są na liście użytkowników)
 local_enable=YES
-# linie 62,63: odkomentuj ( włącz chroot )
+# linia 62: odkomentuj ( włącz chroot )
 chroot_local_user=NO
-chroot_list_enable=YES
-# linia 65: odkomentuj ( plik z listą chroot )
-chroot_list_file=/etc/vsftpd.chroot_list
 # linia 80: zmień (żadnego anonymous)
 anonymous_enable=NO
-# linie 171,172: odkomentuj ( zezwól na ascii mode )
-ascii_upload_enable=YES
-ascii_download_enable=YES
 # linia 184: zmień wedle potrzeb (jeśli vsftpd ma nasłuchiwać połączeń tylko za pomocą protokołu IPv4)
 listen=YES
 # linia 189: zmień wedle potrzeb (jeśli vsftpw ma nasłuchiwać połączeń także za pomocą protokołu IPv6)
@@ -139,14 +131,6 @@ use_localtime=YES
 
 # ogranicz użytkowników FTP do ich katalogu domowego i zezwól im na zapisywanie plików tylko tam
 allow_writeable_chroot=YES
-```
-
-#### Dodaj użytkowników, którym zezwolisz na przejście do ich katalogu domowego
-
-```
-sudo vim  /etc/vsftpd.chroot_list
-add 
-suse
 ```
 
 #### Jeśli Firewalld jest uruchomiony, zezwól na usługę FTP.
