@@ -222,5 +222,5 @@ ip r
 #### Przeszukaj logi
 
 {{< highlight Shell "linenos=table" >}}
-sudo tail -50 /var/log/messages | grep -i 10.10.5.200
+sudo tail -60 /var/log/messages | grep -i 10.10.5.200
 {{< /highlight >}}
