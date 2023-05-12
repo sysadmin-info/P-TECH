@@ -1,6 +1,6 @@
 ---
 title: "Serwer FTP - Vsftpd"
-date:  2023-04-21T10:30:00+00:00
+date:  2023-05-12T14:18:00+00:00
 description: "Zainstaluj Vsftpd, aby skonfigurować serwer FTP."
 draft: false
 hideToc: false
