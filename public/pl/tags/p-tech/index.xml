@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" 
-  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-  xmlns:dc="http://purl.org/dc/elements/1.1/" 
-  xmlns:atom="http://www.w3.org/2005/Atom" 
-  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
-  xmlns:media="http://search.yahoo.com/mrss/">
+  xmlns:content="http:/purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http:/purl.org/dc/elements/1.1/" 
+  xmlns:atom="http:/www.w3.org/2005/Atom" 
+  xmlns:sy="http:/purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http:/search.yahoo.com/mrss/">
   <channel>
     <title>P-TECH</title>
-    <link>https://p-tech-site.netlify.app/pl/tags/p-tech/</link>
+    <link>https:/p-tech-site.netlify.app/pl/tags/p-tech/</link>
     <description>Recent content on P-TECH</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pl</language>
-    <copyright>©2023, <a href="https://p-tech-site.netlify.app/">P-TECH</a> - All rights reserved</copyright>
+    <copyright>©2023, <a href="https:/p-tech-site.netlify.app/">P-TECH</a> - All rights reserved</copyright>
     <lastBuildDate>Sat, 01 Apr 2023 14:50:34 +0200</lastBuildDate>
     
-        <atom:link href="https://p-tech-site.netlify.app/pl/tags/p-tech/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https:/p-tech-site.netlify.app/pl/tags/p-tech/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
         <title>Serwer SSH</title>
-        <link>https://p-tech-site.netlify.app/pl/lab/serwer-ssh/</link>
+        <link>https:/p-tech-site.netlify.app/pl/lab/serwer-ssh/</link>
         <pubDate>Sat, 01 Apr 2023 14:50:34 +0200</pubDate>
         
         <atom:modified>Sat, 01 Apr 2023 14:50:34 +0200</atom:modified>
-        <guid>https://p-tech-site.netlify.app/pl/lab/serwer-ssh/</guid>
+        <guid>https:/p-tech-site.netlify.app/pl/lab/serwer-ssh/</guid>
         <description>Ćwiczenia do wykonania: Wygeneruj parę kluczy RSA za pomocą ssh-keygen Wyeksportuj klucz publiczny z klienta do serwera za pomocą ssh-copy-id Zaloguj się za pomocą hasła poprzez ssh do serwera i przełącz na konto root za pomocą komendy sudo - su lub sudo -i Włącz logowanie kluczami i wyłącz logowanie hasłem. Zapisz zmiany i zrestartuj usługę ssh. Nie zamykaj bieżącej sesji. Otwórz nową sesję ssh i zaloguj się do serwera za pomocą klucza prywatnego.</description>
         
         <dc:creator>admin</dc:creator>
-        <media:content url="https://p-tech-site.netlify.app/images/2023-thumbs/ssh.webp" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https:/p-tech-site.netlify.app/images/2023-thumbs/ssh.webp" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -52,15 +52,15 @@
       
       <item>
         <title>Witaj na stronie P-TECH</title>
-        <link>https://p-tech-site.netlify.app/pl/lab/witaj/</link>
+        <link>https:/p-tech-site.netlify.app/pl/lab/witaj/</link>
         <pubDate>Sat, 01 Apr 2023 08:08:59 +0000</pubDate>
         
         <atom:modified>Sat, 01 Apr 2023 08:08:59 +0000</atom:modified>
-        <guid>https://p-tech-site.netlify.app/pl/lab/witaj/</guid>
+        <guid>https:/p-tech-site.netlify.app/pl/lab/witaj/</guid>
         <description>Na zajęciach wykorzystujemy maszyny wirtualne zbudowane z szablonu AWS. Dlaczego AWS, a nie maszyny wirtualne w Virtual Box? Z kilku powodów. Przede wszystkim na maszynie wirtualnej bardzo problematyczne jest postawienie serwera web/www. Z prostego powodu. Trzeba wiedzieć, czy się da wystawić maszynę wirtualną za pomocą wirtualnego bridge spiętego z naszą kartą sieciową na świat i jak ustawić przekazywanie portu na routerze tak, aby ruch z portów 80 i 443 był przekazywany do naszego komputera, a dalej do maszyny wirtualnej.</description>
         
         <dc:creator>admin</dc:creator>
-        <media:content url="https://p-tech-site.netlify.app/images/2023-thumbs/linux-cli.webp" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https:/p-tech-site.netlify.app/images/2023-thumbs/linux-cli.webp" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         

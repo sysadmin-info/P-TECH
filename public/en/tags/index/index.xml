@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" 
-  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-  xmlns:dc="http://purl.org/dc/elements/1.1/" 
-  xmlns:atom="http://www.w3.org/2005/Atom" 
-  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
-  xmlns:media="http://search.yahoo.com/mrss/">
+  xmlns:content="http:/purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http:/purl.org/dc/elements/1.1/" 
+  xmlns:atom="http:/www.w3.org/2005/Atom" 
+  xmlns:sy="http:/purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http:/search.yahoo.com/mrss/">
   <channel>
     <title>index on P-TECH</title>
-    <link>https://p-tech-site.netlify.app/en/tags/index/</link>
+    <link>https:/p-tech-site.netlify.app/en/tags/index/</link>
     <description>Recent content in index on P-TECH</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>©2023, <a href="https://p-tech-site.netlify.app/">P-TECH</a> - All rights reserved</copyright>
+    <copyright>©2023, <a href="https:/p-tech-site.netlify.app/">P-TECH</a> - All rights reserved</copyright>
     
-        <atom:link href="https://p-tech-site.netlify.app/en/tags/index/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https:/p-tech-site.netlify.app/en/tags/index/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
         <title>Lab</title>
-        <link>https://p-tech-site.netlify.app/en/lab/</link>
+        <link>https:/p-tech-site.netlify.app/en/lab/</link>
         <pubDate>Sat, 01 Apr 2023 15:00:00 +0000</pubDate>
         
         
-        <guid>https://p-tech-site.netlify.app/en/lab/</guid>
+        <guid>https:/p-tech-site.netlify.app/en/lab/</guid>
         <description></description>
         
         <dc:creator>admin</dc:creator>
