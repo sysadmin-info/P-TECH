@@ -25,7 +25,7 @@ image: images/2023-thumbs/docker.webp
 4. Włącz i uruchom usługę Docker
 5. Zweryfikuj instalację Docker
 
-<!--<script async id="asciicast-575108" src="https://asciinema.org/a/575108.js"></script>-->
+<script async id="asciicast-587002" src="https://asciinema.org/a/587002.js"></script>
 
 #### Aby zainstalować Docker, możesz postępować zgodnie z poniższymi krokami. Pamiętaj, że musisz mieć uprawnienia sudo lub dostęp root.
 
