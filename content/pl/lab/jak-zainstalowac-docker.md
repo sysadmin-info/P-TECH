@@ -11,7 +11,7 @@ authorEmoji: 🐧
 pinned: false
 asciinema: true
 tags:
-- P-TECH
+- Docker
 series:
 - Docker
 categories:
