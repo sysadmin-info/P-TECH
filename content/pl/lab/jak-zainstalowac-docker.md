@@ -18,7 +18,7 @@ categories:
 - Docker
 image: images/2023-thumbs/docker.webp
 ---
-#### Exercises to complete:
+#### Ćwiczenia do wykonania:
 1. Zaktualizuj swój system
 2. Dodaj repozytorium Docker i odśwież repozytoria, jeśli jest to wymagane
 3. Zainstaluj Docker
