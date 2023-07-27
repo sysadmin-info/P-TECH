@@ -36,3 +36,7 @@ element.style {
     font-size: 1.5rem;
     margin: 1rem 0 1rem;
 }
+iframe{
+	width: 630px !important;
+	height: 330px !important;
+}
