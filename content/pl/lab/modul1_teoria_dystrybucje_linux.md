@@ -22,6 +22,10 @@ image: images/2023-thumbs/docker.webp
 ### Moduł 1: Wstęp o dystrybucjach Linuxa
 #### Czas Trwania: 15 minut
 
+1. **Wstęp o dystrybucjach Linuxa:**
+   - Porównanie popularnych dystrybucji (Debian, Fedora, Ubuntu, Arch).
+   - Omówienie różnych metod instalacji systemu.
+
 **1. Wprowadzenie:**
 Linux nie jest jednolitym systemem operacyjnym, ale rodzajem systemu operacyjnego, który obejmuje wiele różnych dystrybucji. Każda dystrybucja, czyli "distro", oferuje unikalny zestaw funkcji, interfejs użytkownika, zarządzanie pakietami oraz społeczność wsparcia. Wybór odpowiedniej dystrybucji zależy od preferencji użytkownika, wymagań sprzętowych i celu użycia.
 
