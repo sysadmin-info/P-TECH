@@ -1,7 +1,7 @@
 ---
-title: "Wstęp o dystrybucjach Linuxa"
+title: "Wstęp o dystrybucjach Linux - teoria"
 date:  2024-02-07T14:30:00+00:00
-description: "Wstęp o dystrybucjach Linuxa"
+description: "Wstęp o dystrybucjach Linux - teoria"
 draft: false
 hideToc: false
 enableToc: true
@@ -19,10 +19,10 @@ categories:
 image: images/2023-thumbs/docker.webp
 ---
 ## Część Teoretyczna
-### Moduł 1: Wstęp o dystrybucjach Linuxa
+### Moduł 1: Wstęp o dystrybucjach Linux
 #### Czas Trwania: 15 minut
 
-1. **Wstęp o dystrybucjach Linuxa:**
+1. **Wstęp o dystrybucjach Linux:**
    - Porównanie popularnych dystrybucji (Debian, Fedora, Ubuntu, Arch).
    - Omówienie różnych metod instalacji systemu.
 
@@ -37,7 +37,7 @@ Linux nie jest jednolitym systemem operacyjnym, ale rodzajem systemu operacyjneg
   - **Użytkownicy:** Idealny dla serwerów i doświadczonych użytkowników ceniących stabilność.
 
 - **Fedora:**
-  - **Charakterystyka:** Innowacyjność. Fedora często wprowadza nowe technologie Linuxa, będąc rodzajem poligonu doświadczalnego dla Red Hat.
+  - **Charakterystyka:** Innowacyjność. Fedora często wprowadza nowe technologie Linux, będąc rodzajem poligonu doświadczalnego dla Red Hat.
   - **Zarządzanie pakietami:** DNF.
   - **Użytkownicy:** Dla użytkowników szukających najnowszych technologii w stabilnym wydaniu.
 
@@ -59,4 +59,4 @@ Linux nie jest jednolitym systemem operacyjnym, ale rodzajem systemu operacyjneg
 
 ### Podsumowanie
 
-Wybór dystrybucji Linuxa zależy od wielu czynników, w tym od poziomu doświadczenia użytkownika, preferencji dotyczących stabilności vs. najnowszych technologii, a także od specyficznych wymagań dotyczących oprogramowania i sprzętu. Każda z wymienionych dystrybucji ma swoje unikalne cechy i społeczność, co czyni Linuxa systemem wyjątkowo elastycznym i dostosowującym się do potrzeb użytkowników.
+Wybór dystrybucji Linux zależy od wielu czynników, w tym od poziomu doświadczenia użytkownika, preferencji dotyczących stabilności vs. najnowszych technologii, a także od specyficznych wymagań dotyczących oprogramowania i sprzętu. Każda z wymienionych dystrybucji ma swoje unikalne cechy i społeczność, co czyni Linux systemem wyjątkowo elastycznym i dostosowującym się do potrzeb użytkowników.
