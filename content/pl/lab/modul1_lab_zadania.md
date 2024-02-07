@@ -11,12 +11,12 @@ authorEmoji: 🐧
 pinned: false
 asciinema: true
 tags:
-- Docker
+- Linux
 series:
-- Docker
+- Łódź
 categories:
-- Docker
-image: images/2023-thumbs/docker.webp
+- Podstawy pracy w systemie Linux
+image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 ---
 ## Część Praktyczna
 ### Moduł 1: Podstawy pracy w systemie Linux
