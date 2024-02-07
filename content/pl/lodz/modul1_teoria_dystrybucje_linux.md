@@ -1,7 +1,7 @@
 ---
-title: "Wstęp o dystrybucjach Linux - teoria"
+title: "Moduł 1 - dystrybucje Linux - teoria"
 date:  2024-02-07T14:30:00+00:00
-description: "Wstęp o dystrybucjach Linux - teoria"
+description: "Moduł 1 - dystrybucje Linux - teoria"
 draft: false
 hideToc: false
 enableToc: true
@@ -15,11 +15,11 @@ tags:
 series:
 - Łódź
 categories:
-- Podstawy pracy w systemie Linux
+- dystrybucje Linux
 image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 ---
 ## Część Teoretyczna
-### Moduł 1: Wstęp o dystrybucjach Linux
+### Moduł 1: Dystrybucje Linux - teoria
 #### Czas Trwania: 15 minut
 
 1. **Wstęp o dystrybucjach Linux:**

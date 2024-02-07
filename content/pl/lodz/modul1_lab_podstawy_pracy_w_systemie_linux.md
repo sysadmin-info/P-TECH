@@ -1,7 +1,7 @@
 ---
-title: "Podstawy pracy w systemie Linux - zadania"
+title: "Moduł 1 - Podstawy pracy w systemie Linux - zadania"
 date:  2024-02-07T15:30:00+00:00
-description: "Podstawy pracy w systemie Linux - zadania"
+description: "Moduł 1 - Podstawy pracy w systemie Linux - zadania"
 draft: false
 hideToc: false
 enableToc: true
@@ -19,8 +19,8 @@ categories:
 image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 ---
 ## Część Praktyczna
-### Moduł 1: Podstawy pracy w systemie Linux
-#### Czas Trwania: 30 minut
+### Moduł 1: Podstawy pracy w systemie Linux - zadania
+#### Czas Trwania: 25 minut
 
 - **Zadania:**
       1. Tworzenie użytkownika `mario` z określonymi grupami pomocniczymi i powłoką.
