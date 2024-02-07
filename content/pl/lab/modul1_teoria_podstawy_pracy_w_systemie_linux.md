@@ -1,7 +1,7 @@
 ---
-title: "Podstawy pracy w systemie Linux"
+title: "Podstawy pracy w systemie Linux - teoria"
 date:  2024-02-07T15:00:00+00:00
-description: "Podstawy pracy w systemie Linux"
+description: "Podstawy pracy w systemie Linux - teoria"
 draft: false
 hideToc: false
 enableToc: true
