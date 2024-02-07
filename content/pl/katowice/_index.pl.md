@@ -1,7 +1,7 @@
 +++
 aliases = ["lab","posts","articles","blog","showcase","docs"]
-title = "Lab"
+title = "Katowice"
 author = "admin"
 tags = ["index"]
-description = "Lab"
+description = "Katowice"
 +++

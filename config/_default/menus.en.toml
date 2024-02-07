@@ -1,11 +1,17 @@
 [[main]]
-  identifier = "lab"
-  name = "Lab"
-  url = "lab"
+  identifier = "lodz"
+  name = "Lodz"
+  url = "lodz"
   weight = 1
+
+[[main]]
+  identifier = "katowice"
+  name = "Katowice"
+  url = "katowice"
+  weight = 2
 
 [[main]]
   identifier = "archive"
   name = "Archive"
   url = "archive"
-  weight = 2
+  weight = 3
