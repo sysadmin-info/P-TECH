@@ -29,7 +29,7 @@ image: images/2023-thumbs/docker.webp
    - **Zarządzanie plikami i katalogami:**
    - **Opis:** 
      * Wprowadzenie do systemu plików Linux, ścieżek absolutnych i względnych, podstawowych operacji na plikach i katalogach z użyciem `touch`, `mkdir`, `rm`, `cp`, `mv`, `chmod`, `chown`. 
-     * Omówienie struktury katalogów w Linuxie oraz podstawowych uprawnień plików. 
+     * Omówienie struktury katalogów w Linux oraz podstawowych uprawnień plików. 
 
 **Zarządzanie użytkownikami:**
 
@@ -68,9 +68,9 @@ Zrozumienie różnicy między ścieżkami absolutnymi a względnymi jest niezbę
     - `chmod` – zmienia prawa dostępu do plików lub katalogów.
     - `chown` – zmienia właściciela pliku lub katalogu.
   
-  - **Struktura katalogów** – omówienie głównych katalogów w Linuxie, takich jak `/bin`, `/etc`, `/home`, `/var`, i ich znaczenie.
+  - **Struktura katalogów** – omówienie głównych katalogów w Linux, takich jak `/bin`, `/etc`, `/home`, `/var`, i ich znaczenie.
 
-### Struktura katalogów w Linuxie
+### Struktura katalogów w Linux
 
 W systemie Linux, struktura katalogów jest zaprojektowana w sposób hierarchiczny, gdzie każdy katalog pełni określoną rolę:
 
@@ -81,11 +81,11 @@ W systemie Linux, struktura katalogów jest zaprojektowana w sposób hierarchicz
   
 Ta struktura upraszcza zarządzanie systemem i organizację plików, pomagając w utrzymaniu porządku i przewidywalności lokalizacji danych.
 
-  - **Uprawnienia plików** – system uprawnień w Linuxie określa, kto i w jaki sposób może dostępować do plików i katalogów (czytanie, pisanie, wykonanie).
+  - **Uprawnienia plików** – system uprawnień w Linux określa, kto i w jaki sposób może dostępować do plików i katalogów (czytanie, pisanie, wykonanie).
 
-### Uprawnienia plików w Linuxie
+### Uprawnienia plików w Linux
 
-System uprawnień w Linuxie określa, jakie działania mogą być wykonywane na plikach i katalogach, zdefiniowane dla właściciela, grupy i innych użytkowników:
+System uprawnień w Linux określa, jakie działania mogą być wykonywane na plikach i katalogach, zdefiniowane dla właściciela, grupy i innych użytkowników:
 
 - **Czytanie (r)** - pozwala na odczytanie zawartości pliku lub listowanie katalogu.
 - **Pisanie (w)** - upoważnia do modyfikacji pliku lub dodawania/usuwania plików w katalogu.
