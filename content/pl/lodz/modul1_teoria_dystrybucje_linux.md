@@ -1,6 +1,6 @@
 ---
 title: "Moduł 1 - dystrybucje Linux - teoria"
-date:  2024-02-07T14:30:00+00:00
+date:  2024-02-07T14:00:00+00:00
 description: "Moduł 1 - dystrybucje Linux - teoria"
 draft: false
 hideToc: false
@@ -20,7 +20,7 @@ image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 ---
 ## Część Teoretyczna
 ### Moduł 1: Dystrybucje Linux - teoria
-#### Czas Trwania: 15 minut
+#### Czas Trwania: 10 minut
 
 1. **Wstęp o dystrybucjach Linux:**
    - Porównanie popularnych dystrybucji (Debian, Fedora, Ubuntu, Arch).

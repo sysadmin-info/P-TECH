@@ -1,6 +1,6 @@
 ---
 title: "Moduł 1 - Podstawy pracy w systemie Linux - teoria"
-date:  2024-02-07T15:00:00+00:00
+date:  2024-02-07T14:30:00+00:00
 description: "Moduł 1 - Podstawy pracy w systemie Linux - teoria"
 draft: false
 hideToc: false
@@ -20,7 +20,7 @@ image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 ---
 ## Część Teoretyczna
 ### Moduł 1: Podstawy pracy w systemie Linux - teoria
-#### Czas Trwania: 30 minut
+#### Czas Trwania: 20 minut
 
 2. **Podstawy pracy w systemie Linux (30 minut):**
    - **Zarządzanie użytkownikami:**

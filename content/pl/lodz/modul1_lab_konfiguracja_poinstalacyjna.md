@@ -1,6 +1,6 @@
 ---
 title: "Moduł 1 - Konfiguracja poinstalacyjna - zadania"
-date:  2024-02-07T15:30:00+00:00
+date:  2024-02-07T16:30:00+00:00
 description: "Moduł 1 - Konfiguracja poinstalacyjna - zadania"
 draft: false
 hideToc: false

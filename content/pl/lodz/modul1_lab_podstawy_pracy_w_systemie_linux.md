@@ -1,6 +1,6 @@
 ---
 title: "Moduł 1 - Podstawy pracy w systemie Linux - zadania"
-date:  2024-02-07T15:30:00+00:00
+date:  2024-02-07T16:00:00+00:00
 description: "Moduł 1 - Podstawy pracy w systemie Linux - zadania"
 draft: false
 hideToc: false
