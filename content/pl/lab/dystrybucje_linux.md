@@ -19,7 +19,7 @@ categories:
 image: images/2023-thumbs/docker.webp
 ---
 ## Część Teoretyczna
-### Moduł: Wstęp o dystrybucjach Linuxa
+### Moduł 1: Wstęp o dystrybucjach Linuxa
 #### Czas Trwania: 15 minut
 
 **1. Wprowadzenie:**
