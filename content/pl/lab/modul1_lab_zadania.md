@@ -20,7 +20,7 @@ image: images/2023-thumbs/docker.webp
 ---
 ## Część Praktyczna
 ### Moduł 1: Podstawy pracy w systemie Linux
-#### Czas Trwania: 45 minut
+#### Czas Trwania: 30 minut
 
 - **Zadania:**
       1. Tworzenie użytkownika `mario` z określonymi grupami pomocniczymi i powłoką.
@@ -67,3 +67,48 @@ Podpowiedź: polecenie uptime + pliki ~/.bash_profile lub ~/.bashrc (poczytaj o 
 jednocześnie.
 
 Podpowiedź: /etc/security/limits.conf
+
+**Zarządzanie plikami i katalogami:**
+
+Wykonanie poniższej listy zadań sprawi, że lepiej poznasz zasadę zarządzania plikami w Linuksie.
+
+Założenia wstępne: w systemie posiadasz tylko trzech użytkowników:
+
+– mario - jest w grupie ‘brothers’
+– luigi - jest w grupie ‘brothers’ oraz ‘helpers’
+– peach - jest w grupie ‘princess’
+
+1. Załóż pusty plik o nazwie ‘report.txt’. Użytkownicy luigi i mario mogą czytać jego zawartość.
+Użytkownik mario może także pisać do niego, a peach nie ma do niego dostępu.
+Podpowiedź: chmod + chown
+
+2. Spraw, aby do pliku ‘logs.txt’ dało się tylko dopisywać nowe dane na końcu i aby mogli robić to tylko luigi i mario.
+Podpowiedź: chmod + chown + chattr
+
+3. Plik o nazwie ‘config.yaml’ ma być zdatny do odczytania przez wszystkich użytkowników, ale NIKT nie może go usunąć. Nawet jego właściciel.
+Podpowiedź: chattr
+
+4. Wszyscy użytkownicy mogą zakładać pliki w katalogu /tmp/data/, ale pomimo tego, że każdy ma tam dostęp, to tylko właścicielom wolno usuwać swoje pliki i zmieniać ich nazwy (i to nawet gdyby plik miał chmod 777!).
+Podpowiedź: sticky bit
+
+5. Spraw, aby pliki “first.txt” oraz “second.txt” miały dokładnie taką samą zawartość, a zmiana tekstu w jednym automatycznie powodowała zmianę tekstu w drugim z plików. Zmiana praw dostępu (chmod) do jednego z plików automatycznie zmienia te same prawa na drugim pliku (widoczne przez ls -l).
+Podpowiedź: komenda ‘ln’
+
+6. Stwórz plik, który ma dokładnie 100MB. Zrób to jednym poleceniem.
+Podpowiedź: polecenie ‘truncate’ lub ‘dd’ (w ramach nauki wypróbuj oba)
+
+7. Utwórz plik ‘elders.txt’ w taki sposób, aby polecenie ‘ls -l’ pokazywało, że został
+on założony 1 stycznia 1999 roku.
+Podpowiedź: touch
+
+8. W katalogu masz kilkaset plików z rozszerzeniem TXT. Zmień każdemu z nich rozszerzenie na DOC. Zrób to jednym poleceniem, bez pętli.
+Podpowiedź: rename
+
+9. Jesteś w katalogu, w którym są tysiące plików. Usuń te, których rozmiar jest większy niż 1MB, a nazwa zaczyna się na literę ‘b’. Zrób to jednym poleceniem.
+Podpowiedź: find
+
+10. W katalogu masz tysiące plików. Musisz usunąć wszystkie, które nie zawierają litery ‘x’ w nazwie. Nie używaj do tego pętli (for/while).
+Podpowiedź: find z negacją (prostsze) / ls + grep z xargs
+
+11. W katalogu masz dziesiątki plików. Stwórz paczkę ‘package.tgz’ (tar+gzip) zawierającą jedynie pliki większe niż 1MB i do tego mające rozszerzenie txt.
+Podpowiedź: tar + find (być może trzeba będzie użyć subshella lub pipe)
