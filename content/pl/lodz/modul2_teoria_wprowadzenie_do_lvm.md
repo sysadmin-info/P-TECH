@@ -61,3 +61,6 @@ System operacyjny zapewnia dostęp do logicznych woluminów identycznie jak do f
 To podejście pozwala na zmianę rozmiaru fizycznych mediów bez wpływu na aplikacje.
 
 Podstawowa struktura LVM składa się z następujących składowych:
+
+![woluminy logiczne](/images/2024/logical_volumes.webp "woluminy logiczne")
+<figcaption>woluminy logiczne</figcaption>
