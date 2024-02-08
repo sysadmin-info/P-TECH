@@ -67,6 +67,14 @@ Zrozumienie różnicy między ścieżkami absolutnymi a względnymi jest niezbę
     - `mv` – przenosi lub zmienia nazwy plików lub katalogów.
     - `chmod` – zmienia prawa dostępu do plików lub katalogów.
     - `chown` – zmienia właściciela pliku lub katalogu.
+
+- Dodawanie użytkowników, hasła użytkowników, dodawanie grup, chmod: [https://sysadmin.info.pl/pl/page/13/](https://sysadmin.info.pl/pl/page/13/)
+
+Edycja plików:
+- vi,vim,nano,emacs,gedit
+- chroot/jail: [https://sekurak.pl/chroot-w-praktyce/](https://sekurak.pl/chroot-w-praktyce/)
+- ACL i sticky bit: [https://sysadmin.info.pl/pl/blog/uprawnienia-specjalne-i-sticky-bit-w-linux/ ](https://sysadmin.info.pl/pl/blog/uprawnienia-specjalne-i-sticky-bit-w-linux/)
+
   
   - **Struktura katalogów** – omówienie głównych katalogów w Linux, takich jak `/bin`, `/etc`, `/home`, `/var`, i ich znaczenie.
 
@@ -93,7 +101,8 @@ System uprawnień w Linux określa, jakie działania mogą być wykonywane na pl
 
 System ten zapewnia kontrolę dostępu do danych, umożliwiając zarządzanie prywatnością i bezpieczeństwem systemu.
 
-Obrazek
+![uprawnienia plików i katalogów](/images/2024/uprawnienia-plikow-i-katalogow.webp "uprawnienia plików i katalogów")
+<figcaption>uprawnienia plików i katalogów</figcaption>
 
 ## Setuid i Setgid - szczegółowe wyjaśnienie
 

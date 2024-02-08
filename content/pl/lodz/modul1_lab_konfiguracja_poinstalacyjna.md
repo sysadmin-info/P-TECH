@@ -15,7 +15,7 @@ tags:
 series:
 - Łódź
 categories:
-- dystrybucje Linux
+- konfiguracja poinstalacyjna
 image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 ---
 ## Część Praktyczna
@@ -469,7 +469,11 @@ Przeładuj usługę SSH
 sudo systemctl reload sshd
 ```
 
-2. **Wprowadzenie do bezpieczeństwa systemu: przeglądanie dzienników systemowych, wprowadzenie do fail2ban.**
+2. **Wprowadzenie do bezpieczeństwa systemu: przeglądanie dzienników systemowych**
+
+
+
+3. **wprowadzenie do fail2ban.**
 
 {{< tabs CentOS Ubuntu >}}
   {{< tab >}}
