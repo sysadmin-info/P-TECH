@@ -16,7 +16,7 @@ buildFuture = true
 copyright = "&copy;{year}, [P-TECH](https://p-tech-site.netlify.app/) - All rights reserved"
 timeout = 10000
 enableEmoji = true
-paginate = 6
+paginate = 7
 rssLimit = 100
 
 enableGitInfo = false
