@@ -16,7 +16,7 @@ series:
 - Łódź
 categories:
 - podsumowanie
-image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
+image: images/2024-thumbs/podsumowanie.webp
 ---
 ## Część Praktyczna
 ### Moduł 1: Podsumowanie - zadania
