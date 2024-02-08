@@ -31,7 +31,7 @@ image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 
 2. **Dla chętnych - darmowy serwer ssh.**
 
-[Frog](https://frog.mikr.us/)
+🐸 [**Frog**](https://frog.mikr.us/)
 
 Chcesz się uczyć Chmury, ale zastanawiasz się jak zacząć?
 
