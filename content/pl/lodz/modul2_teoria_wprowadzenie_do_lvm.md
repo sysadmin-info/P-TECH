@@ -176,3 +176,20 @@ lvcreate -l 100%VG –n data system
 ```
 lvs, lvdisplay, lvresize, lvreduce, lvextend
 ```
+
+#### Narzędzia do zmiany rozmiarów partycji
+
+W celu zmiany rozmiaru partycji możemy zastosować poniższe narzędzia:
+
+- xfs_growfs - rozszerza istniejący system plików XFS
+
+```bash
+xfs_growfs -n /dev/system/data
+```
+
+- resize2fs - zmienia rozmiar systemu plików ext2/ext3/ext4
+
+```bash
+resize2fs /dev/system/data
+```
+
