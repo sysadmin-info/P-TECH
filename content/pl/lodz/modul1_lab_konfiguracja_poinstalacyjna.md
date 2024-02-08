@@ -736,7 +736,7 @@ Analiza logów zabezpieczeń to kluczowy element utrzymania bezpieczeństwa syst
 
 Te zadania są przeznaczone do rozwijania podstawowych umiejętności niezbędnych do efektywnej analizy dzienników zabezpieczeń. Praktyczne opanowanie tych technik pozwoli Ci lepiej zrozumieć stan bezpieczeństwa Twojego systemu i reagować na potencjalne zagrożenia.
 
-### **wprowadzenie do fail2ban.**
+### **Wprowadzenie do fail2ban.**
 
 {{< tabs CentOS Ubuntu >}}
   {{< tab >}}
