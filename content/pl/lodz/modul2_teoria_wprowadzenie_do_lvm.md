@@ -97,3 +97,46 @@ Zmiana rozmiarów logicznych woluminów jest o wiele łatwiejsza niż zmiana roz
 - można użyć kilka dysków z poprawioną wydajnością w trybie RAID 0 (striping),
 - nie ma praktycznie limitu liczby logicznych woluminów (limit w LVM v1 wynosił 256),
 - dostępna jest cecha tzw. migawek (snapshot) z systemu i co za tym idzie, - tworzenia kopii zapasowych w pracującym systemie - " na bieżąco".
+
+#### Konfiguracja LVM z linii poleceń
+
+Procedura "ręcznej" konfiguracji LVM poleceniami liniowymi zawiera wiele kroków, z dedykowanymi narzędziami dla każdego z nich:
+- Narzędzia do administracji fizycznymi woluminami
+- Narzędzia do zarządzania grupami woluminów
+- Narzędzia do administracji woluminami logicznymi
+J
+est to krótki przegląd, niezawierający wszystkich narzędzi LVM.
+
+Do przejrzenia narzędzi dostępnych z LVM, należy wprowadzić polecenie 
+
+```bash
+rpm -ql lvm2 | less.
+```
+Wyświetlone zostaną odpowiednie strony manuala.
+
+#### Narzędzia do administracji fizycznymi woluminami
+
+Partycje lub dyski - `LVM` może obsługiwać jako fizyczne woluminy.
+
+`ID partycji` użytej jako część LVM powinien być Linux LVM, 0x8e; ale 0x83, Linux też jest obsługiwany poprawnie.
+
+By wykorzystać cały dysk jako fizyczny wolumin - nie może zawierać on tablicy partycji.
+
+Istniejącą tablicę partycji nadpisujemy poleceniem liniowym dd:
+
+```bash
+dd if=/dev/zero of=/dev/sdb1 bs=512 count=1
+```
+
+Następnym krokiem będzie inicjalizacja partycji LVM narzędziem pvcerate:
+
+```bash
+pvcreate /dev/sdb1
+```
+
+Pozostałe polecenia:
+
+```bash
+pvs
+pvdisplay
+```
