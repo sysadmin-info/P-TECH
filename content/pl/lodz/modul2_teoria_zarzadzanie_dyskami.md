@@ -20,7 +20,7 @@ image: images/2024-thumbs/zarzadzanie-dyskami.webp
 ---
 ## Część Teoretyczna
 ### Moduł 2: Zarządzanie dyskami - teoria
-#### Czas Trwania: 20 minut
+#### Czas Trwania: 10 minut
 
 ### 1. **Omówienie systemów plików (ext3/4, btrfs, xfs.**
 
@@ -357,7 +357,3 @@ Pomniejszenie jak i powiększenie systemu `ext2/ext3` można przeprowadzić tylk
 ```
 Przed każdą manipulacją partycjami i systemami plików - konieczne jest zrobienie dobrej kopii bezpieczeństwa danych!
 ```
-
-
-
-### 2. **Wprowadzenie do LVM: co to jest, podstawowe zastosowania.**
