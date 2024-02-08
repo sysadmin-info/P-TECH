@@ -22,7 +22,7 @@ image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 ### Moduł 1: Konfiguracja poinstalacyjna - zadania
 #### Czas Trwania: 10 minut
 
-1. **Konfiguracja serwera SSH: instalacja, generowanie kluczy RSA.**
+### **Konfiguracja serwera SSH: instalacja, generowanie kluczy RSA.**
 
 #### Ćwiczenia do wykonania:
 1. Wygeneruj parę kluczy RSA za pomocą ssh-keygen
@@ -469,11 +469,274 @@ Przeładuj usługę SSH
 sudo systemctl reload sshd
 ```
 
-2. **Wprowadzenie do bezpieczeństwa systemu: przeglądanie dzienników systemowych**
+### **Wprowadzenie do bezpieczeństwa systemu. Przeglądanie dzienników systemowych**
 
+#### Wprowadzenie do bezpieczeństwa systemu Linux
 
+1. **Aktualizacja systemu i oprogramowania**
+   - Zadanie: Przeprowadź pełną aktualizację systemu operacyjnego i zainstalowanych pakietów na maszynie z systemem Linux. Użyj menedżera pakietów specyficznego dla Twojej dystrybucji (np. `apt` dla Debian/Ubuntu, `yum` dla CentOS, `dnf` dla Fedora).
+   - Cel: Zrozumienie znaczenia utrzymywania aktualności oprogramowania w kontekście bezpieczeństwa.
 
-3. **wprowadzenie do fail2ban.**
+#### Aktualizujemy system 
+
+- openSUSE/SLES 
+
+```bash
+sudo zypper ref
+sudo zypper up
+```
+- Yast
+
+Wzmianka o Yast nie zawiera bezpośrednich poleceń, ponieważ Yast (Yet another Setup Tool) jest graficznym i tekstowym narzędziem do zarządzania systemem dostępnym w openSUSE i SLES. Można go użyć do zarządzania pakietami, ale konkretnych poleceń CLI nie podano.
+
+- RPM-based (RedHat/Fedora/CentOS) 
+
+```bash
+sudo yum check-update
+sudo yum update
+# lub
+sudo dnf check-update
+sudo dnf update
+```
+
+DEB-based (Debian/Ubuntu)
+
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+#### Konfiguracja firewalla
+
+   - Zadanie: Skonfiguruj `ufw` (Uncomplicated Firewall) lub `firewalld` w zależności od dystrybucji, aby zezwolić tylko na ruch na portach 22 (SSH), 80 (HTTP) i 443 (HTTPS).
+   - Cel: Nauka podstawowych zasad ograniczania dostępu do usług sieciowych w celu zwiększenia bezpieczeństwa systemu.
+
+##### ufw
+
+1. **Instalacja i włączenie `ufw`**
+   - Zadanie: Upewnij się, że `ufw` jest zainstalowany na Twoim systemie. Jeśli nie, zainstaluj go za pomocą menedżera pakietów. Następnie włącz `ufw`.
+     ```bash
+     sudo apt install ufw  # Na Debianie/Ubuntu
+     sudo ufw enable
+     ```
+
+2. **Konfiguracja podstawowych zasad**
+   - Zadanie: Skonfiguruj `ufw`, aby domyślnie blokować wszystkie przychodzące połączenia i zezwalać na wszystkie wychodzące.
+     ```bash
+     sudo ufw default deny incoming
+     sudo ufw default allow outgoing
+     ```
+
+3. **Otwieranie portów dla usług**
+   - Zadanie: Otwórz porty 22 (SSH), 80 (HTTP) i 443 (HTTPS) w `ufw`, aby zezwolić na przychodzące połączenia do tych usług.
+     ```bash
+     sudo ufw allow 22
+     sudo ufw allow 80
+     sudo ufw allow 443
+     ```
+
+4. **Sprawdzenie statusu i reguł `ufw`**
+   - Zadanie: Wyświetl status `ufw` oraz aktualne reguły, aby sprawdzić, czy konfiguracja jest zgodna z oczekiwaniami.
+     ```bash
+     sudo ufw status verbose
+     ```
+
+##### firewalld
+
+1. **Instalacja i uruchomienie `firewalld`**
+   - Zadanie: Upewnij się, że `firewalld` jest zainstalowany i uruchomiony na Twoim systemie. Jeśli nie, zainstaluj go i uruchom.
+     ```bash
+     sudo yum install firewalld  # Na CentOS/Red Hat
+     sudo systemctl start firewalld
+     sudo systemctl enable firewalld
+     ```
+
+2. **Ustawienie domyślnej polityki**
+   - Zadanie: Skonfiguruj `firewalld`, aby domyślnie blokować wszystkie przychodzące połączenia i zezwalać na wszystkie wychodzące.
+     ```bash
+     sudo firewall-cmd --set-default-zone=public
+     sudo firewall-cmd --zone=public --change-interface=eth0  # eth0 dostosuj do swojej karty sieciowej
+     ```
+
+3. **Otwieranie portów dla usług**
+   - Zadanie: Otwórz porty 22 (SSH), 80 (HTTP) i 443 (HTTPS) w `firewalld`, aby zezwolić na przychodzące połączenia do tych usług.
+     ```bash
+     sudo firewall-cmd --zone=public --add-service=ssh --permanent
+     sudo firewall-cmd --zone=public --add-service=http --permanent
+     sudo firewall-cmd --zone=public --add-service=https --permanent
+     ```
+
+4. **Zastosowanie zmian i sprawdzenie konfiguracji**
+   - Zadanie: Zastosuj zmiany w konfiguracji i sprawdź aktualne zasady `firewalld`.
+     ```bash
+     sudo firewall-cmd --reload
+     sudo firewall-cmd --list-all
+     ```
+
+#### Utworzenie i zarządzanie użytkownikami
+   - Zadanie: Utwórz nowego użytkownika z ograniczonymi uprawnieniami (bez dostępu sudo/root). Skonfiguruj dla tego użytkownika silne hasło i zapoznaj się z plikiem `/etc/sudoers` w kontekście zarządzania uprawnieniami.
+   - Cel: Zrozumienie znaczenia zasady najmniejszych uprawnień i zarządzania dostępem użytkowników.
+
+##### Zadania
+
+1. **Tworzenie nowego użytkownika**
+   - Zadanie: Utwórz nowego użytkownika o nazwie `test_admin` za pomocą polecenia `useradd` lub `adduser` (w zależności od dystrybucji). Następnie ustaw hasło dla tego użytkownika.
+     ```bash
+     sudo useradd -m test_admin
+     sudo passwd test_admin
+     ```
+   - Cel: Nauka tworzenia kont użytkowników i ustawiania haseł.
+
+2. **Przypisywanie użytkownika do grupy**
+   - Zadanie: Dodaj `test_admin` do grupy `sudo` (na Debianie/Ubuntu) lub `wheel` (na CentOS/Fedora), aby umożliwić mu wykonanie poleceń jako superużytkownik.
+     ```bash
+     sudo usermod -aG sudo test_admin  # Debian-based
+     sudo usermod -aG wheel test_admin  # RHEL-based
+     ```
+   - Cel: Zrozumienie zarządzania członkostwem w grupach i delegowania uprawnień.
+
+3. **Ograniczenie dostępu do sudo**
+   - Zadanie: Edytuj plik `/etc/sudoers` za pomocą `visudo`, aby `test_admin` mógł wykonywać polecenia sudo bez podawania hasła (opcjonalnie, dla zaawansowanych użytkowników).
+     ```bash
+     sudo visudo
+     ```
+     Dodaj na końcu pliku:
+     ```
+     test_admin ALL=(ALL) NOPASSWD: ALL
+     ```
+   - Cel: Nauka zaawansowanego zarządzania uprawnieniami za pomocą `sudo`.
+
+4. **Zmiana powłoki domyślnej**
+   - Zadanie: Zmień powłokę domyślną dla `test_admin` na `bash`, jeśli nie została ona ustawiona podczas tworzenia konta.
+     ```bash
+     sudo chsh -s /bin/bash test_admin
+     ```
+   - Cel: Zrozumienie, jak zarządzać powłokami użytkowników i dostosowywać środowisko pracy.
+
+5. **Usuwanie użytkownika**
+   - Zadanie: Usuń `test_admin` z systemu, zachowując jego katalog domowy jako backup.
+     ```bash
+     sudo userdel -r test_admin
+     ```
+   - Cel: Nauka bezpiecznego usuwania kont użytkowników i zarządzania danymi użytkownika.
+
+Pamiętaj, że działania związane z `sudo` i edycją `/etc/sudoers` powinny być wykonywane ostrożnie, aby uniknąć problemów z uprawnieniami i bezpieczeństwem systemu.   
+
+#### Przeglądanie dzienników systemowych w Linux
+
+1. **Przeglądanie dzienników za pomocą `journalctl`**
+   - Zadanie: Wykorzystaj narzędzie `journalctl` do przeglądania i filtrowania dzienników systemowych. Znajdź i wyświetl wpisy dziennika dotyczące usługi SSH (`sshd`) z ostatnich 24 godzin.
+   - Cel: Nauka korzystania z `journalctl` do analizy dzienników systemowych i zrozumienie struktury dzienników w systemie Linux.
+
+##### Zadania do przeglądania dzienników za pomocą `journalctl`
+
+1. **Podstawowe wykorzystanie `journalctl`**
+   - Zadanie: Wyświetl wszystkie dostępne dzienniki systemowe. Następnie użyj przewijania (scrollowania) do przeglądania wpisów.
+     ```bash
+     journalctl
+     ```
+   - Cel: Zapoznanie się z podstawową funkcjonalnością `journalctl` i nauka nawigacji po dziennikach.
+
+2. **Filtrowanie dzienników dla określonego zakresu czasu**
+   - Zadanie: Wyświetl wpisy dziennika dla konkretnego zakresu czasu. Na przykład, znajdź wszystkie wpisy od początku bieżącego dnia.
+     ```bash
+     journalctl --since today
+     ```
+   - Cel: Nauka filtrowania dzienników na podstawie czasu, co jest przydatne do analizy zdarzeń w określonych okresach.
+
+3. **Wyszukiwanie wpisów od konkretnego serwisu**
+   - Zadanie: Wyświetl wszystkie wpisy dziennika dla usługi SSH (`sshd`).
+     ```bash
+     journalctl -u sshd
+     ```
+   - Cel: Zrozumienie, jak filtrować dzienniki dla określonej usługi, co jest kluczowe przy diagnozowaniu problemów związanych z tą usługą.
+
+4. **Zaawansowane filtrowanie z użyciem kilku kryteriów**
+   - Zadanie: Znajdź wszystkie wpisy dziennika związane z usługą `sshd` zawierające słowo "Failed". Użyj grep do filtrowania wyników.
+     ```bash
+     journalctl -u sshd | grep 'Failed'
+     ```
+   - Cel: Nauka zaawansowanego filtrowania dzienników, co pozwala na dokładne analizowanie wpisów związanych z konkretnymi problemami.
+
+5. **Wyświetlanie dzienników dla konkretnego urządzenia**
+   - Zadanie: Wyświetl dzienniki związane z konkretnym urządzeniem, np. dyskiem (`/dev/sda`).
+     ```bash
+     journalctl _DEVNAME=/dev/sda
+     ```
+   - Cel: Zrozumienie, jak identyfikować i analizować zdarzenia związane z określonymi urządzeniami w systemie.
+
+6. **Monitorowanie w czasie rzeczywistym**
+
+   - Zadanie: Użyj `tail -f` lub `journalctl -f` do monitorowania w czasie rzeczywistym dzienników dotyczących autentykacji użytkowników. Obserwuj próby logowania i identyfikuj nieudane próby.
+   - Cel: Zrozumienie, jak monitorować aktywność systemu w czasie rzeczywistym oraz identyfikować potencjalne próby nieautoryzowanego dostępu.
+
+   - Zadanie: Użyj `journalctl`, aby monitorować dzienniki w czasie rzeczywistym. To przydatne do obserwacji bieżącej aktywności systemu.
+     ```bash
+     journalctl -f
+     ```
+   - Cel: Nauka, jak śledzić dzienniki w czasie rzeczywistym, co jest niezbędne przy debugowaniu bieżących problemów.
+
+Te zadania oferują solidne wprowadzenie do korzystania z `journalctl` do pracy z dziennikami systemowymi w Linuxie. Opanowanie `journalctl` jest kluczowe dla każdego, kto zajmuje się administracją systemami, zapewniając umiejętności niezbędne do monitorowania, debugowania i utrzymania zdrowia systemu.   
+
+##### Zadania dla monitorowania w czasie rzeczywistym z użyciem `tail -f`
+
+1. **Monitorowanie dziennika systemowego**
+   - Zadanie: Użyj `tail -f` do monitorowania głównego dziennika systemowego. Dla systemów używających rsysloga (typowo w dystrybucjach takich jak Debian, Ubuntu), plik ten zazwyczaj znajduje się w `/var/log/syslog`. Dla systemów opartych na `systemd`, których głównym narzędziem do logowania jest `journald`, możesz monitorować tradycyjne pliki logów w `/var/log`, np. `/var/log/messages` w dystrybucjach takich jak Fedora, CentOS.
+     ```bash
+     tail -f /var/log/syslog  # Debian-based
+     tail -f /var/log/messages  # RHEL-based
+     ```
+   - Cel: Nauka monitorowania ogólnego dziennika systemowego, co jest kluczowe do obserwacji bieżącej aktywności systemu.
+
+2. **Obserwacja logów autentykacji**
+   - Zadanie: Skorzystaj z `tail -f` do monitorowania logów autentykacji. Wiele systemów przechowuje te informacje w pliku `/var/log/auth.log` (Debian/Ubuntu) lub `/var/log/secure` (CentOS/RedHat).
+     ```bash
+     tail -f /var/log/auth.log  # Debian-based
+     tail -f /var/log/secure  # RHEL-based
+     ```
+   - Cel: Nauka identyfikacji i reagowania na próby logowania, zarówno udane, jak i nieudane, co jest kluczowe dla bezpieczeństwa systemu.
+
+Wykorzystanie `tail -f` do monitorowania plików dzienników w czasie rzeczywistym jest podstawową, ale potężną techniką w diagnostyce systemów i aplikacji. Pozwala administratorom systemów i deweloperom na bieżąco obserwować aktywność systemową i aplikacji, ułatwiając szybkie identyfikowanie i rozwiązywanie problemów.
+
+3. **Analiza logów zabezpieczeń**
+   - Zadanie: Znajdź w dziennikach systemowych informacje o aktualizacjach bezpieczeństwa, które zostały zastosowane, oraz wszelkie ostrzeżenia związane z bezpieczeństwem. Możesz użyć `grep` lub `awk` do filtrowania odpowiednich wpisów.
+   - Cel: Zrozumienie znaczenia regularnego przeglądania dzienników systemowych w kontekście identyfikacji i reagowania na problemy związane z bezpieczeństwem.
+
+Analiza logów zabezpieczeń to kluczowy element utrzymania bezpieczeństwa systemu i identyfikacji potencjalnych zagrożeń. Poniżej przedstawiam kilka zadań, które pomogą Ci rozwijać umiejętności związane z przeszukiwaniem i analizą dzienników w poszukiwaniu informacji o aktualizacjach bezpieczeństwa i ostrzeżeniach.
+
+##### Zadania do analizy logów zabezpieczeń
+
+1. **Wyszukiwanie wpisów o aktualizacjach bezpieczeństwa**
+   - Zadanie: Użyj `grep` do przeszukania dzienników systemowych w poszukiwaniu informacji o aktualizacjach bezpieczeństwa. Na przykład, w systemach opartych na Debianie/Ubuntu, informacje o aktualizacjach mogą być rejestrowane w `/var/log/apt/history.log`. Szukaj wpisów zawierających frazę "security".
+     ```bash
+     grep 'security' /var/log/apt/history.log
+     ```
+   - Cel: Nauka identyfikowania wpisów dziennika dotyczących aktualizacji bezpieczeństwa, co pozwala śledzić, które łatki bezpieczeństwa zostały zainstalowane.
+
+2. **Filtrowanie ostrzeżeń bezpieczeństwa w dziennikach systemowych**
+   - Zadanie: Skorzystaj z `awk` do przefiltrowania i wyświetlenia tylko tych linii z pliku dziennika systemowego (np. `/var/log/syslog` lub `/var/log/messages`), które zawierają poziom ostrzeżenia (`warn` lub `warning`).
+     ```bash
+     awk '/warn|warning/' /var/log/syslog
+     ```
+   - Cel: Zrozumienie, jak wyszukiwać specyficzne poziomy ostrzeżeń bezpieczeństwa w dziennikach, co jest kluczowe do wczesnego identyfikowania potencjalnych problemów.
+
+3. **Analiza nieudanych prób logowania**
+   - Zadanie: Użyj kombinacji `grep` i innych narzędzi tekstowych, jak `cut` lub `awk`, do zidentyfikowania i wyświetlenia szczegółów dotyczących nieudanych prób logowania. Dla systemów używających `systemd`, możesz wykorzystać `journalctl` do przefiltrowania logów usługi SSH (`sshd`), a następnie użyć `grep` do wyszukiwania nieudanych prób.
+     ```bash
+     journalctl -u sshd | grep 'Failed'
+     ```
+   - Cel: Nauka identyfikowania nieudanych prób logowania, co jest kluczowe dla monitorowania potencjalnych prób nieautoryzowanego dostępu.
+
+4. **Śledzenie błędów systemowych i awarii**
+   - Zadanie: Wykorzystaj `grep` lub `awk` do wyszukiwania dzienników systemowych w celu znalezienia wpisów związanych z błędami systemowymi lub awariami. Możesz przeszukać `/var/log/syslog` lub `/var/log/messages` dla słów kluczowych takich jak `error`, `fail`, `critical`.
+     ```bash
+     grep -i -E "error|fail|critical" /var/log/syslog
+     ```
+   - Cel: Rozwinięcie umiejętności szybkiego identyfikowania i reagowania na krytyczne błędy systemowe oraz awarie.
+
+Te zadania są przeznaczone do rozwijania podstawowych umiejętności niezbędnych do efektywnej analizy dzienników zabezpieczeń. Praktyczne opanowanie tych technik pozwoli Ci lepiej zrozumieć stan bezpieczeństwa Twojego systemu i reagować na potencjalne zagrożenia.
+
+### **wprowadzenie do fail2ban.**
 
 {{< tabs CentOS Ubuntu >}}
   {{< tab >}}
@@ -700,3 +963,5 @@ Sprawdź również, czy Twój regex działa:
 ```bash
 fail2ban-regex /var/log/apache2/access.log /etc/fail2ban/filter.d/wordpress.conf
 ```
+
+Celem opisanego zadania jest wprowadzenie do korzystania z Fail2Ban - narzędzia służącego do ochrony serwerów przed atakami brute-force i innymi próbami nieautoryzowanego dostępu. Zadanie obejmuje kroki instalacji Fail2Ban na różnych dystrybucjach Linuxa (CentOS i Debian/Ubuntu), konfigurację podstawowych ustawień bezpieczeństwa poprzez edycję plików konfiguracyjnych, oraz dodatkowe kroki takie jak aktualizacja zasad SELinux (dla CentOS) i konfiguracja zapor sieciowych. Zadanie zawiera również instrukcje dotyczące monitorowania i zarządzania zbanowanymi adresami IP, a także tworzenia własnych filtrów dla specyficznych potrzeb, takich jak ochrona aplikacji WordPress przed nieautoryzowanym dostępem.
