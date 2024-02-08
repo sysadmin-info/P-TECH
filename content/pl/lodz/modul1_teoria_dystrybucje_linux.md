@@ -16,7 +16,7 @@ series:
 - Łódź
 categories:
 - dystrybucje Linux
-image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
+image: images/2024-thumbs/dystrybucje-linux.webp
 ---
 ## Część Teoretyczna
 ### Moduł 1: Dystrybucje Linux - teoria
