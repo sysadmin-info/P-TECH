@@ -20,7 +20,7 @@ image: images/2024-thumbs/lvm.webp
 ---
 ## Część Teoretyczna
 ### Moduł 2: Wprowadzenie do LVM - teoria
-#### Czas Trwania: 10 minut
+#### Czas Trwania: 7 minut
 
 ### 2. **Wprowadzenie do LVM: co to jest, podstawowe zastosowania.**
 

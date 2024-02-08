@@ -20,7 +20,7 @@ image: images/2024-thumbs/zarzadzanie-dyskami.webp
 ---
 ## Część Teoretyczna
 ### Moduł 2: Zarządzanie dyskami - teoria
-#### Czas Trwania: 10 minut
+#### Czas Trwania: 7 minut
 
 ### 1. **Omówienie systemów plików (ext3/4, btrfs, xfs.**
 
