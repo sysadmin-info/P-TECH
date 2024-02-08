@@ -193,3 +193,24 @@ xfs_growfs -n /dev/system/data
 resize2fs /dev/system/data
 ```
 
+#### Zarządzanie programowym RAID
+
+Skrót `RAID` pochodzi od `Redundant Array of Inexpensive Disks`, czyli: nadmiarowa macierz tanich dysków.
+
+Celem `RAID` - scalenie wielu partycji dysku w jeden duży wirtualny dysk twardy, aby zoptymalizować wydajność i poprawić bezpieczeństwo danych.
+
+Rozróżniamy dwa typy macierzy RAID:
+- `sprzętową` – dyski twarde są podpięte do oddzielnego kontrolera sprzętowego RAID. System operacyjny widzi połączone dyski twarde jako jedno urządzenie, nie ma potrzeby konfigurowania tego typu macierzy z poziomu systemu operacyjnego.
+- `programową` – dyski twarde są łączone w macierz przez system operacyjny. System operacyjny widzi każdy dysk osobno, więc należy odpowiednio go skonfigurować by mógł te dyski traktować jako macierz RAID.
+
+W przeszłości macierz sprzętowa zapewniała lepszą wydajność systemu i bezpieczeństwo danych.
+
+Obecnie, przy dojrzałości rozwiązań programowego RAID w jądrze Linuksa, macierze programowe nie odbiegają osiągami i bezpieczeństwem od macierzy sprzętowych.
+
+Dyski można łączyć w różne typy macierzy RAID.
+
+Najczęściej w praktyce używamy następujących typów macierzy:
+- `RAID 0` (striping) - paskowy, jest konfiguracją, która właściwie nie zasługuje na określanie jej w kategoriach RAID ponieważ w trybie tym nie występuje redundancja (nadmiarowość), nie kładzie się też zupełnie nacisku na bezpieczeństwo danych. 
+
+Dane są zapisywane na kilku połączonych w macierz dyskach (blokami), co znacznie      przyspiesza proces zapisu. Dane zapisywane są i odczytywane na wszystkich dyskach za pomocą specjalnego algorytmu rozdzielającego. Dzięki temu uzyskuje się najwyższą możliwą wydajność, jednak ryzyko awarii zwiększa się wraz z ilością użytych dysków twardych. Jeśli jeden z nich ulegnie uszkodzeniu, wszystkie dane w macierzy ulegają destrukcji.
+
