@@ -1,6 +1,6 @@
 ---
 title: "Moduł 2 - Konfiguracja sieciowa - teoria"
-date:  2024-02-08T13:00:00+00:00
+date:  2024-02-08T14:00:00+00:00
 description: "Moduł 2 - Konfiguracja sieciowa - teoria"
 draft: false
 hideToc: false

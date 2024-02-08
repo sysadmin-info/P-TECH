@@ -1,6 +1,6 @@
 ---
 title: "Moduł 2 - Zaawansowane zarządzanie systemem i dokumentacja techniczna  - teoria"
-date:  2024-02-08T13:00:00+00:00
+date:  2024-02-08T14:30:00+00:00
 description: "Moduł 2 - Zaawansowane zarządzanie systemem i dokumentacja techniczna  - teoria"
 draft: false
 hideToc: false
@@ -16,7 +16,7 @@ series:
 - Łódź
 categories:
 - Zaawansowane zarządzanie systemem i dokumentacja techniczna 
-image: images/2024-thumbs/konfiguracja-sieciowa.webp
+image: images/2024-thumbs/zarzadzanie-systemem.webp
 ---
 ## Część Teoretyczna
 ### Moduł 2: Zaawansowane zarządzanie systemem i dokumentacja techniczna - teoria
