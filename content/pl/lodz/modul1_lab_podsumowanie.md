@@ -1,6 +1,6 @@
 ---
 title: "Moduł 1 - Podsumowanie - zadania"
-date:  2024-02-07T15:30:00+00:00
+date:  2024-02-07T17:30:00+00:00
 description: "Moduł 1 - Podsumowanie- zadania"
 draft: false
 hideToc: false
