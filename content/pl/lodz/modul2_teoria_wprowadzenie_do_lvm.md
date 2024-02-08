@@ -64,3 +64,36 @@ Podstawowa struktura LVM składa się z następujących składowych:
 
 ![woluminy logiczne](/images/2024/logical_volumes.webp "woluminy logiczne")
 <figcaption>woluminy logiczne</figcaption>
+
+#### Jak używać komponentów LVM
+
+- Fizyczny wolumin – fizycznym woluminem może być partycja lub cały dysk.
+- Grupa woluminów – grupa woluminów zawierająca jeden lub wiele fizycznych woluminów zgrupowanych razem.
+
+Fizyczne partycje mogą się rozpościerać na różnych dyskach twardych. Można dodać dyski twarde lub partycje do grupy woluminów w dowolnym momencie, kiedy tylko jest to potrzebne.
+
+Grupy woluminów można również redukować (zmniejszać ich wielkość) poprzez usunięcie fizycznych woluminów (dysków twardych lub partycji).
+
+- Logiczne woluminy – są częścią grupy woluminów. Logiczne woluminy można formatować lub montować tak jak fizyczne partycje.
+
+```
+Można myśleć o grupie woluminów jako o dyskach twardych, a o logicznych woluminach jak o partycjach na tych dyskach.
+```
+
+Grupę woluminów można podzielić na szereg logicznych dysków, którym można przypisać nazwy urządzeń (np. `/dev/system/usr`) podobnie jak konwencjonalnym partycjom (`/dev/hda1`).
+
+#### Jak wykorzystać cechy LVM
+
+`LVM` jako bardzo elastyczne i wygodne rozwiązanie przy wprowadzaniu zmian w organizacji przestrzeni dyskowej jest bardzo użyteczne praktycznie dla dowolnego komputera.
+
+Następujące cechy `LVM` są szczególne użyteczne przy praktycznej implementacji rozwiązań organizacji pamięci masowej:
+- można połączyć kilka dysków twardych lub partycji w dużą grupę woluminów,
+- wygodna zmiana organizacji pamięci masowej - w każdej chwili można powiększyć logiczny wolumin, gdy brakuje na nim wolnego miejsca dla danych.
+
+Zmiana rozmiarów logicznych woluminów jest o wiele łatwiejsza niż zmiana rozmiarów partycji fizycznych.
+- Możemy utworzyć ekstremalnie duże logiczne woluminy – liczone w terabajtach,
+- zdolność do wymiany części sprzętu bez wyłączania całości ( "hot-swappable") - można dodawać dysk twardy do grupy woluminów przy pracującym systemie,
+- można "na gorąco" dodać logiczny wolumin w pracującego systemie - o ile jest wolna przestrzeń w grupie woluminów,
+- można użyć kilka dysków z poprawioną wydajnością w trybie RAID 0 (striping),
+- nie ma praktycznie limitu liczby logicznych woluminów (limit w LVM v1 wynosił 256),
+- dostępna jest cecha tzw. migawek (snapshot) z systemu i co za tym idzie, - tworzenia kopii zapasowych w pracującym systemie - " na bieżąco".
