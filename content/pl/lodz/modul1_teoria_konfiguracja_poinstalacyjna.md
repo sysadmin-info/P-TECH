@@ -16,7 +16,7 @@ series:
 - Łódź
 categories:
 - konfiguracja poinstalacyjna
-image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
+image: images/2024-thumbs/konfiguracja-linux.webp
 ---
 ## Część Teoretyczna
 ### Moduł 1: Konfiguracja poinstalacyjna - teoria
