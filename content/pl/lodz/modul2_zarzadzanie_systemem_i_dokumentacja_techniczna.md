@@ -76,13 +76,13 @@ Dodatkowo:
 [Monitorowanie wykorzystania zasobów systemu Linux](https://sysadmin.info.pl/pl/blog/monitorowanie-wykorzystania-zasobow-systemu-linux/)
 
 
-### 2. **Zaawansowane zarządzanie systemem i dokumentacja techniczna **
+### 2. **Zaawansowane zarządzanie systemem i dokumentacja techniczna**
 
-#### Praktyczne ćwiczenia z monitorowania stanu systemu.
+##### Praktyczne ćwiczenia z monitorowania stanu systemu.
 
 Monitorowanie zasobów systemowych przy użyciu `top`, `htop` (jeśli dostępne) oraz `dmesg`.
 
-#### Wprowadzenie do tworzenia dokumentacji technicznej: praktyczne zastosowanie narzędzi do dokumentacji.
+##### Wprowadzenie do tworzenia dokumentacji technicznej: praktyczne zastosowanie narzędzi do dokumentacji.
 
 1. Tworzenie dokumentacji technicznej na przykładzie Confluence.
 2. Instalacja Confluence (pokaz z mojej strony).
