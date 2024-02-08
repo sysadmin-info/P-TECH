@@ -214,3 +214,36 @@ Najczęściej w praktyce używamy następujących typów macierzy:
 
 Dane są zapisywane na kilku połączonych w macierz dyskach (blokami), co znacznie      przyspiesza proces zapisu. Dane zapisywane są i odczytywane na wszystkich dyskach za pomocą specjalnego algorytmu rozdzielającego. Dzięki temu uzyskuje się najwyższą możliwą wydajność, jednak ryzyko awarii zwiększa się wraz z ilością użytych dysków twardych. Jeśli jeden z nich ulegnie uszkodzeniu, wszystkie dane w macierzy ulegają destrukcji.
 
+![RAID 0](/images/2024/raid0.webp "RAID 0")
+<figcaption>RAID 0</figcaption>
+
+`RAID 1 (mirroring)` - lustrzane odbicie dwóch dysków lub ich partycji fizycznych, jest `przeciwieństwem macierzy RAID 0`: oferuje bezpieczeństwo kosztem nadmiarowości sprzętu. Te same dane są zapisywane równolegle na dwóch dyskach (dyski stanowią swoje jako lustrzane odbicie).
+
+W przypadku, gdy jeden z dysków ulegnie awarii, wszystkie zadania przejmuje drugi dysk.
+
+Dużą wadą trybu `RAID 1` jest to, iż z całkowitej pojemności dysków dostępna jest dokładnie jej połowa.
+
+Możliwe są także konfiguracje z więcej, niż tylko jednym lustrem, jednak wtedy pojemności są odpowiednio mniejsze.
+
+Dobre implementacje `RAID 1` pozwalają na jednoczesny odczyt danych z obu dysków, więc przynajmniej szybkość odczytu jest większa, niż przy użyciu pojedynczego dysku.
+
+`RAID 5` to typ macierzy łączący bezpieczeństwo z wydajnością i niezawodnością. Poza samymi danymi, przechowywane są także dane o parzystości. Zarówno dane, jak i nadmiarowa informacja są rozmieszczone równomiernie na wszystkich dyskach w macierzy. Szybkość działania całej macierzy `RAID 5` ulega zwiększeniu przy dodawaniu kolejnych dysków.
+
+`RAID 5` zapisuje dane o parzystości na każdym z dysków według zmiennych zasad. Tak więc informacje pomagające w odzyskiwaniu danych tworzone są bez wielkiego wpływu na transfery. To także pozwala na korzystanie ze wszystkich danych nawet w momencie, gdy brakuje jednego z uszkodzonych dysków; oczywiście dysk trzeba uzupełnić, by "bezawaryjna" macierz była w pełni funkcjonalna.
+
+`Minimalna liczba dysków` potrzebna do stworzenia tego typu macierzy to `3`.
+
+W przypadku awarii jednego z dysków, dane są rekonstruowane poprzez zastąpienie ich danymi z pozostałych dysków i ich sumami kontrolnymi.
+
+Gdy awarii w tym samym czasie ulega więcej niż jeden dysk, wówczas dane z tych dysków zostają utracone.
+
+![RAID 5](/images/2024/raid5.webp "RAID 5")
+<figcaption>RAID 5</figcaption>
+
+`RAID 6` jest porównywalną macierzą z RAID 5, z tą różnicą, że dwa dyski mogą ulec uszkodzeniu równocześnie a dane zostaną odzyskane.
+
+Cztery dyski to minimalne wymagania do zbudowania macierzy RAID6.
+
+Za pomocą YaSTa można zestawić macierze typu 0, 1 i 5, czyli te, które są możliwe do programowego zdefiniowania.
+
+RAID poziomów 2,3,4 wymagają zestawienia sprzętowego.
