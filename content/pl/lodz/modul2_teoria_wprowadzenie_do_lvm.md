@@ -140,3 +140,20 @@ Pozostałe polecenia:
 pvs
 pvdisplay
 ```
+
+#### Narzędzia do zarządzania grupami woluminów
+
+Narzędzie `vgcreate` wykorzystywane jest do tworzenia nowych grup woluminów.
+
+Poniższy przykład pokazuje tworzenie grupy woluminów o nazwie `system` z dodaniem partycji `/dev/sdb1`:
+
+```bash
+vgcreate system /dev/sdb1
+```
+
+Pozostałe polecenia:
+
+```
+vgs, vgdisplay, vgresize, vgreduce, vgextend, vgchange, vgscan
+```
+
