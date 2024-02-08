@@ -31,7 +31,11 @@ image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 
 2. **Dla chętnych - darmowy serwer ssh.**
 
-🐸 [**Frog**](https://frog.mikr.us/)
+Projekt FROG to darmowa oferta małych (malutkich!) serwerów VPS przeznaczonych do nauki administracji serwerami, hostingu prostych aplikacji (np. checki, crony) i hostowania niewielkich stron WWW.
+
+Serwery są darmowe, ale wymagają wpłaty dowolnej kwoty (np. 5zł) w ramach weryfikacji tożsamości użytkownika. Jest to opłata jednorazowa. Możesz posiadać tylko JEDEN darmowy serwer w usłudze FROG.
+
+🐸 [Frog](https://frog.mikr.us/)
 
 Chcesz się uczyć Chmury, ale zastanawiasz się jak zacząć?
 
