@@ -157,3 +157,22 @@ Pozostałe polecenia:
 vgs, vgdisplay, vgresize, vgreduce, vgextend, vgchange, vgscan
 ```
 
+#### Narzędzia do administracji woluminami logicznymi
+
+W celu stworzenia woluminu logicznego podajemy polecenie lvcreate określając rozmiar woluminu, nazwę woluminu i grupy woluminów, w ramach której wolumin logiczny tworzymy. W tym przypadku rozmiar woluminu to 100 MB.
+
+Możemy też przypisać całą dostępną przestrzeń poniższym poleceniem:
+
+```bash
+lvcreate –L 100M –n data system
+```
+
+Pozostałe polecenia:
+
+```bash
+lvcreate -l 100%VG –n data system
+```
+
+```
+lvs, lvdisplay, lvresize, lvreduce, lvextend
+```
