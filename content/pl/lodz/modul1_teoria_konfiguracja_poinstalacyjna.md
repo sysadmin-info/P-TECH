@@ -22,16 +22,13 @@ image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 ### Moduł 1: Konfiguracja poinstalacyjna - teoria
 #### Czas Trwania: 15 minut
 
-1. Konfiguracja serwera SSH: instalacja, generowanie kluczy RSA.
+1. **Konfiguracja serwera SSH: instalacja, generowanie kluczy RSA.**
 Artykuł: [serwer SSH](https://sysadmin.info.pl/pl/blog/serwer-ssh/)
 
-2. Wprowadzenie do bezpieczeństwa systemu: przeglądanie dzienników systemowych.
-
-##### Przeglądanie dzienników systemowych
+2. **Wprowadzenie do bezpieczeństwa systemu: przeglądanie dzienników systemowych.**
 
 Przeglądanie dzienników systemowych w Linuxie jest kluczowym elementem zarządzania systemem i diagnozowania problemów. Dzienniki te zawierają informacje o działaniu systemu, aplikacji i usług systemowych, oferując wgląd w błędy, ostrzeżenia i inne zdarzenia systemowe. Główne narzędzia do przeglądania dzienników to `journalctl` dla systemów używających systemd oraz tradycyjne pliki dzienników w `/var/log`, takie jak `/var/log/syslog` czy `/var/log/messages`. Umożliwiają one monitorowanie systemu w czasie rzeczywistym, analizę przyczyn problemów oraz planowanie działań prewencyjnych, co jest niezbędne dla utrzymania zdrowia i stabilności systemu.
 
-3. Wprowadzenie do fail2ban.
+3. **Wprowadzenie do fail2ban.**
 
-3. Fail2ban
 Artykuł: [fail2ban](https://sysadmin.info.pl/pl/blog/fail2ban-instalacja-i-konfiguracja/)
