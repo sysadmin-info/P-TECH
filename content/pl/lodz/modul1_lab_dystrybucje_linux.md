@@ -22,14 +22,14 @@ image: images/2024-thumbs/podstawy_pracy_w_systemie_linux.webp
 ### Moduł 1: Dystrybucje Linux - zadania
 #### Czas Trwania: 10 minut
 
-1. **Przygotowanie bootowalnego pendrive i instalacja systemu (10 minut):**
+1. #### **Przygotowanie bootowalnego pendrive i instalacja systemu (10 minut):**
    - Demonstracja tworzenia bootowalnego nośnika. (Rufus, Balena Etcher) 
    - Rozpoczęcie procesu instalacji systemu Linux.
    - [Ventoy](https://www.ventoy.net/)
    - IODD ST400
 
 
-2. **Dla chętnych - darmowy serwer ssh.**
+2. #### **Dla chętnych - darmowy serwer ssh.**
 
 Projekt FROG to darmowa oferta małych (malutkich!) serwerów VPS przeznaczonych do nauki administracji serwerami, hostingu prostych aplikacji (np. checki, crony) i hostowania niewielkich stron WWW.
 
@@ -37,7 +37,7 @@ Serwery są darmowe, ale wymagają wpłaty dowolnej kwoty (np. 5zł) w ramach we
 
 🐸 [Frog](https://frog.mikr.us/)
 
-Chcesz się uczyć Chmury, ale zastanawiasz się jak zacząć?
+3. #### **Chcesz się uczyć Chmury, ale zastanawiasz się jak zacząć?**
 
 ✅ Przede wszystkim, pamiętaj o wersjach trial. Każdy, znaczący dostawca Chmury oferuje na start konkretną kwotę, którą możesz wykorzystać, by za darmo sprawdzić podstawowe funkcjonalności. Nie ma zatem problemu, by w ramach wersji trial uruchomić serwer lub wybraną usługę i "pobawić się" ustawieniami.
 
