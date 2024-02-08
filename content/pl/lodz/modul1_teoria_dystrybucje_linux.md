@@ -131,6 +131,32 @@ sudo apt install xorg
 
 ##### Instalujemy Gnome/KDE/XFCE/Awesome
 
+**XFCE**
+
+- openSUSE/SLES
+
+```bash
+sudo zypper install xfce4
+```
+
+- RPM-based (RedHat/Fedora/CentOS)
+
+```bash
+rpm -qi epel-release
+sudo dnf --enablerepo=epel group
+sudo dnf install epel-release
+sudo dnf group list | grep -i xfce
+sudo dnf groupinstall "Xfce" "base-x"
+sudo echo "exec /usr/bin/xfce4-session" >>  ~/.xinitrc
+sudo systemctl set-default graphical
+```
+
+- DEB-based (Debian/Ubuntu)
+
+```bash
+sudo apt install xubuntu-desktop
+```
+
 ##### Aktualizujemy system 
 
 - openSUSE/SLES 
