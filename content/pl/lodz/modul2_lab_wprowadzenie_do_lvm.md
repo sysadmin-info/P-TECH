@@ -36,7 +36,7 @@ image: images/2024-thumbs/lvm.webp
   4. Sformatowanie woluminu logicznego systemem plików ext4.
   5. Zamontowanie LV i utworzenie na nim pliku tekstowego z kilkoma linijkami tekstu.
 
- ## Zadania z LVM (15 minut)
+ ##### Zadania z LVM (10 minut)
 
 **Cel:** Naucz się używać LVM do zarządzania wolumenami logicznymi.
 
