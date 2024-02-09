@@ -16,7 +16,7 @@ series:
 - Łódź
 categories:
 - Wprowadzenie do LVM
-image: images/2024-thumbs/zarzadzanie-dyskami.webp
+image: images/2024-thumbs/lvm.webp
 ---
 ## Część Praktyczna
 ### Moduł 2: Wprowadzenie do LVM - zadania
