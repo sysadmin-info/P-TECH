@@ -33,13 +33,13 @@ Konfiguracja sieciowa jest fundamentalnym elementem zarządzania systemami opera
 - **Debian/Ubuntu**
 W środowiskach opartych na Debianie, takich jak Ubuntu, konfiguracja sieciowa często wykorzystuje pliki znajdujące się w katalogu `/etc/network/interfaces`. To tradycyjne podejście pozwala na statyczną konfigurację interfejsów sieciowych, wskazując adresy IP, bramy domyślne i serwery DNS bezpośrednio w pliku tekstowym. Dla bardziej dynamicznego zarządzania połączeniami sieciowymi, Debian i Ubuntu oferują również `NetworkManager` - graficzne i tekstowe interfejsy użytkownika, takie jak `nmtui` i `nmcli`, ułatwiają zarządzanie siecią, oferując szybkie przełączanie między różnymi profilami sieciowymi.
 
-**Red Hat/Fedora**
+- **Red Hat/Fedora**
 W dystrybucjach takich jak Red Hat, Fedora, i ich pochodnych, konfiguracja sieciowa jest zarządzana głównie przez `NetworkManager` i jego narzędzie wiersza poleceń, `nmcli`. Pozwala to na łatwą konfigurację połączeń sieciowych, zarówno dla interfejsów przewodowych, jak i bezprzewodowych. Pliki konfiguracyjne dla statycznej konfiguracji znajdują się w `/etc/sysconfig/network-scripts/`, gdzie każdy skrypt odpowiada za konkretny interfejs sieciowy. Dzięki temu administratorzy mogą precyzyjnie kontrolować zachowanie sieci.
 
-**Arch Linux**
+- **Arch Linux**
 Arch Linux oferuje bardziej ręczne podejście do konfiguracji sieciowej, pozwalając użytkownikom na głębsze zrozumienie i kontrolę nad procesem. `netctl` jest narzędziem specyficznym dla Arch Linuxa, które umożliwia zarządzanie profilami sieciowymi i wspiera różnorodne typy połączeń. Mimo to, `NetworkManager` pozostaje popularną alternatywą również w Archu, oferując bardziej przyjazny dla użytkownika interfejs do zarządzania siecią.
 
-**openSUSE**
+- **openSUSE**
 openSUSE używa narzędzia `Yast` do zarządzania konfiguracją sieciową, które jest potężnym i wszechstronnym centrum sterowania systemem. Dla konfiguracji sieciowej, `Yast` oferuje graficzny interfejs użytkownika, który ułatwia zarządzanie ustawieniami sieci, w tym konfigurację adresów IP, serwerów DNS i tras routingu. Alternatywnie, openSUSE oferuje również `wicked`, narzędzie wiersza poleceń do zarządzania siecią, które zastąpiło starsze narzędzia takie jak `ifup` i `ifdown`.
 
 ### 2. **Wprowadzenie do narzędzi diagnostycznych sieci.**
