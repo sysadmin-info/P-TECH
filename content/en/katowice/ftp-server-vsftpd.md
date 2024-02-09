@@ -418,9 +418,7 @@ connect_from_port_20=YES
 # You may change the default value for timing out an idle session.
 #idle_session_timeout=600
 #
-# You may change the default value for
-
- timing out a data connection.
+# You may change the default value for timing out a data connection.
 #data_connection_timeout=120
 #
 # Enable this and the server will recognise asynchronous ABOR requests. Not
