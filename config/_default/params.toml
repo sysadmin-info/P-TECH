@@ -4,7 +4,7 @@ description = "GNU/Linux - lab"
 custom_css = ["css/custom.css"]
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
-meta_image = "https://p-tech-site.netlify.app/images/header/p-tech.jpg"
+meta_image = "https://p-tech.net.pl/images/header/p-tech.jpg"
 themecolor = ""
 
 themeOptions = ["light", "dark"]
