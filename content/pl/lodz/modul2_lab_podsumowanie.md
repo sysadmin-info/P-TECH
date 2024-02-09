@@ -20,7 +20,7 @@ image: images/2024-thumbs/podsumowanie.webp
 ---
 ## Część Praktyczna
 ### Moduł 2: Podsumowanie - zadania
-#### Czas Trwania: 1 minuta
+#### Czas Trwania: 2 minuty
 
 Podsumowanie i analiza zaproponowanych ćwiczeń obejmuje praktyczne aspekty zarządzania systemem Linux, zarządzania dyskami i partycjonowania, konfiguracji sieciowej, monitorowania systemu oraz tworzenia dokumentacji technicznej. Te ćwiczenia mają na celu rozwijanie umiejętności technicznych, które są kluczowe dla każdego administratora systemu, inżyniera DevOps, czy specjalisty IT pracującego z systemami opartymi na Linuxie.
 
