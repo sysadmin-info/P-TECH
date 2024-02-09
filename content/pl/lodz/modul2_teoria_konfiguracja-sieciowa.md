@@ -55,6 +55,11 @@ Jednak w nowszych dystrybucjach Linuxa, `netstat` zaczęło być zastępowane pr
 
 Współczesne zarządzanie siecią wymaga zatem nie tylko znajomości tych narzędzi, ale także umiejętności ich efektywnego wykorzystania. Od prostego sprawdzania dostępności hosta, przez śledzenie trasy pakietów, aż po zaawansowaną analizę stanu gniazd, `ping`, `traceroute`/`tracepath`, `netstat` i `ss` to podstawowe, ale potężne narzędzia w arsenale każdego administratora sieci.
 
+#### Nowoczesne narzędzia i analiza (6 minut)
+- **ip:** Zarządzanie adresami IP, trasami, i interfejsami.
+- **tcpdump:** Wprowadzenie do przechwytywania ruchu sieciowego.
+- **iperf3** i **mtr:** Testowanie przepustowości sieci i dynamiczna analiza trasy.
+
 W świecie sieci komputerowych, zdolność do monitorowania, testowania i rozwiązywania problemów jest kluczowa. Narzędzia takie jak `ip`, `tcpdump`, `iperf3` i `mtr` stanowią zaawansowane metody analizy i diagnostyki, umożliwiając administratorom głębsze zrozumienie i kontrolę nad siecią.
 
 `ip` to narzędzie, które zastępuje wiele starszych poleceń (takich jak `ifconfig`, `route`, `arp`, itp.), oferując jednolite podejście do zarządzania wszystkimi aspektami interfejsów sieciowych, trasowania i polityk sieciowych. Za jego pomocą można łatwo konfigurować adresy IP, zarządzać tabelami routingu, oraz monitorować stan interfejsów sieciowych. Jego elastyczność i potencjał czynią `ip` nieocenionym narzędziem dla każdego, kto pracuje z linuxowymi sieciami.
