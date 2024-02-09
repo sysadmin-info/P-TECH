@@ -20,7 +20,7 @@ image: images/2024-thumbs/podsumowanie.webp
 ---
 ## Część Praktyczna
 ### Moduł 1: Podsumowanie - zadania
-#### Czas Trwania: 1 minuta
+#### Czas Trwania: 2 minuty
 
 - Ćwiczenia z pierwszej części kursu stanowią fundament dla zaawansowanych zagadnień omawianych w module drugim, skupiającym się na zarządzaniu dyskami, konfiguracji sieciowej oraz zaawansowanym zarządzaniu systemem i tworzeniu dokumentacji technicznej. Uczniowie nauczyli się instalować system Linux, zarządzać użytkownikami i plikami, co jest niezbędne do efektywnego wykorzystania systemów plików takich jak ext3/4, btrfs, xfs oraz do zrozumienia i stosowania LVM (Logical Volume Manager). 
 
