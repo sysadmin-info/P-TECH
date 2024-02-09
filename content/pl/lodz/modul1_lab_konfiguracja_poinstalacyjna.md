@@ -736,6 +736,94 @@ Analiza logów zabezpieczeń to kluczowy element utrzymania bezpieczeństwa syst
 
 Te zadania są przeznaczone do rozwijania podstawowych umiejętności niezbędnych do efektywnej analizy dzienników zabezpieczeń. Praktyczne opanowanie tych technik pozwoli Ci lepiej zrozumieć stan bezpieczeństwa Twojego systemu i reagować na potencjalne zagrożenia.
 
+5. **Konfiguracja syslog**
+- Zadanie: podejrzyj plik rsyslog.conf znajdujący się w katalogu /etc .
+
+Poniższy przykład zawiera zmodyfikowany plik rsyslog.conf, który rozdziela ostrzeżenia i informacje pomiędzy odpowiednie pliki logów.
+Znaki wykrzyknika oznaczają zaprzeczenie (negacja ta pochodzi z programowania).
+
+Źródło: [https://superuser.com/questions/351387/how-to-stop-kernel-messages-from-flooding-my-console](https://superuser.com/questions/351387/how-to-stop-kernel-messages-from-flooding-my-console)
+
+```vim
+###### RULES ######
+Log all kernel messages to the console.
+# Logging much else clutters up the screen.
+#kern.*                                               /dev/console
+kern.*;kern.!info;kern.!warning                       /var/log/kern
+kern.info                                             /var/log/kern-info_log
+kern.warning                                          /var/log/kern-warnings_log
+
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;mail.none;authpriv.none;cron.none;local2.none  /var/log/messages
+
+```
+
+Dodatkowo zmień plik: `/etc/audisp/plugins.d/syslog.conf` w taki sposób, jak poniżej:
+
+```vim
+args = LOG_INFO
+```
+
+Następnie zrestartuj `auditd` i `rsyslog` za pomocą poniższych poleceń:
+
+```bash
+sudo service auditd restart && sudo service rsyslog restart
+```
+
+Wiadomości pochodzące z jądra systemu (kernel) można modyfikować na przykład tak:
+
+```bash
+sudo sysctl -w kernel.printk="3 4 1 3"
+```
+
+Przed modyfikacją i po modyfikacji możesz sprawdzić ustawienia za pomocą poniższego polecenia:
+
+```bash
+sudo sysctl kernel.printk
+```
+
+### Konfiguracja parametrów jądra w czasie rzeczywistym - wyjaśnienie
+
+Zobacz `man sysctl` - „konfiguracja parametrów jądra w czasie rzeczywistym” aby dowiedzieć się więcej.
+
+Przypomnienie o poziomach ważności i czterech wartościach kernel.printk:
+
+  * CUR = bieżący poziom ważności; tylko komunikaty ważniejsze niż ten poziom są wyświetlane
+  * DEF = domyślny poziom ważności przypisywany do komunikatów bez poziomu
+  * MIN = minimalny dopuszczalny CUR
+  * BTDEF = domyślny CUR przy uruchamianiu
+
+Na moim CentOS: 7 4 1 7
+
+```vim
+                     CUR  DEF  MIN  BTDEF
+0 - awaryjny         x              x                        
+1 - alarm            x         x    x
+2 - krytyczny        x              x
+3 - błąd             x              x
+4 - ostrzeżenie      x    x         x
+5 - ogłoszenie       x              x
+6 - informacyjny     V              V
+7 - debugowanie
+```
+
+To jest zbyt `głośne`, chcę tylko krytyczne i wyżej (bez błędów). Komunikaty bez etykiety powinny być traktowane jako ostrzeżenia, więc DEF jest dobry:
+
+```vim
+                     CUR  DEF  MIN  BTDEF
+0 - awaryjny         x              x                        
+1 - alarm            x         x    x
+2 - krytyczny        x              x
+3 - błąd             V              V
+4 - ostrzeżenie           x         
+5 - ogłoszenie                           
+6 - informacyjny                       
+7 - debugowanie
+```
+
+Ustaw na: 3 4 1 3 i problem rozwiązany. Teraz, gdy użyjesz tail do oglądania logów, zobaczysz, że logi są dużo bardziej czytelne.
+
 ### **Wprowadzenie do fail2ban.**
 
 {{< tabs CentOS Ubuntu >}}
