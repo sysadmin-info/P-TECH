@@ -1,6 +1,6 @@
 ---
 title: "Moduł 2 - Wprowadzenie do LVM - zadania"
-date:  2024-02-09T09:30:00+00:00
+date:  2024-02-09T09:40:00+00:00
 description: "Moduł 2 - Wprowadzenie do LVM - zadania"
 draft: false
 hideToc: false
@@ -25,7 +25,7 @@ image: images/2024-thumbs/lvm.webp
 
 #### 1. **Praca z LVM**
 
-#### Praktyczne ćwiczenia z LVM
+##### Praktyczne ćwiczenia z LVM
 
 - **Ćwiczenie:** Stworzenie woluminu logicznego przy użyciu LVM.
   1. Inicjalizacja dwóch dysków (lub partycji) jako fizycznych woluminów LVM.
