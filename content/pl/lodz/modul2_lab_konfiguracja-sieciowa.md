@@ -18,7 +18,7 @@ categories:
 - Konfiguracja sieciowa
 image: images/2024-thumbs/konfiguracja-sieciowa.webp
 ---
-## Część Teoretyczna
+## Część Praktyczna
 ### Moduł 2: Konfiguracja sieciowa - zadania
 #### Czas Trwania: 15 minut
 
