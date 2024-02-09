@@ -82,6 +82,43 @@ Dodatkowo:
 
 Monitorowanie zasobów systemowych przy użyciu `top`, `htop` (jeśli dostępne) oraz `dmesg`.
 
+* Jakie są różne rodzaje zasobów systemowych?
+
+Wyróżniamy kilka głównych typów zasobów systemowych:
+
+- Procesor (CPU): Wykonuje instrukcje programów.
+- Pamięć (RAM): Przechowuje dane i kod programów podczas ich wykonywania.
+- Pamięć masowa: Przechowuje dane trwale, nawet po wyłączeniu komputera.
+- Sieć: Umożliwia komunikację z innymi komputerami i urządzeniami.
+- Wejście/wyjście (I/O): Umożliwia interakcję z użytkownikiem i peryferiami, takimi jak klawiatura, mysz, monitor,
+
+* Jakie narzędzia służą do monitorowania zasobów systemowych?
+
+Istnieje wiele narzędzi do monitorowania zasobów systemowych, m.in.:
+
+- top: Wyświetla listę procesów wraz z informacjami o ich zużyciu CPU, pamięci RAM i innych zasobów.
+- htop: Bardziej graficzna wersja narzędzia top.
+- dmesg: Wyświetla wiadomości kernela, w tym informacje o błędach i ostrzeżeniach.
+- sar: Generuje raporty o wydajności systemu.
+- vmstat: Wyświetla statystyki dotyczące pamięci wirtualnej.
+- iostat: Wyświetla statystyki dotyczące operacji wejścia/wyjścia.
+
+* Jakie są najczęstsze problemy z wydajnością systemu?
+
+- Wysokie zużycie CPU: Może być spowodowane przez jeden lub wiele procesów, które zużywają zbyt dużo czasu procesora.
+- Niski poziom pamięci RAM: Może powodować spowolnienie działania systemu i zacinanie się aplikacji.
+- Problemy z pamięcią masową: Mogą obejmować błędy dysku twardego, fragmentację danych lub niewystarczającą ilość wolnego miejsca.
+- Problemy z siecią: Mogą obejmować niską przepustowość, problemy z połączeniem lub błędy konfiguracji.
+
+* Jakie są rodzaje wiadomości kernela?
+
+Wiadomości kernela można podzielić na kilka kategorii:
+
+- Informacyjne: Informują o zdarzeniach w systemie, takich jak uruchomienie sterownika urządzenia.
+- Ostrzeżenia: Informują o potencjalnych problemach, które mogą nie wymagać natychmiastowej interwencji.
+- Błędy: Informują o problemach, które uniemożliwiają prawidłowe działanie systemu.
+- Krytyczne błędy: Informują o poważnych problemach, które mogą spowodować awarię systemu.
+
 ##### Wprowadzenie do tworzenia dokumentacji technicznej: praktyczne zastosowanie narzędzi do dokumentacji.
 
 1. Tworzenie dokumentacji technicznej na przykładzie Confluence.
