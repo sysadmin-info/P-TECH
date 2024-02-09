@@ -1,7 +1,7 @@
 ---
-title: "Serwer FTP - Vsftpd"
+title: "FTP Server - Vsftpd"
 date:  2023-05-12T14:18:00+00:00
-description: "Zainstaluj Vsftpd, aby skonfigurować serwer FTP."
+description: "Install Vsftpd to configure an FTP server."
 draft: false
 hideToc: false
 enableToc: true
@@ -18,61 +18,61 @@ categories:
 - 
 image: images/2023-thumbs/vsftpd.webp
 ---
-#### Ćwiczenia do wykonania:
-1. Zainstaluj Vsftpd.
-2. Włącz i uruchom Vsftpd
-3. Dodaj port do firewalld
+#### Exercises to be done:
+1. Install Vsftpd.
+2. Enable and start Vsftpd.
+3. Add a port to firewalld.
 
 <script async id="asciicast-580161" src="https://asciinema.org/a/580161.js"></script>
 
-#### Zainstaluj Vsftpd
+#### Install Vsftpd
 
 {{< tabs SLES Debian RedHat >}}
   {{< tab >}}
   ### SLES
-  Aby zainstalować Vsftpd wpisz:
+  To install Vsftpd type:
   ```bash
-  # odśwież repozytoria
+  # refresh repositories
   sudo zypper ref
-  # zainstaluj Vsftpd
+  # install Vsftpd
   sudo zypper -n in vsftpd
-  # włącz Vsftpd przy starcie systemu
+  # enable Vsftpd at system startup
   sudo systemctl enable vsftpd
-  # uruchom Vsftpd
+  # start Vsftpd
   sudo systemctl start vsftpd
   ```
   {{< /tab >}}
   {{< tab >}}
   ### Debian
-  Aby zainstalować Vsftpd wpisz:
+  To install Vsftpd type:
   ```bash
-  # odśwież repozytoria
+  # refresh repositories
   sudo apt update
-  # zainstaluj sftpd
+  # install Vsftpd
   sudo apt -y install vsftpd
-  # włącz Vsftpd przy starcie systemu
+  # enable Vsftpd at system startup
   sudo systemctl enable vsftpd
-  # uruchom Vsftpd
+  # start Vsftpd
   sudo systemctl start vsftpd
   ```
   {{< /tab >}}
   {{< tab >}}
   ### Red Hat
-  Aby zainstalować Vsftpd wpisz:
+  To install Vsftpd type:
   ```bash
-  # zainstaluj Vsftpd
+  # install Vsftpd
   sudo yum install vsftpd -y
   or
   sudo dnf install vsftpd -y
-  # włącz Vsftpd przy starcie systemu
+  # enable Vsftpd at system startup
   sudo systemctl enable vsftpd
-  # uruchom Vsftpd
+  # start Vsftpd
   sudo systemctl start vsftpd
   ```
   {{< /tab >}}
 {{< /tabs >}}
 
-#### Zezwól na usługę Vsftpd
+#### Allow Vsftpd service
 
 {{< tabs SLES Debian RedHat >}}
   {{< tab >}}
@@ -89,7 +89,7 @@ image: images/2023-thumbs/vsftpd.webp
   ### Debian
   ```bash
   sudo ufw allow 'FTP'
-  # lub
+  #or
   sudo ufw allow 'Vsftpd'
   ```
   {{< /tab >}}
@@ -105,96 +105,97 @@ image: images/2023-thumbs/vsftpd.webp
   {{< /tab >}}
 {{< /tabs >}}
 
-#### Zmodyfikuj konfigurację Vsftpd dla openSUSE/SLES
+#### Modify Vsftpd configuration for openSUSE/SLES
 
 ```bash
 sudo vim /etc/vsftpd.conf
-# linia 19: zmień
+# line 19: change
 write_enable=YES
-# linia 53: odkomentuj (Pozwól lokalnym użytkownikom zalogować się do FTP, jeśli są na liście użytkowników)
+# line 53: uncomment (Allow local users to log into FTP if they are on the user list)
 local_enable=YES
-# linia 62: odkomentuj ( włącz chroot )
+# line 62: uncomment (enable chroot)
 chroot_local_user=NO
-# linia 80: zmień (żadnego anonymous)
+# line 80: change (no anonymous)
 anonymous_enable=NO
-# linia 184: zmień wedle potrzeb (jeśli vsftpd ma nasłuchiwać połączeń tylko za pomocą protokołu IPv4)
+# line 184: change as needed (if vsftpd should listen to connections only using IPv4 protocol)
 listen=YES
-# linia 189: zmień wedle potrzeb (jeśli vsftpw ma nasłuchiwać połączeń także za pomocą protokołu IPv6)
+# line 189: change as needed (if vsftpd should listen to connections also using IPv6 protocol)
 listen_ipv6=NO
-# linia 217: odkomentuj (wyłącz filtr seccomp)
+# line 217: uncomment (disable seccomp filter)
 seccomp_sandbox=NO
 
-# dodaj na końcu pliku
+# add at the end of the file
 
-# używaj czasu lokalnego
+# use local time
 use_localtime=YES
 
-# ogranicz użytkowników FTP do ich katalogu domowego i zezwól im na zapisywanie plików tylko tam
+# restrict FTP users to their home directory and allow them to write files only there
 allow_writeable_chroot=YES
 ```
 
-#### Jeśli Firewalld jest uruchomiony, zezwól na usługę FTP.
+#### If Firewalld is running, allow FTP service.
 
 ```bash
 sudo vim /etc/vsftpd.conf
-# zmień porty 30000 i 31000 na te poniższe
-# dodaj porty PASV, aby umożliwić dostęp do FTP za pomocą PASV
+# change ports 30000 and 31000 to those below
+# add PASV ports to enable FTP access using PASV
 pasv_enable=YES
 pasv_min_port=21000
 pasv_max_port=21010
 ```
 
-#### Dodaj użytkowników
+#### Add users
 
 ```bash
 sudo useradd -d /srv/www/ftp1 ftp1
 sudo passwd ftp1
+
 sudo useradd -d /srv/www/ftp2 ftp2
 sudo passwd ftp2
 ```
 
-#### Skonfiguruj vsftpd, by korzystał z nowo utworzonych użytkowników
+#### Configure vsftpd to use the newly created users
 
 ```bash
 sudo vim /etc/vsftpd.conf
 
-# Włącz listę użytkowników
+# Enable user list
 userlist_enable=YES
 
-# Skonfiguruj listę użytkowników, aby działała jako biała lista (zezwalaj tylko na użytkowników, którzy są tam wymienieni) 
+# Configure the user list to act as a whitelist (only allow users who are listed there)
 userlist_deny=NO
 
-# Plik z listą użytkowników
+# User list file
 userlist_file=/etc/vsftpd.userlist
  
-# Zezwalaj użytkownikom wirtualnym na korzystanie z tych samych uprawnień co użytkownikom lokalnym 
+# Allow virtual users to use the same privileges as local users
 virtual_use_local_privs=YES
  
-# Ustaw katalog konfiguracyjny dla użytkowników wirtualnych 
+# Set configuration directory for virtual users
 user_config_dir=/etc/vsftpd_user_config_dir/
 ```
 
-{{< notice success "WAŻNE" >}}
-Staraj się unikać duplikatów ustawień: jeśli niektóre z powyższych ustawień są już obecne w twoim pliku vsftpd.conf albo je wykomentuj, albo usuń, w przeciwnym razie usługa VSFTPD nie będzie mogła się uruchomić.
+{{< notice success "IMPORTANT" >}}
+Try to avoid duplicates of settings: if some of the above settings are already present in your vsftpd.conf file either comment them out or remove them, otherwise, the VSFTPD service will not be able to start.
 
-Powyższe opcje są dość oczywiste: w zasadzie mówimy VSFTP, aby zezwolił na dostęp do FTP tylko lokalnym użytkownikom, których umieścimy w pliku user_list, pobierając ich konfigurację z katalogu /etc/vsftpd_user_config_dir
+The above options are quite obvious: basically, we are telling VSFTP to allow access to FTP only to local users, which we will place in the user_list file, fetching their configuration from the directory /etc/vsftpd_user_config_dir
 {{< /notice >}}
 
-Otwórzmy teraz plik /etc/vsftpd/user_list i dodajmy użytkowników ftp1 i ftp2 w następujący sposób:
+Let's now open the file /etc/vsftpd/user_list and add the users ftp1 and ftp2 in the following way:
 
 ```bash
 sudo vim /etc/vsftpd.userlist
 
-# dodaj poniższych użytkowników
+# add the following users
 ftp1
 ftp2
 ```
 
-#### Konfiguracja folderów domowych
+#### Configuration of home directories
 
-Teraz, gdy zezwoliliśmy tym dwóm użytkownikom na dostęp do naszego serwera FTP (i zamknęliśmy go dla wszystkich innych), ostatnią rzeczą, którą musimy zrobić, jest skonfigurowanie ich folderów domowych.
+Now, having allowed these two users access to our FTP server (and closed it for everyone else), the last thing we need to do is configure their home directories.
 
-Aby to zrobić, utwórz folder /etc/vsftpd/user_config_dir/ i stwórz dwa pliki o dokładnie takich samych nazwach, jak dwóch użytkowników:
+To do this, create the folder /etc/vsftpd/user_config_dir/ and create two files with exactly the same names as the two users:
 
 ```bash
 mkdir -p /etc/vsftpd_user_config_dir/
@@ -202,7 +203,7 @@ touch /etc/vsftpd_user_config_dir/ftp1
 touch /etc/vsftpd_user_config_dir/ftp2
 ```
 
-Zaraz po tym edytuj plik ftp1 w następujący sposób:
+Right after that, edit the file ftp1 in the following way:
 
 ```bash
 sudo vim /etc/vsftpd_user_config_dir/ftp1
@@ -210,7 +211,7 @@ local_root=/srv/www/ftp1
 write_enable=YES
 ```
 
-Po wykonaniu tej czynności, zrób to samo z plikiem ftp2, określając inny folder domowy:
+After doing this, do the same with the file ftp2, specifying a different home folder:
 
 ```bash
 sudo vim /etc/vsftpd_user_config_dir/ftp2
@@ -218,20 +219,20 @@ local_root=/srv/www/ftp2
 write_enable=YES
 ```
 
-Następnie utwórz powyższe katalogi:
+Then create the above directories:
 
 ```bash
 sudo mkdir -p /srv/www/{ftp1,ftp2}
 ```
 
-A także nadaj im uprawnienia:
+And also grant them permissions:
 
 ```bash
 sudo chown -R ftp1:users /srv/www/ftp1
 sudo chown -R ftp2:users /srv/www/ftp2
 ```
 
-Zrestartuj Vsftpd.
+Restart Vsftpd.
 
 {{< tabs SLES Debian RedHat >}}
   {{< tab >}}
@@ -254,14 +255,13 @@ Zrestartuj Vsftpd.
   {{< /tab >}}
 {{< /tabs >}}
 
-Teraz możesz stworzyć osobne, dedykowane katalogi domowe dla każdego z użytkowników FTP.
+Now you can create separate, dedicated home directories for each of the FTP users.
 
-{{< notice success "WAŻNE" >}}
-Pamiętaj, aby dodać certyfikat SSL do swojego serwera VSFTP, aby lepiej go zabezpieczyć, a także ochronić przed złośliwymi próbami kradzieży Twoich cennych danych!
+{{< notice success "IMPORTANT" >}}
+Remember to add an SSL certificate to your VSFTP server to better secure it, as well as protect against malicious attempts to steal your valuable data!
 {{< /notice >}}
 
-Dla pewności poniżej konfiguracja, która jest przetestowana i działa. Jeszcze bez SSL. Konfiguracja SSL będzie opisana osobno.
-
+For certainty, below is a configuration that is tested and works. Still without SSL. SSL configuration will be described separately.
 
 {{< highlight Shell "linenos=table" >}}
 # Example config file /etc/vsftpd.conf
@@ -418,7 +418,9 @@ connect_from_port_20=YES
 # You may change the default value for timing out an idle session.
 #idle_session_timeout=600
 #
-# You may change the default value for timing out a data connection.
+# You may change the default value for
+
+ timing out a data connection.
 #data_connection_timeout=120
 #
 # Enable this and the server will recognise asynchronous ABOR requests. Not
