@@ -1,4 +1,4 @@
-baseURL = "https://p-tech-site.netlify.app/" 
+baseURL = "https://p-tech.net.pl/" 
 title = "P-TECH"
 theme = ["zzo"]
 
@@ -13,7 +13,7 @@ hasCJKLanguage = false
 summaryLength = 70
 buildFuture = true
 
-copyright = "&copy;{year}, [P-TECH](https://p-tech-site.netlify.app/) - All rights reserved"
+copyright = "&copy;{year}, [P-TECH](https://p-tech.net.pl/) - All rights reserved"
 timeout = 10000
 enableEmoji = true
 paginate = 10
