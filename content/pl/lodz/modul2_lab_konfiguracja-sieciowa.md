@@ -104,3 +104,7 @@ ip address add 192.168.1.10/24 dev enp0s3
 * Skonfiguruj serwer DHCP na swoim komputerze.
 * Skonfiguruj połączenie VPN.
 * Użyj narzędzia `tcpdump` do analizy ruchu sieciowego.
+* Użyj narzędzi: `ifconfig`, `netstat`, `ss`, `ip`, `ethtool`, `iperf3`. Obejrzyj poniższy film, aby zobaczyć, w jaki sposób używać tych narzędzi.
+
+{{< youtube fc8wMXoX8Lw >}}
+<figcaption>Rozwiązywanie problemów z wolną komunikacją sieciową lub przekroczeniem limitu czasu połączenia w systemie Linux</figcaption>
