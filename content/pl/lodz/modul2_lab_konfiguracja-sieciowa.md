@@ -101,10 +101,12 @@ ip address add 192.168.1.10/24 dev enp0s3
 
 
 **Zadania rozszerzające:**
-* Skonfiguruj serwer DHCP na swoim komputerze.
+* Skonfiguruj serwer DHCP na swoim komputerze. 
+Podpowiedź: Zobacz ten artykuł: [https://p-tech.net.pl/pl/katowice/serwer-dhcp/ ](https://p-tech.net.pl/pl/katowice/serwer-dhcp/)
 * Skonfiguruj połączenie VPN.
 * Użyj narzędzia `tcpdump` do analizy ruchu sieciowego.
-* Użyj narzędzi: `ifconfig`, `netstat`, `ss`, `ip`, `ethtool`, `iperf3`. Obejrzyj poniższy film, aby zobaczyć, w jaki sposób używać tych narzędzi.
+* Użyj narzędzi: `ifconfig`, `netstat`, `ss`, `ip`, `ethtool`, `iperf3`. 
+Podpowiedź: Obejrzyj poniższy film, aby zobaczyć, w jaki sposób ich używać.
 
 {{< youtube fc8wMXoX8Lw >}}
 <figcaption>Rozwiązywanie problemów z wolną komunikacją sieciową lub przekroczeniem limitu czasu połączenia w systemie Linux</figcaption>
