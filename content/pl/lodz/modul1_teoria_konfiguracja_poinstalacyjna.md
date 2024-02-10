@@ -77,16 +77,16 @@ Niektóre dystrybucje np.: Debian 12, Arch nie instalują domyślnie żadnego de
 
 3. **Wprowadzenie do fail2ban.**
 
-Fail2Ban jest nieocenionym narzędziem dla administratorów systemów, zapewniającym ochronę przed atakami brute-force i innymi rodzajami prób nieautoryzowanego dostępu do serwerów. Program działa poprzez monitorowanie logów systemowych w poszukiwaniu wzorców nieudanych prób logowania i automatycznie blokuje adresy IP, które te wzorce generują, używając zapory sieciowej.
+Fail2ban jest nieocenionym narzędziem dla administratorów systemów, zapewniającym ochronę przed atakami brute-force i innymi rodzajami prób nieautoryzowanego dostępu do serwerów. Program działa poprzez monitorowanie logów systemowych w poszukiwaniu wzorców nieudanych prób logowania i automatycznie blokuje adresy IP, które te wzorce generują, używając zapory sieciowej.
 
-Instalacja Fail2Ban różni się w zależności od dystrybucji systemu operacyjnego. Na systemach CentOS wymagane jest dodatkowo zainstalowanie repozytorium EPEL, aby uzyskać dostęp do pakietu Fail2Ban, natomiast na systemach Debian/Ubuntu instalacja jest bezpośrednia za pomocą menedżera pakietów apt.
+Instalacja fail2ban różni się w zależności od dystrybucji systemu operacyjnego. Na systemach CentOS wymagane jest dodatkowo zainstalowanie repozytorium EPEL, aby uzyskać dostęp do pakietu fail2ban, natomiast na systemach Debian/Ubuntu instalacja jest bezpośrednia za pomocą menedżera pakietów apt.
 
-Konfiguracja Fail2Ban rozpoczyna się od skopiowania domyślnego pliku konfiguracyjnego `jail.conf` do `jail.local`, co pozwala na bezpieczną personalizację ustawień bez ryzyka ich nadpisania podczas aktualizacji. Podstawowe parametry konfiguracyjne zawarte w pliku `jail.local` umożliwiają administratorom dostosowanie, jakie adresy IP ignorować (`ignoreip`), określenie czasu bana (`bantime`), czasu poszukiwania (`findtime`) oraz maksymalnej liczby prób przed zbanowaniem (`maxretry`).
+Konfiguracja fail2ban rozpoczyna się od skopiowania domyślnego pliku konfiguracyjnego `jail.conf` do `jail.local`, co pozwala na bezpieczną personalizację ustawień bez ryzyka ich nadpisania podczas aktualizacji. Podstawowe parametry konfiguracyjne zawarte w pliku `jail.local` umożliwiają administratorom dostosowanie, jakie adresy IP ignorować (`ignoreip`), określenie czasu bana (`bantime`), czasu poszukiwania (`findtime`) oraz maksymalnej liczby prób przed zbanowaniem (`maxretry`).
 
 Specyficzne dla serwisów konfiguracje, takie jak ochrona SSH, są realizowane przez dodanie plików konfiguracyjnych w katalogu `jail.d`, np. `sshd.local`, gdzie można szczegółowo określić polityki dotyczące specyficznych usług, takich jak SSH.
 
-Fail2Ban jest szczególnie elastyczny dzięki możliwości tworzenia własnych filtrów za pomocą wyrażeń regularnych, co umożliwia ochronę przed specyficznymi zagrożeniami, jak np. atakami na strony WordPress poprzez nieautoryzowane próby logowania.
+Fail2ban jest szczególnie elastyczny dzięki możliwości tworzenia własnych filtrów za pomocą wyrażeń regularnych, co umożliwia ochronę przed specyficznymi zagrożeniami, jak np. atakami na strony WordPress poprzez nieautoryzowane próby logowania.
 
-Uruchomienie i zarządzanie Fail2Ban odbywa się za pomocą systemowego menedżera pakietów i narzędzia `fail2ban-client`, które umożliwia sprawdzanie statusu działania, monitorowanie zbanowanych adresów IP oraz zarządzanie indywidualnymi zbanowanymi adresami.
+Uruchomienie i zarządzanie fail2ban odbywa się za pomocą systemowego menedżera pakietów i narzędzia `fail2ban-client`, które umożliwia sprawdzanie statusu działania, monitorowanie zbanowanych adresów IP oraz zarządzanie indywidualnymi zbanowanymi adresami.
 
-Dzięki Fail2Ban, administratorzy systemów mogą skutecznie zwiększyć poziom bezpieczeństwa swoich serwerów, dynamicznie reagując na próby nieautoryzowanego dostępu i automatycznie ograniczając potencjalne zagrożenia. Implementacja tego narzędzia jest kluczowym elementem strategii obronnej każdego serwera, zwłaszcza tych narażonych na ataki z Internetu.
+Dzięki fail2ban, administratorzy systemów mogą skutecznie zwiększyć poziom bezpieczeństwa swoich serwerów, dynamicznie reagując na próby nieautoryzowanego dostępu i automatycznie ograniczając potencjalne zagrożenia. Implementacja tego narzędzia jest kluczowym elementem strategii obronnej każdego serwera, zwłaszcza tych narażonych na ataki z Internetu.
