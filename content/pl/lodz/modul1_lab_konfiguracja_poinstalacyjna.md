@@ -505,7 +505,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-#### Konfiguracja firewalla
+#### Konfiguracja firewall
 
    - Zadanie: Skonfiguruj `ufw` (Uncomplicated Firewall) lub `firewalld` w zależności od dystrybucji, aby zezwolić tylko na ruch na portach 22 (SSH), 80 (HTTP) i 443 (HTTPS).
    - Cel: Nauka podstawowych zasad ograniczania dostępu do usług sieciowych w celu zwiększenia bezpieczeństwa systemu.
