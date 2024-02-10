@@ -37,7 +37,7 @@ image: images/2024-thumbs/konfiguracja-linux.webp
 
 <script async id="asciicast-574590" src="https://asciinema.org/a/574590.js"></script>
 
-#### OpenSSH : KeyBoard-Intereractive Auth
+##### OpenSSH : KeyBoard-Intereractive Auth
 
 OpenSSH jest już domyślnie zainstalowany, więc nie ma potrzeby instalowania nowych pakietów. Domyślnie możesz logować się za pomocą KeyBoard-Interactive Authentication, ale zmień niektóre ustawienia dla bezpieczeństwa jak poniżej.
 
@@ -45,7 +45,7 @@ Jeśli OpenSSH jednak nie jest jeszcze zainstalowany możesz go zainstalować za
 
 {{< tabs SLES Debian RedHat >}}
   {{< tab >}}
-  ### SLES
+  ##### SLES
   Aby zainstalować OpenSSH wpisz:
 ```bash
   # odśwież repozytoria
@@ -65,7 +65,7 @@ Jeśli OpenSSH jednak nie jest jeszcze zainstalowany możesz go zainstalować za
   ```
   {{< /tab >}}
   {{< tab >}}
-  ### Debian
+  ##### Debian
   Aby zainstalować OpenSSH wpisz:
 ```bash
   # odśwież repozytoria
@@ -81,7 +81,7 @@ Jeśli OpenSSH jednak nie jest jeszcze zainstalowany możesz go zainstalować za
   ```
   {{< /tab >}}
   {{< tab >}}
-  ### Red Hat
+  ##### Red Hat
   Aby zainstalować OpenSSH wpisz:
 ```bash
   sudo yum install openssh-server -y
@@ -105,7 +105,7 @@ Następnie na maszynie z Linux, za pomocą której zamierzasz łączyć się do 
 
 {{< tabs SLES Debian RedHat >}}
   {{< tab >}}
-  ### SLES
+  ##### SLES
   Aby zainstalować OpenSSH wpisz:
 ```bash
   # odśwież repozytoria
@@ -115,7 +115,7 @@ Następnie na maszynie z Linux, za pomocą której zamierzasz łączyć się do 
   ```
   {{< /tab >}}
   {{< tab >}}
-  ### Debian
+  ##### Debian
   Aby zainstalować OpenSSH wpisz:
 ```bash
   # odśwież repozytoria
@@ -125,7 +125,7 @@ Następnie na maszynie z Linux, za pomocą której zamierzasz łączyć się do 
   ```
   {{< /tab >}}
   {{< tab >}}
-  ### Red Hat
+  ##### Red Hat
   Aby zainstalować OpenSSH wpisz:
 ```bash
   sudo yum install openssh-clients -y
@@ -135,11 +135,11 @@ Następnie na maszynie z Linux, za pomocą której zamierzasz łączyć się do 
   {{< /tab >}}
 {{< /tabs >}}
 
-#### Instalacja firewalld
+##### Instalacja firewalld
 
 {{< tabs SLES Debian RedHat >}}
   {{< tab >}}
-  ### SLES
+  ##### SLES
   Aby zainstalować firewalld wpisz:
 ```bash
   # odśwież repozytoria
@@ -153,7 +153,7 @@ Następnie na maszynie z Linux, za pomocą której zamierzasz łączyć się do 
   ```
   {{< /tab >}}
   {{< tab >}}
-  ### Debian
+  ##### Debian
   Aby zainstalować firewalld wpisz:
 ```bash
   # odśwież repozytoria
@@ -167,7 +167,7 @@ Następnie na maszynie z Linux, za pomocą której zamierzasz łączyć się do 
   ```
   {{< /tab >}}
   {{< tab >}}
-  ### Red Hat
+  ##### Red Hat
   Aby zainstalować firewalld wpisz:
 ```bash
   sudo yum install firewalld -y
@@ -185,32 +185,30 @@ Domyślnie firewalld po instalacji ma zaimplementowaną usługę SSH jako dozwol
 
 {{< tabs SLES Debian RedHat >}}
   {{< tab >}}
-  ### SLES
+  ##### SLES
 ```bash
-  linux:~ # sudo firewall-cmd --add-service=ssh --permanent
+  sudo firewall-cmd --add-service=ssh --permanent
   success
-  linux:~ # sudo firewall-cmd --reload
+  sudo firewall-cmd --reload
   success
   ```
   {{< /tab >}}
   {{< tab >}}
-  ### Debian
+  ##### Debian
 ```bash
   sudo ufw allow ssh
 ```
   {{< /tab >}}
   {{< tab >}}
-  ### Red Hat
+  ##### Red Hat
 ```bash
-  linux:~ # sudo firewall-cmd --add-service=ssh --permanent
-  success
-  linux:~ # sudo firewall-cmd --reload
-  success
+  sudo firewall-cmd --add-service=ssh --permanent
+  sudo firewall-cmd --reload
 ```
   {{< /tab >}}
 {{< /tabs >}}
 
-#### Konfiguracja klienta SSH 
+##### Konfiguracja klienta SSH 
 
 Połącz się z serwerem SSH za pomocą zwykłego użytkownika.
 
@@ -225,7 +223,7 @@ Password:          # login user's password
 adrian@example.com:~>    # just logined
 ```
 
-#### Uwierzytelnianie parą kluczy SSH
+##### Uwierzytelnianie parą kluczy SSH
 
 Skonfiguruj serwer SSH do logowania za pomocą Key-Pair Authentication. Utwórz klucz prywatny dla klienta i klucz publiczny dla serwera, aby to zrobić.
 
@@ -285,7 +283,7 @@ ssh -i ~/.ssh/p-tech student@IP-ADDRRESS
 
 Podaj passphrase
 
-#### Automatyzacja
+##### Automatyzacja
 
 Dodaj poniższe wpisy do pliku .bashrc lub .zshrc znajdującego się w katalogu /home/user. Pierwszy wpis uruchamia agenta ssh, a drugi ładuje do niego Twój klucz prywatny. Jeśli ustawiłeś passphrase na swoim kluczu, agent zapyta o jego wpisanie. Możesz dodać więcej niż jeden klucz. Należy pamiętać, że za każdym razem, gdy Bash lub Zsh uruchomi proces restartu lub rozruchu systemu operacyjnego, w CLI poprosi o podanie passphrase.
 
@@ -440,7 +438,7 @@ Aby odłączyć nieaktywnych klientów, jeśli używasz bash jako powłoki, moż
 # Nie widzę sensu zamykania sesji od legalnych użytkowników.
 ```
 
-#### Bezpieczna konfiguracja szyfrów/MAC/Kex dostępnych w SSH 
+##### Bezpieczna konfiguracja szyfrów/MAC/Kex dostępnych w SSH 
 
 ```vim
 KexAlgorithms diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha256,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,curve25519-sha256,curve25519-sha256@libssh.org
@@ -468,8 +466,9 @@ Przeładuj usługę SSH
 ```bash
 sudo systemctl reload sshd
 ```
+---
 
-### **Wprowadzenie do bezpieczeństwa systemu. Przeglądanie dzienników systemowych**
+### **Wprowadzenie do bezpieczeństwa systemu.**
 
 #### Wprowadzenie do bezpieczeństwa systemu Linux
 
@@ -823,6 +822,8 @@ To jest zbyt `głośne`, chcę tylko krytyczne i wyżej (bez błędów). Komunik
 ```
 
 Ustaw na: 3 4 1 3 i problem rozwiązany. Teraz, gdy użyjesz tail do oglądania logów, zobaczysz, że logi są dużo bardziej czytelne.
+
+---
 
 ### **Wprowadzenie do fail2ban.**
 
