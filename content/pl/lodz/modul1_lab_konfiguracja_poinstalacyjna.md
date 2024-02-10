@@ -829,7 +829,7 @@ Ustaw na: 3 4 1 3 i problem rozwiązany. Teraz, gdy użyjesz tail do oglądania 
 
 {{< tabs CentOS Ubuntu >}}
   {{< tab >}}
-  ### CentOS
+  ##### CentOS
   Aby zainstalować Fail2Ban na CentOS 7.6, w pierwszej kolejności trzeba będzie zainstalować repozytorium EPEL (ang. _Extra Packages for Enterprise Linux_). EPEL zawiera dodatkowe pakiety dla wszystkich wersji CentOS, jednym z tych dodatkowych pakietów jest Fail2Ban.
   ```bash
   sudo yum install epel-release
@@ -837,7 +837,7 @@ Ustaw na: 3 4 1 3 i problem rozwiązany. Teraz, gdy użyjesz tail do oglądania 
   ```
   {{< /tab >}}
   {{< tab >}}
-  ### Debian/Ubuntu
+  ##### Debian/Ubuntu
   Dla Debian/Ubuntu wystarczy komenda:
   ```bash
   sudo apt-get install fail2ban
@@ -852,7 +852,6 @@ sudo yum update -y selinux-policy*
 ```
 
 Debian i Ubuntu posiadaja AppArmor. 
-
 
 Po zainstalowaniu, będziemy musieli skonfigurować i dostosować oprogramowanie za pomocą pliku konfiguracyjnego jail.local. Plik jail.local zastępuje plik jail.conf i jest używany w celu zapewnienia bezpieczeństwa aktualizacji konfiguracji użytkownika.
 
@@ -885,7 +884,7 @@ backend = systemd
   * Findtime jest parametrem, który służy do sprawdzenia, czy host musi zostać zbanowany czy nie. Gdy host generuje maksimum w ostatnim findtime, jest on banowany.
   * Maxretry jest parametrem używanym do ustawienia limitu liczby prób przez hosta, po przekroczeniu tego limitu, host jest banowany.
 
-#### Dodawanie pliku więzienia (ang. jail), w celu ochrony SSH.
+##### Dodawanie pliku więzienia (ang. jail), w celu ochrony SSH.
 
 Utwórz nowy plik za pomocą edytora Vim.
 
@@ -920,7 +919,7 @@ action = iptables-allports
   * Maxretry służy do ustawienia maksymalnego limitu nieudanych wpisów logowania.
   * Parametr Bantime służy do ustawienia czasu trwania sekund, na który host musi zostać zablokowany.
 
-#### Uruchomienie usługi Fail2Ban
+##### Uruchomienie usługi Fail2Ban
 
 Jeśli jeszcze nie używasz zapory sieciowej CentOS, uruchom ją:
 
@@ -943,7 +942,7 @@ sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
 ```
 
-#### Śledzenie wpisów logowania fail2ban
+##### Śledzenie wpisów logowania fail2ban
 
 Poniższe polecenie służy do sprawdzenia, które próby zalogowania się do serwera przez post ssh nie powiodły się.
 
@@ -958,7 +957,7 @@ Feb 12 19:27:12 centos sshd[25729]: Failed password for root from 150.10.0.107 p
 Feb 13 15:05:35 deb_usr sshd[1617]: Failed password for invalid user pi from 42.236.138.215 port 58182 ssh2
 ```
 
-#### Sprawdzanie zbanowanych adresów IP przez Fail2Ban
+##### Sprawdzanie zbanowanych adresów IP przez Fail2Ban
 
 Poniższe polecenie służy do uzyskania listy zablokowanych adresów IP, które zostały rozpoznane jako zagrożenia metodą brute force.
 
@@ -966,7 +965,7 @@ Poniższe polecenie służy do uzyskania listy zablokowanych adresów IP, które
 iptables -L –n
 ```
 
-#### Sprawdzanie statusu Fail2Ban
+##### Sprawdzanie statusu Fail2Ban
 
 Użyj następującej komendy, aby sprawdzić status plików jail w Fail2Ban:
 
@@ -988,14 +987,15 @@ Poniższe polecenie wyświetli zbanowane adresy IP dla danego więzienia (jail).
 ```bash
 sudo fail2ban-client status sshd
 ```
-#### Usunięcie zbanowanego adresu IP
+
+##### Usunięcie zbanowanego adresu IP
 
 W celu usunięcia adresu IP z zablokowanej listy, parametr IPADDRESS jest ustawiony na odpowiedni adres IP, który wymaga odbanowania. Nazwa &#8222;sshd&#8221; jest nazwą więzienia, w tym przypadku jest to więzienie &#8222;sshd&#8221;, które skonfigurowaliśmy powyżej. Poniższe polecenie pozwala usunąć adres IP.
 
 ```bash
 sudo fail2ban-client set sshd unbanip IPADDRESS
 ```
-#### Dodawanie własnego filtra w celu zwiększenia ochrony
+##### Dodawanie własnego filtra w celu zwiększenia ochrony
 
 Fail2ban umożliwia tworzenie własnych filtrów. Poniżej krótki opis konfiguracji jednego z nich.
 
