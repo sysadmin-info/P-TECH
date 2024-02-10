@@ -22,7 +22,7 @@ image: images/2024-thumbs/konfiguracja-linux.webp
 ### Moduł 1: Konfiguracja poinstalacyjna - teoria
 #### Czas Trwania: 15 minut
 
-1. **Konfiguracja serwera SSH: instalacja, generowanie kluczy RSA.**
+#### 1. **Konfiguracja serwera SSH: instalacja, generowanie kluczy RSA.**
 
 Secure Shell (SSH) jest niezastąpionym narzędziem w arsenale każdego specjalisty IT, umożliwiając bezpieczne zarządzanie maszynami zdalnymi poprzez zaszyfrowane połączenia. Umożliwia wykonanie szerokiej gamy zadań, od prostego logowania po zaawansowane operacje przesyłania plików i tunelowania portów. Instalacja serwera SSH zaczyna się od wyboru odpowiedniego pakietu dla dystrybucji Linuxa, jak OpenSSH, dostępnego w większości repozytoriów systemowych.
 
@@ -36,7 +36,7 @@ Automatyzacja i zarządzanie sesjami, w tym konfiguracja nieaktywnych interwał�
 
 Na koniec, stosowanie się do najlepszych praktyk bezpieczeństwa, jak wyłączenie protokołu 1 na rzecz protokołu 2, jest niezbędne dla zapewnienia najwyższego poziomu ochrony. Wdrażając opisane w ćwiczeniach zalecenia, można skutecznie zabezpieczyć serwer SSH przed nieautoryzowanym dostępem, a tym samym zwiększyć ogólną postawę bezpieczeństwa infrastruktury IT.
 
-2. **Wprowadzenie do bezpieczeństwa systemu: przeglądanie dzienników systemowych.**
+#### 2. **Wprowadzenie do bezpieczeństwa systemu: przeglądanie dzienników systemowych.**
 
 Przeglądanie dzienników systemowych w Linux jest kluczowym elementem zarządzania systemem i diagnozowania problemów. Dzienniki te zawierają informacje o działaniu systemu, aplikacji i usług systemowych, oferując wgląd w błędy, ostrzeżenia i inne zdarzenia systemowe. Główne narzędzia do przeglądania dzienników to `journalctl` dla systemów używających systemd oraz tradycyjne pliki dzienników w `/var/log`, takie jak `/var/log/syslog` czy `/var/log/messages`. Umożliwiają one monitorowanie systemu w czasie rzeczywistym, analizę przyczyn problemów oraz planowanie działań prewencyjnych, co jest niezbędne dla utrzymania zdrowia i stabilności systemu.
 
@@ -75,7 +75,7 @@ To nie jest kompletna lista – nie tylko syslog tworzy logi w /var/log.
 Niektóre dystrybucje np.: Debian 12, Arch nie instalują domyślnie żadnego demona syslog.
 
 
-3. **Wprowadzenie do fail2ban.**
+#### 3. **Wprowadzenie do fail2ban.**
 
 Fail2ban jest nieocenionym narzędziem dla administratorów systemów, zapewniającym ochronę przed atakami brute-force i innymi rodzajami prób nieautoryzowanego dostępu do serwerów. Program działa poprzez monitorowanie logów systemowych w poszukiwaniu wzorców nieudanych prób logowania i automatycznie blokuje adresy IP, które te wzorce generują, używając zapory sieciowej.
 
