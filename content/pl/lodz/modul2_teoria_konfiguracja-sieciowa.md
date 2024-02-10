@@ -72,6 +72,6 @@ W świecie sieci komputerowych, zdolność do monitorowania, testowania i rozwi�
 
 Wykorzystanie tych narzędzi w praktyce wymaga nie tylko znajomości ich składni i opcji, ale również zrozumienia podstawowych koncepcji sieciowych. Zarządzanie adresami IP, analiza ruchu, testowanie przepustowości i śledzenie trasy pakietów to podstawowe umiejętności każdego administratora sieci. `ip`, `tcpdump`, `iperf3` i `mtr` oferują zaawansowane możliwości w tych obszarach, umożliwiając efektywne zarządzanie i diagnostykę sieci w środowiskach Linux.
 
-Analiza problemów sieciowych - zaniżony transfer danych, opóźnienia za pomocą narzędzi ze statusem deprecated takich jak: `ifconfig`, `netstat`, `nslookup`, `route` jak i nowych, które je zastąpiły: `ss`, `ip address`, `ip route`, `dig`, a także diagnostyka za pomocą: `ethtool`, `iperf3`, przeglądanie logów pod kątem problemów sieciowych celem wstępnej analizy problemu 
+Dodatkowo dla zainteresowanych:
 
-Artykuł po angielsku: [Troubleshooting slow network communication or Connection Timeouts in Linux](https://sysadmin.info.pl/en/blog/troubleshooting-slow-network-communication-or-connection-timeouts-in-linux/)
+Analiza problemów sieciowych takich jak: zaniżony transfer danych i opóźnienia, za pomocą narzędzi ze statusem deprecated takich jak: `ifconfig`, `netstat`, `nslookup`, `route` jak i nowych, które je zastąpiły: `ss`, `ip address`, `ip route`, `dig`, a także diagnostyka za pomocą: `ethtool`, `iperf3`, przeglądanie logów pod kątem problemów sieciowych celem wstępnej analizy problemu. 
