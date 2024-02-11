@@ -32,7 +32,7 @@ image: images/2024-thumbs/dystrybucje-linux.webp
       ✅ [Ventoy](https://www.ventoy.net/)
       ✅ IODD ST400 - koszt samego urządzenia wynosi około 500 PLN. Do tego należy doliczyć osobno cenę dysku. Nie jest to tanie rozwiązanie, ale dla osób nazywanych `distro hoppers` lub specjalistów, którzy używają zawodowo takich rozwiązań - koszt urządzenia nie ma znaczenia. W przypadku firmy można wrzucić to sobie w koszty. Przydaje się to w sytuacji, gdy mamy kolejne wydania jakiejś dystrybucji i chcemy testować instalacje różnych wersji tej samej dystrybucji na różnych serwerach fizycznych. 
 
-### Dla chętnych:
+### Dla chętnych, którzy będą zainteresowani rozwojem zawodowym w kierunkach SysOps, DevOps, SecOps:
 
 #### 2. **Darmowy serwer ssh.**
 
@@ -123,3 +123,51 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
 ✅ Automatyzacja - darmowe rozwiązania
    🌐 [AWX](https://github.com/ansible/awx)
    🌐 [Ansible Semaphore](https://www.semui.co/)
+
+#### 7. CI/CD - Continuous Integration/Continuous Delivery
+
+🌐 [GitLab](https://about.gitlab.com/)
+🌐 [Jenkins](https://www.jenkins.io/)
+🌐 [TeamCity](https://www.jetbrains.com/teamcity/)
+🌐 [Bamboo](https://www.atlassian.com/software/bamboo)
+🌐 [GoCD](https://www.gocd.org/)
+🌐 [IBM Urbancode](https://www.ibm.com/products/urbancode)
+🌐 [CircleCI](https://circleci.com/)
+🌐 [Bitrise](https://github.com/bitrise-io/bitrise)
+
+#### 8. Code repositories
+
+🌐 [Git](https://git-scm.com/)
+🌐 [Github](https://github.com/)
+🌐 [Bitbucket](https://bitbucket.org/)
+🌐 [Mercurial](https://www.mercurial-scm.org/)
+🌐 [Fossil](https://fossil-scm.org/home/doc/trunk/www/index.wiki)
+🌐 [Apache Subversion](https://subversion.apache.org/)
+
+#### 9. Cybersecurity
+
+✅ Nauka
+🌐 [Hack The Box](https://www.hackthebox.com/)
+🌐 [Try Hack Me](https://tryhackme.com/)
+🌐 [VulnHub](https://www.vulnhub.com/)
+🌐 [HackerOne](https://www.hackerone.com/)
+
+✅ Portale
+🌐 [infosec writeups](https://infosecwriteups.com/)
+🌐 [System Weakness](https://systemweakness.com/)
+🌐 [OWASP](https://owasp.org/)
+
+✅ Software
+🌐 [PortSwigger](https://portswigger.net/)
+🌐 [Exploit Database](https://www.exploit-db.com/)
+🌐 [Wazuh](https://wazuh.com/)
+🌐 [Suricata](https://suricata.io/)
+🌐 [Snort](https://www.snort.org/)
+🌐 [SonarQube](https://www.sonarsource.com/products/sonarqube/)
+🌐 [Mend](https://www.mend.io/)
+
+✅ Operating systems for pentesters
+🌐 [Kali](https://www.kali.org/)
+🌐 [Parrot Security](https://www.parrotsec.org/)
+🌐 [BackBox](https://www.backbox.org/)
+🌐 [Black Arch](https://blackarch.org/)
