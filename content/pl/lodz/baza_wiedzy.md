@@ -16,7 +16,7 @@ series:
 - Łódź
 categories:
 - baza wiedzy
-image: images/2024-thumbs/dystrybucje-linux.webp
+image: images/2024-thumbs/kb.webp
 ---
 ### Dla chętnych, którzy będą zainteresowani rozwojem zawodowym w kierunkach SysOps, DevOps, SecOps:
 
