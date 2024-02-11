@@ -29,7 +29,6 @@ image: images/2024-thumbs/dystrybucje-linux.webp
       ✅ Rozpoczęcie procesu instalacji systemu Linux.
 
    📌Jako ciekawostka:
-
       ✅ [Ventoy](https://www.ventoy.net/)
       ✅ IODD ST400 - koszt samego urządzenia wynosi około 500 PLN. Do tego należy doliczyć osobno cenę dysku. Nie jest to tanie rozwiązanie, ale dla osób nazywanych `distro hoppers` lub specjalistów, którzy używają zawodowo takich rozwiązań - koszt urządzenia nie ma znaczenia. W przypadku firmy można wrzucić to sobie w koszty. Przydaje się to w sytuacji, gdy mamy kolejne wydania jakiejś dystrybucji i chcemy testować instalacje różnych wersji tej samej dystrybucji na różnych serwerach fizycznych. 
 
