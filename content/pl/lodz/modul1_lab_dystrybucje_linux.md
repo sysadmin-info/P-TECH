@@ -63,11 +63,13 @@ image: images/2024-thumbs/dystrybucje-linux.webp
       Ma dwa dodatkowe sloty m.2 w porównaniu do DELL WYSE 5070. Jest nieco tańszy od DELL WYSE 5070 i wydaje się lepszym rozwiązaniem ze względu na wspomniane sloty. 
 
    ✅ Fujitsu ESPRIMO Q920 
-      Cena zbliżona do DELL WYSE 5070. 
+      Cena zbliżona do DELL WYSE 5070. Niestety w porównaniu do DELL WYSE ma tylko 16 GB RAM. Używam w domu.
 
    ✅ Intel NUC
       Cena zbliżona do DELL WYSE 5070.
 
-   ✅ Jakikolwiek sensowny thin-client lub coś zbliżonego do Intel NUC, lub Raspberry Pi.    
+   ✅ Jakikolwiek sensowny thin-client lub coś zbliżonego do Intel NUC, lub Raspberry Pi.
+
+Porównanie poszczególnych modeli wymienionych wyżej: [https://www.hardware-corner.net/compare/Dell-OptiPlex-5070M_vs_Fujitsu-Esprimo-Q920/](https://www.hardware-corner.net/compare/Dell-OptiPlex-5070M_vs_Fujitsu-Esprimo-Q920/). Z rozwijanej listy można wybrać modele i porównać między sobą.
 
 Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżetu. Tu chodzi o coś, co będzie w stanie pracować 24h na dobę, nie będzie hałasować i zużycie prądu zamknie się w kosztach ~ 200 PLN lub mniej rocznie.
