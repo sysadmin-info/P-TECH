@@ -91,27 +91,26 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
       🌐 [Microsoft Azure Virtual Machines](https://azure.microsoft.com/en-us/products/virtual-machines)
    
    ✅ Konteneryzacja
-      
-      🌐 [Docker](https://www.docker.com/)
-      🌐 [Docker Swarm](https://docs.docker.com/engine/swarm/key-concepts/)
+   🌐 [Docker](https://www.docker.com/)
+   🌐 [Docker Swarm](https://docs.docker.com/engine/swarm/key-concepts/)
       
    ❇️ Kubernetes
-         🌐 [K8S](https://kubernetes.io/)
-         🌐 [K3S](https://k3d.io/)
-         🌐 [Minikube](https://minikube.sigs.k8s.io/docs/)
-         🌐 [MicroK8s](https://microk8s.io/)
-         🌐 [KinD](https://kind.sigs.k8s.io/)
-         🌐 [KOS](https://docs.k0sproject.io/v1.27.2+k0s.0/)
+      🌐 [K8S](https://kubernetes.io/)
+      🌐 [K3S](https://k3d.io/)
+      🌐 [Minikube](https://minikube.sigs.k8s.io/docs/)
+      🌐 [MicroK8s](https://microk8s.io/)
+      🌐 [KinD](https://kind.sigs.k8s.io/)
+      🌐 [KOS](https://docs.k0sproject.io/v1.27.2+k0s.0/)
 
    ❇️ Narzędzia dla Kubernetes
-         🌐 [Kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/)
-         🌐 [Rancher](https://www.rancher.com/)
-         🌐 [Portainer](https://www.portainer.io/)
-         🌐 [Kubeflow](https://www.kubeflow.org/)
-         🌐 [K9S](https://k9scli.io/topics/install/)
-         🌐 [Octant](https://octant.dev/)
-         🌐 [Kustomize](https://kustomize.io/)
-         🌐 [Helm](https://helm.sh/)
+      🌐 [Kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/)
+      🌐 [Rancher](https://www.rancher.com/)
+      🌐 [Portainer](https://www.portainer.io/)
+      🌐 [Kubeflow](https://www.kubeflow.org/)
+      🌐 [K9S](https://k9scli.io/topics/install/)
+      🌐 [Octant](https://octant.dev/)
+      🌐 [Kustomize](https://kustomize.io/)
+      🌐 [Helm](https://helm.sh/)
 
    ✅Automatyzacja
       🌐 [Ansible](https://www.ansible.com/)
