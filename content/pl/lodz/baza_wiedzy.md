@@ -1,7 +1,7 @@
 ---
-title: "Moduł 1 - Dystrybucje Linux - zadania"
-date:  2024-02-07T15:30:00+00:00
-description: "Moduł 1 - Dystrybucje Linux - zadania"
+title: "Baza wiedzy"
+date:  2024-02-11T15:30:00+00:00
+description: "Baza wiedzy"
 draft: false
 hideToc: false
 enableToc: true
@@ -15,7 +15,7 @@ tags:
 series:
 - Łódź
 categories:
-- dystrybucje Linux
+- baza wiedzy
 image: images/2024-thumbs/dystrybucje-linux.webp
 ---
 ### Dla chętnych, którzy będą zainteresowani rozwojem zawodowym w kierunkach SysOps, DevOps, SecOps:
