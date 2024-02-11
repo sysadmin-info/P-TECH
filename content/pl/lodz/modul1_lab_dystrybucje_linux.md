@@ -32,7 +32,9 @@ image: images/2024-thumbs/dystrybucje-linux.webp
       ✅ [Ventoy](https://www.ventoy.net/)
       ✅ IODD ST400 - koszt samego urządzenia wynosi około 500 PLN. Do tego należy doliczyć osobno cenę dysku. Nie jest to tanie rozwiązanie, ale dla osób nazywanych `distro hoppers` lub specjalistów, którzy używają zawodowo takich rozwiązań - koszt urządzenia nie ma znaczenia. W przypadku firmy można wrzucić to sobie w koszty. Przydaje się to w sytuacji, gdy mamy kolejne wydania jakiejś dystrybucji i chcemy testować instalacje różnych wersji tej samej dystrybucji na różnych serwerach fizycznych. 
 
-#### 2. **Dla chętnych - darmowy serwer ssh.**
+### Dla chętnych:
+
+#### 2. **Darmowy serwer ssh.**
 
 📌Projekt FROG to darmowa oferta małych (malutkich!) serwerów VPS przeznaczonych do nauki administracji serwerami, hostingu prostych aplikacji (np. checki, crony) i hostowania niewielkich stron WWW. Serwery są darmowe, ale wymagają wpłaty dowolnej kwoty (np. 5zł) w ramach weryfikacji tożsamości użytkownika. Jest to opłata jednorazowa. Możesz posiadać tylko JEDEN darmowy serwer w usłudze FROG. 🐸 [Frog](https://frog.mikr.us/)
 
@@ -112,8 +114,12 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
       🌐 [Kustomize](https://kustomize.io/)
       🌐 [Helm](https://helm.sh/)
 
-   ✅Automatyzacja
-      🌐 [Ansible](https://www.ansible.com/)
-      🌐 [Ansible Tower](https://docs.ansible.com/ansible-tower/)
-      🌐 [AWX](https://github.com/ansible/awx)
-      🌐 [Ansible Semaphore](https://www.semui.co/)
+#### 6. **Automatyzacja**
+
+✅ Automatyzacja - płatne rozwiązania (komercyjne)
+   🌐 [Ansible](https://www.ansible.com/)
+   🌐 [Ansible Tower](https://docs.ansible.com/ansible-tower/)
+
+✅ Automatyzacja - darmowe rozwiązania
+   🌐 [AWX](https://github.com/ansible/awx)
+   🌐 [Ansible Semaphore](https://www.semui.co/)
