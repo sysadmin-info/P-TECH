@@ -90,7 +90,7 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
    
    ✅ Konteneryzacja
       🌐 [Docker](https://www.docker.com/)
-      🌐 [Docker] Swarm(https://docs.docker.com/engine/swarm/key-concepts/)
+      🌐 [Docker Swarm](https://docs.docker.com/engine/swarm/key-concepts/)
       ❇️ Kubernetes
          🌐[K8S](https://kubernetes.io/)
          🌐[K3S](https://k3d.io/)
