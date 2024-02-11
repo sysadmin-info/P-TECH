@@ -1,7 +1,7 @@
 ---
 title: "Baza wiedzy"
 date:  2024-02-11T15:30:00+00:00
-description: "Baza wiedzy"
+description: "Baza wiedzy dla chętnych, zainteresowanych rozwojem zawodowym w kierunkach SysOps, DevOps, SecOps."
 draft: false
 hideToc: false
 enableToc: true
@@ -18,7 +18,7 @@ categories:
 - baza wiedzy
 image: images/2024-thumbs/kb.webp
 ---
-### Dla chętnych, którzy będą zainteresowani rozwojem zawodowym w kierunkach SysOps, DevOps, SecOps:
+### Dla chętnych, zainteresowanych rozwojem zawodowym w kierunkach SysOps, DevOps, SecOps.
 
 #### 1. **Źródła i literatura GNU/Linux**
 
