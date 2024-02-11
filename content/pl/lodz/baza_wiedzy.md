@@ -33,7 +33,7 @@ image: images/2024-thumbs/dystrybucje-linux.webp
 🌐 [Chris Titus](https://christitus.com/categories/linux/)
 🌐 [Udemy - kursy Linux](https://www.udemy.com/courses/search/?src=ukw&q=Linux)
 
-#### 2. **Darmowy serwer ssh.**
+#### 2. **Darmowy serwer SSH.**
 
 📌Projekt FROG to darmowa oferta małych (malutkich!) serwerów VPS przeznaczonych do nauki administracji serwerami, hostingu prostych aplikacji (np. checki, crony) i hostowania niewielkich stron WWW. Serwery są darmowe, ale wymagają wpłaty dowolnej kwoty (np. 5zł) w ramach weryfikacji tożsamości użytkownika. Jest to opłata jednorazowa. Możesz posiadać tylko JEDEN darmowy serwer w usłudze FROG. 🐸 [Frog](https://frog.mikr.us/)
 
