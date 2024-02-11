@@ -48,7 +48,7 @@ image: images/2024-thumbs/dystrybucje-linux.webp
 
    ✅ Jak już uruchomisz wersję trial to pamiętaj o darmowych tutorialach, które oferuje każdy z dostawców chmury. Z tymi poradnikami będzie Ci łatwiej wystartować.
 
-#### 4. **Jeśli nie chumra, to może własny Home Lab?**
+#### 4. **Jeśli nie chmura, to może własny homelab?**
 
 📌 Hardware, czyli to, co ważne. Liczy się każda kilowatogodzina. Zatem szukamy rozwiązań energooszczędnych.
 
