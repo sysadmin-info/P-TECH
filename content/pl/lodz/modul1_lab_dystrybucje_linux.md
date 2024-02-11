@@ -73,3 +73,43 @@ image: images/2024-thumbs/dystrybucje-linux.webp
 Porównanie poszczególnych modeli wymienionych wyżej: [https://www.hardware-corner.net/compare/Dell-OptiPlex-5070M_vs_Fujitsu-Esprimo-Q920/](https://www.hardware-corner.net/compare/Dell-OptiPlex-5070M_vs_Fujitsu-Esprimo-Q920/). Z rozwijanej listy można wybrać modele i porównać między sobą.
 
 Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżetu. Tu chodzi o coś, co będzie w stanie pracować 24h na dobę, nie będzie hałasować i zużycie prądu zamknie się w kosztach ~ 200 PLN lub mniej rocznie.
+
+#### 5. **Wirtualizacja, czy konteneryzacja?**
+
+📌 Podejścia są dwa: wirtualizacja, gdzie w grę wchodzi kilka rozwiązań komercyjnych i jedno darmowe, które jest dobrze rozwijane. 
+
+   ✅ Wirtualizacja - darmowe rozwiązania
+      ❇️ [Proxmox](https://www.proxmox.com/en/proxmox-virtual-environment/comparison)
+   ✅ Wirtualizacja - płatne rozwiązania (komercyjne)
+      ❇️ [VMware vSphere](https://www.vmware.com/products/vsphere.html) (darmowe ESXi się skończyło :( [VMware End Of Availability of Perpetual Licensing and SaaS Services](https://blogs.vmware.com/cloud-foundation/2024/01/22/vmware-end-of-availability-of-perpetual-licensing-and-saas-services/) )
+      ❇️ [Oracle Linux KVM](https://www.oracle.com/virtualization/)
+      ❇️ [Citrix Hypervisor](https://www.citrix.com/downloads/citrix-hypervisor/)
+      ❇️ [SUSE Linux Enterprise Server](https://www.suse.com/pl-pl/products/server/)
+      ❇️ [Red Hat Virtualization](https://access.redhat.com/products/red-hat-virtualization)
+      ❇️ [Microsoft Azure Virtual Machines](https://azure.microsoft.com/en-us/products/virtual-machines)
+   
+   ✅ Konteneryzacja
+      ❇️ [Docker](https://www.docker.com/)
+      ❇️ [Docker] Swarm(https://docs.docker.com/engine/swarm/key-concepts/)
+      ❇️ Kubernetes
+         🟢[K8S](https://kubernetes.io/)
+         🟢[K3S](https://k3d.io/)
+         🟢[Minikube](https://minikube.sigs.k8s.io/docs/)
+         🟢[MicroK8s](https://microk8s.io/)
+         🟢[KinD](https://kind.sigs.k8s.io/)
+         🟢[KOS](https://docs.k0sproject.io/v1.27.2+k0s.0/)
+      ❇️ Narzędzia dla Kubernetes
+         🟢[Kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/)
+         🟢[Rancher](https://www.rancher.com/)
+         🟢[Portainer](https://www.portainer.io/)
+         🟢[Kubeflow](https://www.kubeflow.org/)
+         🟢[K9S](https://k9scli.io/topics/install/)
+         🟢[Octant](https://octant.dev/)
+         🟢[Kustomize](https://kustomize.io/)
+         🟢[Helm](https://helm.sh/)
+
+   ✅Automatyzacja
+      ❇️[Ansible](https://www.ansible.com/)
+      ❇️[Ansible Tower](https://docs.ansible.com/ansible-tower/)
+      ❇️[AWX](https://github.com/ansible/awx)
+      ❇️[Ansible Semaphore](https://www.semui.co/)
