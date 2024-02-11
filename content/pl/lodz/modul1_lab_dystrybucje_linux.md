@@ -80,8 +80,10 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
 
    ✅ Wirtualizacja - darmowe rozwiązania
       🌐 [Proxmox](https://www.proxmox.com/en/proxmox-virtual-environment/comparison)
+   
    ✅ Wirtualizacja - płatne rozwiązania (komercyjne)
-      🌐 [VMware vSphere](https://www.vmware.com/products/vsphere.html) (darmowe ESXi się skończyło :( [VMware End Of Availability of Perpetual Licensing and SaaS Services](https://blogs.vmware.com/cloud-foundation/2024/01/22/vmware-end-of-availability-of-perpetual-licensing-and-saas-services/) )
+      🌐 [VMware vSphere](https://www.vmware.com/products/vsphere.html) (
+      🌐 [darmowe ESXi się skończyło :(](https://blogs.vmware.com/cloud-foundation/2024/01/22/vmware-end-of-availability-of-perpetual-licensing-and-saas-services/) )
       🌐 [Oracle Linux KVM](https://www.oracle.com/virtualization/)
       🌐 [Citrix Hypervisor](https://www.citrix.com/downloads/citrix-hypervisor/)
       🌐 [SUSE Linux Enterprise Server](https://www.suse.com/pl-pl/products/server/)
@@ -89,16 +91,19 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
       🌐 [Microsoft Azure Virtual Machines](https://azure.microsoft.com/en-us/products/virtual-machines)
    
    ✅ Konteneryzacja
+      
       🌐 [Docker](https://www.docker.com/)
       🌐 [Docker Swarm](https://docs.docker.com/engine/swarm/key-concepts/)
-      ❇️ Kubernetes
+      
+   ❇️ Kubernetes
          🌐 [K8S](https://kubernetes.io/)
          🌐 [K3S](https://k3d.io/)
          🌐 [Minikube](https://minikube.sigs.k8s.io/docs/)
          🌐 [MicroK8s](https://microk8s.io/)
          🌐 [KinD](https://kind.sigs.k8s.io/)
          🌐 [KOS](https://docs.k0sproject.io/v1.27.2+k0s.0/)
-      ❇️ Narzędzia dla Kubernetes
+
+   ❇️ Narzędzia dla Kubernetes
          🌐 [Kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/)
          🌐 [Rancher](https://www.rancher.com/)
          🌐 [Portainer](https://www.portainer.io/)
