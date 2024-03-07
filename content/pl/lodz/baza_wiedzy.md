@@ -92,8 +92,8 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
       🌐 [Microsoft Azure Virtual Machines](https://azure.microsoft.com/en-us/products/virtual-machines)
    
    ✅ Konteneryzacja
-   🌐 [Docker](https://www.docker.com/)
-   🌐 [Docker Swarm](https://docs.docker.com/engine/swarm/key-concepts/)
+      🌐 [Docker](https://www.docker.com/)
+      🌐 [Docker Swarm](https://docs.docker.com/engine/swarm/key-concepts/)
       
    ❇️ Kubernetes
       🌐 [K8S](https://kubernetes.io/)
@@ -112,6 +112,11 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
       🌐 [Octant](https://octant.dev/)
       🌐 [Kustomize](https://kustomize.io/)
       🌐 [Helm](https://helm.sh/)
+
+   ❇️ Monitoring i cybersecurity dla kontenerów
+      🌐 [Snyk](https://snyk.io/)
+      🌐 [Cilium](https://cilium.io/)
+      🌐 [Trivy](https://trivy.dev/)
 
 #### 6. **Automatyzacja**
 
@@ -157,6 +162,7 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
 🌐 [OWASP](https://owasp.org/)
 
 ✅ Software
+🌐 [Nmap](https://nmap.org/)
 🌐 [PortSwigger](https://portswigger.net/)
 🌐 [Exploit Database](https://www.exploit-db.com/)
 🌐 [Wazuh](https://wazuh.com/)
@@ -164,6 +170,8 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
 🌐 [Snort](https://www.snort.org/)
 🌐 [SonarQube](https://www.sonarsource.com/products/sonarqube/)
 🌐 [Mend](https://www.mend.io/)
+🌐 [Black Duck](https://www.synopsys.com/software-integrity/software-composition-analysis-tools/black-duck-sca.html)
+🌐 [Sonatype Nexus](https://www.sonatype.com/products/sonatype-nexus-repository)
 
 ✅ Systemy operacyjne dla pentesterów
 🌐 [Kali](https://www.kali.org/)
