@@ -301,3 +301,57 @@ RAID poziomów 2,3,4 wymagają zestawienia sprzętowego.
 - **Przypadki użycia**: Nadające się do aplikacji wymagających wydajności, gdzie ochrona danych jest również problemem, ale `RAID 5` lub `6` mogą nie być odpowiednie z powodu ich odpowiednich wad.
 
 Każdy poziom `RAID` oferuje kompromis między wydajnością, pojemnością i redundancją. Wybór poziomu `RAID` zależy od konkretnych wymagań aplikacji, w tym od znaczenia integralności danych, wydajności systemu i ograniczeń kosztowych.
+
+### Kontroler RAID
+
+Kontroler RAID to specjalizowane urządzenie lub oprogramowanie zarządzające tablicą dysków w celu utworzenia systemu RAID (Redundant Array of Independent Disks). Jego główne role to:
+
+- **Zarządzanie tablicami RAID**: Obsługuje konfigurację poziomów RAID (np. RAID 0, RAID 1, RAID 5 itd.), optymalizując redundancję i wydajność w oparciu o wybraną konfigurację RAID.
+- **Dystrybucja danych i redundancja**: W zależności od poziomu RAID zarządza dystrybucją danych na wielu dyskach, wprowadzając redundancję i parzystość w celu ochrony przed awariami dysków.
+- **Optymalizacja wydajności**: Może poprawić wydajność, umożliwiając równoległe odczyty/zapisy na wielu dyskach w konfiguracjach takich jak RAID 0, lub poprzez implementację strategii buforowania.
+- **Obsługa tolerancji na błędy**: W konfiguracjach RAID oferujących redundancję (np. RAID 1, RAID 5, RAID 6) kontroler zarządza procesem odbudowy w przypadku awarii dysku, wykorzystując informacje o redundancji lub parzystości do odzyskania utraconych danych.
+
+- **Kontroler RAID** jest komponentem sprzętowym lub warstwą oprogramowania, która zarządza sposobem przechowywania danych na wielu dyskach w konfiguracji RAID, zwiększając redundancję danych, tolerancję na błędy i czasami wydajność. Kontroler RAID abstrahuje złożoność zarządzania RAID od systemu operacyjnego i użytkowników, prezentując tablicę dysków jako pojedynczą logiczną jednostkę dla systemu.
+
+#### Budowa kontrolera RAID
+
+- **Procesor i pamięć**: Kontrolery RAID często mają własny procesor i pamięć (pamięć podręczna) do zarządzania tablicą RAID, obsługując zadania takie jak obliczenia parzystości (dla RAID 5 lub RAID 6), co odciąża główny procesor CPU i przyspiesza operacje odczytu/zapisu.
+- **Interfejsy i porty**: Kontrolery RAID są wyposażone w wiele interfejsów do jednoczesnego podłączania kilku dysków. Mogą obsługiwać interfejsy takie jak SATA, SAS lub PCIe, w zależności od typu kontrolera RAID i używanych dysków.
+- **Format i połączenie**: Sprzętowe kontrolery RAID mogą być samodzielnymi kartami, które pasują do gniazda PCIe na płycie głównej, lub zintegrowane z płytą główną. Działają jako pośrednik między dyskami a głównym procesorem komputera.
+- **Oprogramowanie/firmware do zarządzania**: Kontrolery RAID są wyposażone w wbudowane oprogramowanie lub firmware, które dostarcza narzędzi do konfigurowania tablic RAID, monitorowania stanu dysków i zarządzania innymi funkcjami związanymi z systemem RAID.
+
+#### Typy kontrolerów RAID
+
+Kontrolery RAID różnią się szeroko pod względem swoich możliwości, w tym typów złączy dysków, które obsługują. Te różnice są istotne dla kompatybilności z różnymi napędami dysków i wymagań dotyczących wydajności. Oto przegląd głównych typów złączy dysków, które mogą obsługiwać kontrolery RAID:
+
+##### SATA (Serial ATA)
+
+- **Zastosowanie**: Głównie używane do łączenia HDD i SSD w aplikacjach konsumenckich i niektórych przedsiębiorstwach.
+- **Wydajność**: Obsługuje prędkości transferu danych do 6 Gb/s (SATA III).
+- **Charakterystyka**: Złącza SATA są zaprojektowane do bezpośredniego połączenia z pojedynczymi napędami i chociaż mogą być używane w konfiguracjach RAID, są generalnie uważane za wolniejsze niż SAS w konfiguracjach z wieloma dyskami.
+
+##### SAS (Serial Attached SCSI)
+
+- **Zastosowanie**: Powszechne w środowiskach przedsiębiorstw do łączenia HDD i SSD.
+- **Wydajność**: Obsługuje wyższe prędkości transferu danych niż SATA, do 12 Gb/s lub 22,5 Gb/s z nowszymi standardami SAS-3 i SAS-4, odpowiednio.
+- **Charakterystyka**: Złącza SAS obsługują wiele napędów na port (konfiguracje punkt-punkt lub rozszerzone), oferując większą elastyczność i skalowalność dla konfiguracji RAID. SAS jest kompatybilny z napędami SATA, co pozwala na mieszanie obu typów w tym samym systemie, ale będą one działać z prędkością najwolniejszego podłączonego napędu.
+
+##### PCIe (Peripheral Component Interconnect Express)
+
+- **Zastosowanie**: Używane do bezpośredniego połączenia z płytą główną, szczególnie dla dysków SSD NVMe, które omijają tradycyjne ograniczenia SATA/SAS.
+- **Wydajność**: Oferuje bardzo wysokie prędkości transferu danych, znacznie przewyższające możliwości SATA/SAS, z PCIe 4.0 i 5.0 osiągającymi prędkości do 16 GT/s i 32 GT/s na pasmo, odpowiednio.
+- **Charakterystyka**: Kontrolery RAID oparte na PCIe mogą bezpośrednio łączyć się z napędami NVMe lub używać pasm PCIe do łączenia zewnętrznych obudów. Konfiguracja ta jest szczególnie korzystna dla wysokowydajnych obliczeń, gier i rozwiązań do przechowywania danych przedsiębiorstw.
+
+##### NVMe (Non-Volatile Memory Express)
+
+- **Zastosowanie**: Chociaż NVMe jest bardziej protokołem niż typem złącza, kontrolery RAID zaprojektowane dla NVMe wykorzystują interfejs PCIe dla ultra-szybkich dysków SSD.
+- **Wydajność**: Zapewnia najwyższe dostępne prędkości transferu danych dla urządzeń do przechowywania, co czyni je idealnymi dla aplikacji wymagających dużej przepustowości i niskiej latencji.
+- **Charakterystyka**: Konfiguracje RAID NVMe są coraz bardziej powszechne w środowiskach, gdzie prędkość jest kluczowa, takich jak centra danych, wysokowydajne obliczenia i analityka czasu rzeczywistego.
+
+##### Fibre Channel
+
+- **Zastosowanie**: Głównie używane w środowiskach SAN (Storage Area Network) do łączenia urządzeń do przechowywania danych na duże odległości.
+- **Wydajność**: Obsługuje prędkości do 16 Gb/s lub wyższe.
+- **Charakterystyka**: Chociaż zazwyczaj nie jest używane bezpośrednio z kontrolerami RAID w samym serwerze, Fibre Channel jest ważne w dużych sieciach przechowywania danych, gdzie konfiguracje RAID są zarządzane na poziomie tablicy przechowywania.
+
+Wybór kontrolera RAID i złączy dysków zależy od konkretnych wymagań systemu przechowywania, w tym wydajności, skalowalności, potrzeb redundancji i budżetu. Wysokiej klasy systemy przechowywania danych przedsiębiorstwa mogą używać kontrolerów RAID opartych na SAS lub NVMe ze względu na ich wydajność i niezawodność, podczas gdy konfiguracje dla konsumentów lub małych firm mogą wybrać kontrolery RAID oparte na SATA ze względu na ich opłacalność i kompatybilność ze standardowymi napędami.

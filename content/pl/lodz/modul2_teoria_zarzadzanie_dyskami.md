@@ -357,3 +357,92 @@ Pomniejszenie jak i powiększenie systemu `ext2/ext3` można przeprowadzić tylk
 ```
 Przed każdą manipulacją partycjami i systemami plików - konieczne jest zrobienie dobrej kopii bezpieczeństwa danych!
 ```
+
+### Dodatkowa wiedza
+
+#### Dysk
+
+Dysk, w skrócie dysk twardy, to urządzenie do przechowywania danych służące do zapisywania i odczytywania informacji cyfrowych za pomocą jednego lub większej liczby sztywnych, szybko obracających się dysków (talerek) pokrytych materiałem magnetycznym. Dyski mogą być różnych typów, w tym Dysków Twardych (HDD) i Dysków Stanu Stałego (SSD). Ich główne funkcje to:
+
+- **Przechowywanie danych**: Służą jako główne medium do przechowywania wszelkiego rodzaju danych cyfrowych, w tym systemów operacyjnych, aplikacji i danych użytkownika.
+- **Operacje odczytu/zapisu**: Wykonywanie operacji odczytu i zapisu w celu dostępu do danych i ich przechowywania. Wydajność tych operacji zależy od typu dysku (np. SSD są szybsze niż HDD).
+
+##### Dyski (HDD i SSD)
+
+- **Nośniki fizyczne**: Dyski używają fizycznych nośników do przechowywania danych. HDD przechowują dane magnetycznie na obracających się talerzach, podczas gdy SSD używają chipów pamięci flash (NAND flash) do przechowywania danych.
+- **Mechanika dostępu do danych**: W przypadku HDD dostęp do danych wymaga części mechanicznych (np. głowice odczytu/zapisu poruszające się nad obracającymi się talerzami). SSD natomiast nie mają ruchomych części i używają interfejsów elektronicznych do dostępu do danych, co prowadzi do szybszych czasów dostępu do danych.
+- **Format**: Dyski mają standaryzowane rozmiary (np. 2,5 cala, 3,5 cala dla HDD; różne formaty dla SSD, takie jak 2,5 cala, M.2, U.2) i łączą się przez interfejsy takie jak SATA, SAS lub NVMe.
+- **Zużycie energii**: HDD zazwyczaj zużywają więcej energii ze względu na ruchome części, podczas gdy SSD są bardziej energooszczędne z powodu braku ruchomych części.
+
+Podsumowując, dyski to fizyczne nośniki, na których przechowywane są dane, zaprojektowane do bezpośredniego wykonywania operacji odczytu i zapisu.
+
+##### Jaka jest różnica między NVMe a złączem M.2?
+
+Różnica między NVMe (Non-Volatile Memory Express) a M.2 polega głównie na ich definicjach i rolach w kontekście technologii przechowywania. NVMe to protokół zaprojektowany do dostępu do szybkich nośników pamięci masowej, podczas gdy M.2 to specyfikacja formy lub fizyczna specyfikacja złączy i modułów. Oto bliższe spojrzenie na każde z nich:
+
+##### NVMe (Non-Volatile Memory Express)
+
+- **Definicja**: NVMe to protokół pamięci masowej specjalnie zaprojektowany dla dysków półprzewodnikowych (SSD) w celu wykorzystania szybkiego magistrali PCIe (Peripheral Component Interconnect Express). Jego celem jest poprawa szybkości i efektywności transferu danych między systemem a urządzeniem przechowującym, w porównaniu ze starszymi protokołami pamięci masowej, takimi jak SATA.
+- **Zastosowanie**: NVMe jest używane dla dysków SSD, które są bezpośrednio podłączone do magistrali PCIe, pozwalając im działać z znacznie wyższymi prędkościami niż dyski SSD oparte na SATA. Dyski NVMe są znane ze swojej niskiej latencji i wysokiej przepustowości, co czyni je idealnymi dla aplikacji wymagających szybkiego dostępu do danych i przetwarzania.
+- **Kompatybilność**: Chociaż NVMe jest protokołem, może być implementowany przez różne fizyczne interfejsy, w tym gniazda PCIe i złącza M.2.
+
+##### Złącze M.2
+
+- **Definicja**: M.2 to specyfikacja dla wewnętrznie montowanych kart rozszerzeń komputerowych i powiązanych złączy. Obsługuje różne interfejsy i protokoły transferu danych, w tym PCIe, SATA i USB, co czyni go wysoce wszechstronnym.
+- **Forma**: Moduły M.2 występują w różnych rozmiarach, identyfikowanych przez system numeracji, jak 2280, gdzie „22” oznacza szerokość w milimetrach, a „80” długość. Ta kompaktowa forma sprawia, że M.2 nadaje się do małych urządzeń, takich jak laptopy i kompaktowe komputery PC.
+- **Zastosowanie**: Gniazdo M.2 może pomieścić urządzenia korzystające z różnych protokołów, w tym dyski SSD NVMe (korzystające z interfejsu PCIe) i dyski SSD SATA. Specyficzne możliwości gniazda M.2 zależą od sposobu, w jaki jest ono podłączone do płyty głównej - dla PCIe, SATA lub obu.
+
+##### Kluczowe różnice
+
+- **Protokół a złącze**: NVMe to protokół dla szybkiego transferu danych z dyskami SSD, podczas gdy M.2 to fizyczne złącze, które może obsługiwać wiele protokołów transferu danych, w tym NVMe.
+- **Kompatybilność i użycie**: Gniazdo M.2 może przyjąć dyski SSD NVMe, jeśli jest kompatybilne z PCIe, ale nie wszystkie gniazda M.2 są skonfigurowane do obsługi PCIe, a tym samym NVMe. Z kolei dyski SSD NVMe mogą być podłączone przez inne interfejsy niż M.2, takie jak U.2 lub bezpośrednio do gniazda PCIe za pomocą odpowiedniego adaptera.
+
+Podsumowując, chociaż NVMe i M.2 są oba związane z technologią SSD, pełnią różne role. NVMe definiuje, jak dane są transferowane z wysoką prędkością, a M.2 zapewnia kompaktowe fizyczne złącze, które może obsługiwać protokół NVMe wśród innych. Kompatybilność gniazda M.2 z dyskami SSD NVMe zależy od projektu płyty głównej i konfiguracji samego gniazda M.2.
+
+Wyjaśnijmy związek między NVMe, M.2 i połączeniami między urządzeniami a gniazdami, aby pomóc zrozumieć, jak one współdziałają:
+
+##### NVMe i M.2: Zrozumienie połączenia
+
+- **NVMe (Non-Volatile Memory Express)** nie jest typem fizycznego gniazda ani złącza; to protokół zaprojektowany do maksymalizacji wydajności dysków półprzewodnikowych (SSD) poprzez wykorzystanie szybkiej magistrali PCIe (Peripheral Component Interconnect Express). Zasadniczo NVMe określa, jak dane są transferowane przez PCIe, aby osiągnąć szybsze prędkości odczytu/zapisu w porównaniu ze starszymi protokołami przechowywania, takimi jak SATA.
+
+- **M.2** to forma złącza i modułów, która obsługuje różne typy interfejsów, w tym PCIe i SATA. Gniazdo M.2 na płycie głównej może pomieścić moduły M.2 (karty), które używają tych interfejsów do łączności.
+
+##### Podłączanie dysków SSD NVMe do gniazd M.2
+
+- Możesz podłączyć **dysk SSD NVMe do gniazda M.2**, które obsługuje PCIe. Dzieje się tak, ponieważ dyski SSD NVMe używają interfejs
+
+u PCIe do transferu danych, a wiele gniazd M.2 jest przewodzone do obsługi łączności PCIe, wykorzystując tym samym wysokoszybkościowe możliwości protokołu NVMe.
+
+##### Podłączanie modułów M.2 do płyt głównych
+
+- Jeśli chodzi o **podłączanie modułu M.2 (który może być dyskiem SSD) do płyty głównej**, kluczowe jest dopasowanie interfejsu obsługiwanego przez gniazdo M.2 do modułu M.2. Jeśli moduł M.2 to dysk SSD NVMe (używający PCIe do transferu danych), gniazdo M.2 musi obsługiwać PCIe. Jeśli moduł M.2 używa SATA (inny protokół, który jest również obsługiwany przez niektóre gniazda M.2), wówczas gniazdo musi obsługiwać SATA.
+
+##### Wyjaśnienie nieporozumienia
+
+- Zamieszanie może wynikać z terminu **"gniazdo NVMe"**. Ponieważ NVMe jest protokołem, a nie fizycznym interfejsem, nie odnosimy się do fizycznych gniazd na płytach głównych jako "gniazd NVMe". Zamiast tego mamy gniazda PCIe i M.2, które mogą obsługiwać protokół NVMe, jeśli są kompatybilne z PCIe.
+
+- Dlatego poprawne zrozumienie polega na tym, że **możesz podłączyć dysk SSD NVMe do gniazda M.2**, jeśli to gniazdo obsługuje połączenia PCIe. Nie ma pojęcia podłączania czegoś do "gniazda NVMe", ponieważ NVMe dotyczy sposobu transferu danych, a nie typu fizycznego połączenia.
+
+Podsumowując, kompatybilność zależy od interfejsu obsługiwanego przez gniazdo M.2 (PCIe dla dysków SSD NVMe lub SATA dla dysków SSD SATA), a nie tylko od fizycznej formy. M.2 jest wszechstronny i może obsługiwać zarówno protokoły NVMe, jak i SATA, w zależności od tego, jak producent płyty głównej zaprojektował gniazdo M.2.
+
+##### Gniazda PCIe i SATA
+
+Podsumowując, w kontekście podłączania urządzeń do przechowywania danych, takich jak dyski SSD (Solid State Drives) do płyty głównej, głównymi rodzajami gniazd lub interfejsów, z którymi się spotkasz, są PCIe (Peripheral Component Interconnect Express) i SATA (Serial ATA). Oto krótki przegląd każdego z nich:
+
+##### PCIe (Peripheral Component Interconnect Express)
+
+- **Cel**: Standard interfejsu wysokiej prędkości do łączenia urządzeń sprzętowych z płytą główną komputera, w tym dysków SSD, kart graficznych i innych kart rozszerzeń.
+- **Prędkość**: Oferuje znacznie wyższe prędkości transferu danych w porównaniu z SATA, z prędkościami zależnymi od liczby pasm (x1, x4, x8, x16) i wersji PCIe (np. PCIe 3.0, 4.0, 5.0). Każda wersja podwaja przepustowość na pasmo w porównaniu z poprzednią wersją.
+- **Użycie dla dysków SSD**: Gniazda PCIe są używane dla dysków SSD NVMe, które są zaprojektowane, aby wykorzystać wysoką przepustowość PCIe, oferując szybsze prędkości odczytu/zapisu niż dyski SSD SATA. Dyski SSD NVMe mogą być bezpośrednio włożone do gniazd PCIe lub do gniazd M.2, które są kompatybilne z PCIe.
+
+##### SATA (Serial ATA)
+
+- **Cel**: Interfejs używany do łączenia urządzeń do przechowywania masowego, takich jak dyski twarde (HDD) i dyski półprzewodnikowe (SSD), z płytą główną.
+- **Prędkość**: SATA III, najnowsza wersja SATA używana obecnie, oferuje prędkości transferu danych do 6 Gb/s, co jest wystarczające dla wielu zastosowań, ale wolniejsze niż rozwiązania oparte na PCIe.
+- **Użycie dla dysków SSD**: Porty SATA są używane do łączenia dysków SSD SATA, które są powszechnie używane do przechowywania ze względu na ich równowagę między wydajnością, pojemnością i kosztem. Dyski SSD SATA mogą być również podłączone do gniazd M.2, które obsługują interfejs SATA.
+
+##### Gniazda M.2: Warto wspomnieć
+
+- **Wszechstronność**: M.2 to forma i może obsługiwać zarówno interfejsy SATA, jak i PCIe, w zależności od tego, jak gniazdo jest skonfigurowane przez producenta płyty głównej. Gniazdo M.2 może więc pomieścić zarówno dyski SSD SATA, jak i NVMe, ale ważne jest, aby sprawdzić specyfikacje płyty głównej, aby zrozumieć, co każde gniazdo M.2 obsługuje.
+
+Podsumowując, PCIe i SATA są głównymi interfejsami do łączenia urządzeń do przechowywania danych z płytą główną, z PCIe oferującym wyższe prędkości, a SATA zapewniającym szeroką kompatybilność i opłacalność. Gniazda M.2 dodają wszechstronność, obsługując oba interfejsy, co pozwala na kompaktowe i elastyczne rozwiązania do przechowywania danych, szczególnie w laptopach i komputerach o małej formie.
