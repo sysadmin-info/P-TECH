@@ -184,6 +184,11 @@ sudo apt update
 sudo apt upgrade
 ```
 
+##### Jak działa cały proces?
+
+![Jak działa Linux?](/images/2024/how-linux-works.gif "Jak działa Linux?")
+<figcaption>Jak działa Linux?</figcaption>
+
 ### Podsumowanie
 
 Wybór dystrybucji Linux zależy od wielu czynników, w tym od poziomu doświadczenia użytkownika, preferencji dotyczących stabilności vs. najnowszych technologii, a także od specyficznych wymagań dotyczących oprogramowania i sprzętu. Każda z wymienionych dystrybucji ma swoje unikalne cechy i społeczność, co czyni Linux systemem wyjątkowo elastycznym i dostosowującym się do potrzeb użytkowników.
