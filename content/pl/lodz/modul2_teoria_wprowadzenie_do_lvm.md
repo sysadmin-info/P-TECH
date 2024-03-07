@@ -286,14 +286,14 @@ RAID poziomów 2,3,4 wymagają zestawienia sprzętowego.
 - **Wady**: Wymaga co najmniej sześciu dysków; bardziej skomplikowany w zarządzaniu.
 - **Przypadki użycia**: Duże bazy danych, systemy przedsiębiorstwa, gdzie krytyczne są zarówno wysoka wydajność, jak i redundancja danych.
 
-### RAID 60 (6+0) - Stripping z RAID 6
+##### RAID 60 (6+0) - Stripping z RAID 6
 
 - **Opis**: Podobny do `RAID 50`, ale oparty na tablicach `RAID 6`, zapewniając dwa poziomy parzystości dla każdej tablicy `RAID 6`.
 - **Korzyści**: Jeszcze wyższa ochrona danych niż w `RAID 50`, może przetrwać wiele awarii dysków w różnych tablicach `RAID 6`.
 - **Wady**: Wymaga co najmniej ośmiu dysków; ma te same problemy złożoności i zmniejszonej pojemności co `RAID 6`, ale spotęgowane.
 - **Przypadki użycia**: Systemy przechowywania o dużej pojemności, gdzie integralność danych i tolerancja na błędy są nadrzędne.
 
-### RAID 1E - Mirroring + Stripping
+##### RAID 1E - Mirroring + Stripping
 
 - **Opis**: Hybryda między `RAID 1` a `RAID 0`, która rozkłada dane na trzech lub więcej dyskach w konfiguracji lustrzanej. Oferuje równowagę między wydajnością, efektywnością przechowywania a redundancją.
 - **Korzyści**: Lepsze wykorzystanie pojemności dysku niż `RAID 1` z podobną redundancją i poprawioną wydajnością.
