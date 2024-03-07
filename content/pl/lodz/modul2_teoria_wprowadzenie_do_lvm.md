@@ -199,8 +199,6 @@ Skrót `RAID` pochodzi od `Redundant Array of Inexpensive Disks`, czyli: nadmiar
 
 `RAID` (`Redundant Array of Independent Disks`) to technologia wirtualizacji przechowywania danych, która łączy wiele fizycznych komponentów dysków twardych w jedną lub więcej logicznych jednostek w celu zapewnienia redundancji danych, poprawy wydajności lub obojga. Poniżej szczegółowo opiszę poziomy RAID 0, 1, 5, 6, 50, 60 i 1E, skupiając się na ich kluczowych cechach, korzyściach i przypadkach użycia.
 
-### RAID 0 -
-
 Celem `RAID` - scalenie wielu partycji dysku w jeden duży wirtualny dysk twardy, aby zoptymalizować wydajność i poprawić bezpieczeństwo danych.
 
 Rozróżniamy dwa typy macierzy RAID:
@@ -215,6 +213,8 @@ Dyski można łączyć w różne typy macierzy RAID.
 
 Najczęściej w praktyce używamy następujących typów macierzy:
 
+##### RAID 0 - Stripping
+
 - `RAID 0` (striping) - paskowy; inaczej nazywamy to rozproszeniem. Jest konfiguracją, która właściwie nie zasługuje na określanie jej w kategoriach RAID ponieważ w trybie tym nie występuje redundancja (nadmiarowość), nie kładzie się też zupełnie nacisku na bezpieczeństwo danych. 
 
 Dane są zapisywane na kilku połączonych w macierz dyskach (blokami), co znacznie przyspiesza proces zapisu. Dane zapisywane są i odczytywane na wszystkich dyskach za pomocą specjalnego algorytmu rozdzielającego. Dzięki temu uzyskuje się najwyższą możliwą wydajność, jednak ryzyko awarii zwiększa się wraz z ilością użytych dysków twardych. Jeśli jeden z nich ulegnie uszkodzeniu, wszystkie dane w macierzy ulegają destrukcji.
@@ -227,6 +227,8 @@ Dane są zapisywane na kilku połączonych w macierz dyskach (blokami), co znacz
 - **Wady**: Brak redundancji; jeśli jeden dysk ulegnie awarii, wszystkie dane w tablicy zostaną utracone.
 - **Przypadki użycia**: Sytuacje, w których wydajność jest priorytetem nad niezawodnością danych, takie jak buforowanie.
 
+##### RAID 1 - Mirroring
+
 `RAID 1 (mirroring)` - lustrzane odbicie dwóch dysków lub ich partycji fizycznych, jest `przeciwieństwem macierzy RAID 0`: oferuje bezpieczeństwo kosztem nadmiarowości sprzętu. Te same dane są zapisywane równolegle na dwóch dyskach (dyski stanowią swoje jako lustrzane odbicie).
 
 W przypadku, gdy jeden z dysków ulegnie awarii, wszystkie zadania przejmuje drugi dysk.
@@ -237,10 +239,12 @@ Możliwe są także konfiguracje z więcej, niż tylko jednym lustrem, jednak wt
 
 Dobre implementacje `RAID 1` pozwalają na jednoczesny odczyt danych z obu dysków, więc przynajmniej szybkość odczytu jest większa, niż przy użyciu pojedynczego dysku.
 
-- **Opis**: `RAID` 1 składa się z dokładnej kopii (lub lustra) zestawu danych na dwóch lub więcej dyskach. Jest to użyteczne dla tolerancji na błędy.
+- **Opis**: `RAID 1` składa się z dokładnej kopii (lub lustra) zestawu danych na dwóch lub więcej dyskach. Jest to użyteczne dla tolerancji na błędy.
 - **Korzyści**: Zapewnia redundancję; jeśli jeden dysk ulegnie awarii, system może przełączyć się na inny dysk bez utraty danych.
 - **Wady**: Efektywna pojemność przechowywania to tylko połowa całkowitej pojemności dysków, ponieważ wszystkie dane są duplikowane.
 - **Przypadki użycia**: Krytyczne aplikacje, gdzie redundancja danych jest ważniejsza niż efektywność przechowywania, takie jak krytyczne bazy danych.
+
+##### RAID 5 - Stripping z Parzystością
 
 `RAID 5` to typ macierzy łączący bezpieczeństwo z wydajnością i niezawodnością. Poza samymi danymi, przechowywane są także dane o parzystości. Zarówno dane, jak i nadmiarowa informacja są rozmieszczone równomiernie na wszystkich dyskach w macierzy. Szybkość działania całej macierzy `RAID 5` ulega zwiększeniu przy dodawaniu kolejnych dysków.
 
@@ -260,6 +264,8 @@ Gdy awarii w tym samym czasie ulega więcej niż jeden dysk, wówczas dane z tyc
 - **Wady**: Wydajność zapisu może być wolniejsza z powodu obciążenia związanego z obliczaniem parzystości; jeśli dwa dyski ulegną jednocześnie awarii, dane zostaną utracone.
 - **Przypadki użycia**: Serwery ogólnego przeznaczenia, serwery plików i systemy, gdzie pożądane są zarówno wydajność, jak i redundancja.
 
+##### RAID 6 - Stripping z Podwójną Parzystością
+
 `RAID 6` jest porównywalną macierzą z RAID 5, z tą różnicą, że dwa dyski mogą ulec uszkodzeniu równocześnie a dane zostaną odzyskane.
 
 Cztery dyski to minimalne wymagania do zbudowania macierzy RAID6.
@@ -273,7 +279,7 @@ Za pomocą YaSTa można zestawić macierze typu 0, 1 i 5, czyli te, które są m
 
 RAID poziomów 2,3,4 wymagają zestawienia sprzętowego.
 
-### RAID 50 (5+0) - Stripping z RAID 5
+##### RAID 50 (5+0) - Stripping z RAID 5
 
 - **Opis**: Łączy wiele tablic `RAID 5` i rozkłada dane między nimi, efektywnie tworząc tablicę `RAID 0` z tablic `RAID 5`.
 - **Korzyści**: Oferuje lepszą wydajność i ochronę danych niż pojedynczy RAID 5, może przetrwać wiele awarii dysków.
@@ -287,7 +293,7 @@ RAID poziomów 2,3,4 wymagają zestawienia sprzętowego.
 - **Wady**: Wymaga co najmniej ośmiu dysków; ma te same problemy złożoności i zmniejszonej pojemności co `RAID 6`, ale spotęgowane.
 - **Przypadki użycia**: Systemy przechowywania o dużej pojemności, gdzie integralność danych i tolerancja na błędy są nadrzędne.
 
-### RAID 1E - Lustrowane Rozproszenie
+### RAID 1E - Mirroring + Stripping
 
 - **Opis**: Hybryda między `RAID 1` a `RAID 0`, która rozkłada dane na trzech lub więcej dyskach w konfiguracji lustrzanej. Oferuje równowagę między wydajnością, efektywnością przechowywania a redundancją.
 - **Korzyści**: Lepsze wykorzystanie pojemności dysku niż `RAID 1` z podobną redundancją i poprawioną wydajnością.
