@@ -117,6 +117,9 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
       🌐 [Snyk](https://snyk.io/)
       🌐 [Cilium](https://cilium.io/)
       🌐 [Trivy](https://trivy.dev/)
+      🌐 [Knative](https://knative.dev/)
+      🌐 [Jaeger](https://www.jaegertracing.io/)
+
 
 #### 6. **Automatyzacja**
 
