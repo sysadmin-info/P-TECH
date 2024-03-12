@@ -56,7 +56,7 @@ image: images/2024-thumbs/kb.webp
    ✅ Raspberry Pi 4 lub 5. Można zbudować własny klaster Kubernetes. Polecam K3S, gdyż wspiera procesory ARM i bez problemu można go zainstalować. Szczegóły znajdziecie na [mojej stronie](https://sysadmin.info.pl). Energooszczędne rozwiązanie. Plus ma przewagę nad innymi ze względu na porty GPIO i możliwość nauki mikroelektroniki. Jeśli kogoś interesuje mikroelektronika, to polecam zainteresować się ESP32 oraz Arduino. Są to znacznie tańsze rozwiązania i pozwalają na naukę IoT bez ponoszenia wielkich wydatków.
 
    ✅ DELL WYSE 5070 thin client
-      Terminal wyposażony w procesor Intel jest określany jako najlepsze i najbardziej energooszczędne rozwiązania przy zachowaniu stosunkowo dobrej ceny i możliwości, a jednocześnie nie zrujnuje rachunkami za energię elektryczną.
+      Terminal wyposażony w procesor Intel jest określany jako najlepsze i najbardziej energooszczędne rozwiązania przy zachowaniu stosunkowo dobrej ceny i możliwości, a jednocześnie nie zrujnuje rachunkami za energię elektryczną. Przeczytaj artykuł: [Dell Wyse 5070 gdy chcesz czegoś więcej](https://hejdom.pl/blog/22-home-assistant/965-home-assistant-sprzet-dell-wyse-5070-gdy-chcesz-czegos-wiecej.html)
 
    ✅ [Porównanie dwóch powyższych rozwiązań](https://browser.geekbench.com/v5/cpu/compare/9792492?baseline=8704648)
 
