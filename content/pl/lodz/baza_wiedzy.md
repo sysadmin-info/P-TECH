@@ -114,13 +114,20 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
       🌐 [Helm](https://helm.sh/)
 
    ❇️ Monitoring i cybersecurity dla kontenerów
-      🌐 [Snyk](https://snyk.io/)
-      🌐 [Cilium](https://cilium.io/)
-      🌐 [Trivy](https://trivy.dev/)
-      🌐 [Knative](https://knative.dev/)
-      🌐 [Jaeger](https://www.jaegertracing.io/)
-      🌐 [Falco](https://falco.org/)
+      ✔️ eBPF
+         🌐 [bpftrace](https://bpftrace.org/)
+         🌐 [Calico](https://www.tigera.io/project-calico/)
+         🌐 [Cilium](https://cilium.io/)
+         🌐 [Falco](https://falco.org/)
+         🌐 [Pixie](https://px.dev/)
+         🌐 [eBPF Applications Landscape](https://ebpf.io/applications/)
 
+      ✔️ Inne narzędzia
+         🌐 [Snyk](https://snyk.io/) -  skupia się na identyfikacji i naprawie podatności w zależnościach, kontenerach i kodzie.
+         🌐 [Trivy](https://trivy.dev/) - skanuje kontenery, systemy plików i repozytoria pod kątem problemów z bezpieczeństwem. 
+         🌐 [Knative](https://knative.dev/) - zarządza bezserwerowymi obciążeniami na Kubernetes, usprawniając wdrożenie i skalowanie.
+         🌐 [Jaeger](https://www.jaegertracing.io/) - zapewnia rozproszone śledzenie dla monitorowania i rozwiązywania problemów z systemami opartymi na mikrousługach.
+      
 
 #### 6. **Automatyzacja**
 
