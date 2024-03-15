@@ -127,8 +127,7 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
          🌐 [Trivy](https://trivy.dev/) - skanuje kontenery, systemy plików i repozytoria pod kątem problemów z bezpieczeństwem. 
          🌐 [Knative](https://knative.dev/) - zarządza bezserwerowymi obciążeniami na Kubernetes, usprawniając wdrożenie i skalowanie.
          🌐 [Jaeger](https://www.jaegertracing.io/) - zapewnia rozproszone śledzenie dla monitorowania i rozwiązywania problemów z systemami opartymi na mikrousługach.
-      
-
+         
 #### 6. **Automatyzacja**
 
 ✅ Automatyzacja - płatne rozwiązania (komercyjne)
