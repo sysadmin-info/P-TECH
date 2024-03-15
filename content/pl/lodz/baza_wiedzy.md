@@ -119,6 +119,7 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
       🌐 [Trivy](https://trivy.dev/)
       🌐 [Knative](https://knative.dev/)
       🌐 [Jaeger](https://www.jaegertracing.io/)
+      🌐 [Falco](https://falco.org/)
 
 
 #### 6. **Automatyzacja**
