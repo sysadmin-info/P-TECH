@@ -115,7 +115,7 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
 
    ❇️ Monitoring i cybersecurity dla kontenerów
 
-      ✔️ eBPF
+      ⭕ eBPF
          🌐 [bpftrace](https://bpftrace.org/)
          🌐 [Calico](https://www.tigera.io/project-calico/)
          🌐 [Cilium](https://cilium.io/)
@@ -123,7 +123,7 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
          🌐 [Pixie](https://px.dev/)
          🌐 [eBPF Applications Landscape](https://ebpf.io/applications/)
 
-      ✔️ Inne narzędzia
+      ⭕ Inne narzędzia
          🌐 [Snyk](https://snyk.io/) - skupia się na identyfikacji i naprawie podatności w zależnościach, kontenerach i kodzie.
          🌐 [Trivy](https://trivy.dev/) - skanuje kontenery, systemy plików i repozytoria pod kątem problemów z bezpieczeństwem.
          🌐 [Knative](https://knative.dev/) - zarządza bezserwerowymi obciążeniami na Kubernetes, usprawniając wdrożenie i skalowanie.
