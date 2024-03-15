@@ -121,24 +121,25 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
          🌐 [Falco](https://falco.org/)
          🌐 [Pixie](https://px.dev/)
          🌐 [eBPF Applications Landscape](https://ebpf.io/applications/)
-
       ✔️ Inne narzędzia
-         🌐 Snyk - skupia się na identyfikacji i naprawie podatności w zależnościach, kontenerach i kodzie.
-         🌐 Trivy - skanuje kontenery, systemy plików i repozytoria pod kątem problemów z bezpieczeństwem.
-         🌐 Knative - zarządza bezserwerowymi obciążeniami na Kubernetes, usprawniając wdrożenie i skalowanie.
-         🌐 Jaeger - zapewnia rozproszone śledzenie dla monitorowania i rozwiązywania problemów z systemami opartymi na mikrousługach.
+         🌐 [Snyk](https://snyk.io/) - skupia się na identyfikacji i naprawie podatności w zależnościach, kontenerach i kodzie.
+         🌐 [Trivy](https://trivy.dev/) - skanuje kontenery, systemy plików i repozytoria pod kątem problemów z bezpieczeństwem.
+         🌐 [Knative](https://knative.dev/) - zarządza bezserwerowymi obciążeniami na Kubernetes, usprawniając wdrożenie i skalowanie.
+         🌐 [Jaeger](https://www.jaegertracing.io/) - zapewnia rozproszone śledzenie dla monitorowania i rozwiązywania problemów z systemami opartymi na mikrousługach.
          
 #### 6. **Automatyzacja**
 
 ✅ Automatyzacja - płatne rozwiązania (komercyjne)
+
    🌐 [Ansible](https://www.ansible.com/)
    🌐 [Ansible Tower](https://docs.ansible.com/ansible-tower/)
 
 ✅ Automatyzacja - darmowe rozwiązania
+
    🌐 [AWX](https://github.com/ansible/awx)
    🌐 [Ansible Semaphore](https://www.semui.co/)
 
-#### 7. CI/CD - Continuous Integration/Continuous Delivery
+#### 7. **CI/CD - Continuous Integration/Continuous Delivery**
 
 🌐 [GitLab](https://about.gitlab.com/)
 🌐 [Jenkins](https://www.jenkins.io/)
@@ -149,7 +150,7 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
 🌐 [CircleCI](https://circleci.com/)
 🌐 [Bitrise](https://github.com/bitrise-io/bitrise)
 
-#### 8. Code repositories
+#### **8. Code repositories**
 
 🌐 [Git](https://git-scm.com/)
 🌐 [Github](https://github.com/)
@@ -158,20 +159,23 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
 🌐 [Fossil](https://fossil-scm.org/home/doc/trunk/www/index.wiki)
 🌐 [Apache Subversion](https://subversion.apache.org/)
 
-#### 9. Cybersecurity
+#### **9. Cybersecurity**
 
 ✅ Nauka
+
 🌐 [Hack The Box](https://www.hackthebox.com/)
 🌐 [Try Hack Me](https://tryhackme.com/)
 🌐 [VulnHub](https://www.vulnhub.com/)
 🌐 [HackerOne](https://www.hackerone.com/)
 
 ✅ Portale
+
 🌐 [infosec writeups](https://infosecwriteups.com/)
 🌐 [System Weakness](https://systemweakness.com/)
 🌐 [OWASP](https://owasp.org/)
 
 ✅ Software
+
 🌐 [Nmap](https://nmap.org/)
 🌐 [PortSwigger](https://portswigger.net/)
 🌐 [Exploit Database](https://www.exploit-db.com/)
@@ -184,6 +188,7 @@ Podsumowanie: Oczywiście są wersje dużo droższe. Wszystko zależy od budżet
 🌐 [Sonatype Nexus](https://www.sonatype.com/products/sonatype-nexus-repository)
 
 ✅ Systemy operacyjne dla pentesterów
+
 🌐 [Kali](https://www.kali.org/)
 🌐 [Parrot Security](https://www.parrotsec.org/)
 🌐 [BackBox](https://www.backbox.org/)
