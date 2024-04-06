@@ -104,6 +104,98 @@ System ten zapewnia kontrolę dostępu do danych, umożliwiając zarządzanie pr
 ![uprawnienia plików i katalogów](/images/2024/uprawnienia-plikow-i-katalogow.webp "uprawnienia plików i katalogów")
 <figcaption>uprawnienia plików i katalogów</figcaption>
 
+#### Uproszczone wyjaśnienie
+
+Wyobraź sobie, że masz skrzynkę, do której różne osoby mają różne klucze. Każdy klucz pozwala robić inne rzeczy: jeden pozwala tylko oglądać to, co jest w środku (czytać), inny pozwala coś dołożyć lub wyjąć (pisać), a jeszcze inny pozwala to zrobić oraz zamieniać zamki (wykonywać).
+
+W Linux, kiedy masz plik, system sprawdza, co możesz z nim zrobić, sprawdzając trzy rodzaje kluczy:
+1. Klucz użytkownika – to Twój osobisty klucz.
+2. Klucz grupy – to klucz, którym dzielisz się z grupą osób (jak rodzina).
+3. Klucz innych – to klucz dla każdego, kto nie ma innego specjalnego klucza.
+
+System patrzy na klucze w tej kolejności i zatrzymuje się, gdy znajdzie pierwszy pasujący. Oznacza to, że nawet jeśli grupa, do której należysz, może coś więcej zrobić z plikiem, jeśli Twój osobisty klucz pozwala na mniej, to właśnie te mniejsze uprawnienia będziesz miał.
+
+Jednak jest specjalna postać, "root" (jak superbohater), który ma uniwersalny klucz, dzięki któremu może robić wszystko z każdym plikiem, bez względu na zamki.
+
+##### Przykład:
+
+```bash
+[test@localhost test ]$ id
+uid=1000 (test) gid=1000 (test) groups-1000 (test)
+[test@localhost test ]$ ls -1 ./file
+-r--rw-rwx 1 test test
+
+[test@localhost test ]$ cat ./file
+Adrian
+./file
+
+[test@localhost test ]$ echo ADI > ./file
+bash: /file: Permission denied
+
+[test@localhost test ]$
+
+root@localhost:/tmp/test# id
+uid=0(root) gid=0(root) groups-0 (root)
+
+root@localhost:/tmp/test# ls -la file
+-r--r-- 1 root root
+
+root@localhost:/tmp/test# cat ./file
+Adrian
+file
+
+root@localhost:/tmp/test# echo ADI > ./file
+
+root@localhost:/tmp/test# cat file
+ADI
+
+root@localhost:/tmp/test# chmod 0000 ./file
+
+root@localhost:/tmp/test# chown test ./file
+
+root@localhost:/tmp/test# chgrp test ./file
+
+root@localhost:/tmp/test# ls -lah ./file
+1 test test
+11.
+III
+./file
+```
+
+W Linux system uprawnień do plików określa, kto i jak może interagować z danym plikiem lub katalogiem. Uprawnienia są podzielone na trzy kategorie:
+
+1. **Uprawnienia dla użytkownika** (owner) - To są uprawnienia dla osoby, która jest właścicielem pliku. Właściciel może mieć uprawnienia do czytania (r), pisania (w) lub wykonywania (x) pliku.
+2. **Uprawnienia dla grupy** (group) - Osoby należące do grupy, do której przypisany jest plik, mogą mieć różne uprawnienia. Podobnie jak właściciel, grupa może mieć uprawnienia do czytania, pisania lub wykonywania pliku.
+3. **Uprawnienia dla innych** (others) - To są uprawnienia dla wszystkich pozostałych użytkowników, którzy nie są właścicielem ani nie należą do grupy. Również mogą mieć uprawnienia do czytania, pisania lub wykonywania.
+
+Każde z tych uprawnień jest niezależne i nie sumuje się z innymi. Oznacza to, że jeśli użytkownik ma uprawnienie do czytania na poziomie użytkownika, ale grupa, do której należy, ma uprawnienia do czytania i pisania, użytkownik wciąż będzie miał tylko uprawnienie do czytania. System sprawdza uprawnienia od użytkownika do grupy, a potem do innych, i stosuje pierwszy zestaw znalezionych uprawnień.
+
+**Uprawnienia w praktyce:**
+
+W podanym przykładzie, `test` to użytkownik i grupa, a plik ma uprawnienia `-r--rw-rwx`:
+- `-r--` dla użytkownika: oznacza, że właściciel może tylko czytać plik.
+- `rw-` dla grupy: oznacza, że członkowie grupy mogą czytać i pisać do pliku.
+- `rwx` dla innych: oznacza, że wszyscy inni mogą czytać, pisać i wykonywać plik.
+
+Jednak, jako użytkownik `test`, dostajesz tylko uprawnienia do czytania (`-r--`), ponieważ system nie sumuje uprawnień z różnych kategorii. Nawet jeśli grupa ma większe uprawnienia, system stosuje tylko uprawnienia specyficzne dla użytkownika.
+
+**Wyjątek `root`:**
+
+Użytkownik `root` jest wyjątkowy, ponieważ ma uprawnienie `CAP_DAC_OVERRIDE`, co oznacza, że może ignorować zwykłe ograniczenia uprawnień i robić prawie wszystko z każdym plikiem. Dlatego w Twoim przykładzie `root` może zmodyfikować plik, nawet jeśli jego uprawnienia są ustawione na `0000`, co zwykle uniemożliwia wszystkim działania na pliku.
+
+Użytkownik `root` w systemie Linux jest bardzo potężny i ma szereg przywilejów, które pozwalają mu wykonywać operacje, które są zablokowane dla innych użytkowników. `root` jest często nazywany superużytkownikiem lub użytkownikiem administracyjnym, ponieważ ma dostęp do wszystkich plików i procesów w systemie.
+
+**CAP_DAC_OVERRIDE** to jedna z wielu możliwości (capabilities), które może mieć proces w systemie Linux. W kontekście `root` i uprawnień systemu plików:
+
+- **CAP_DAC_OVERRIDE**: Pozwala procesowi na omijanie kontroli dostępu do danych (czyli uprawnień do plików i katalogów). Oznacza to, że użytkownik lub proces z tą zdolnością może czytać, pisać i wykonywać pliki bez względu na ustawione uprawnienia. W praktyce, gdy użytkownik `root` próbuje uzyskać dostęp do pliku, system nie sprawdza typowych uprawnień pliku (czyli rwx), ponieważ `CAP_DAC_OVERRIDE` umożliwia pominięcie tych kontroli.
+
+To przywilej ma znaczące implikacje bezpieczeństwa, ponieważ daje `root` lub innym procesom z tą zdolnością możliwość dostępu do wszystkich plików i katalogów w systemie, niezależnie od ich uprawnień. Dzięki temu `root` może naprawiać problemy, zarządzać systemem i wykonywać administracyjne zadania konserwacji, ale również stwarza ryzyko bezpieczeństwa, jeśli nie jest właściwie zarządzane lub jeśli dostęp do konta `root` zostanie skompromitowany.
+
+W nowoczesnych systemach Linux, koncept zdolności (capabilities) pozwala na bardziej szczegółowe zarządzanie uprawnieniami niż tradycyjny model wszystko albo nic `root`. To znaczy, że poszczególnym procesom można przypisać tylko te zdolności, które są im potrzebne do wykonania swoich zadań, zamiast dawać im pełne uprawnienia `root`. Takie podejście, nazywane zasadą najmniejszych uprawnień, pomaga ograniczyć potencjalne szkody w przypadku eksploatacji luki bezpieczeństwa.
+
+Więcej na temat CAP_DAC_OVERRIDE znajdziesz tu: [https://man7.org/linux/man-pages/man7/capabilities.7.html](https://man7.org/linux/man-pages/man7/capabilities.7.html)
+
+
 ## Setuid i Setgid - szczegółowe wyjaśnienie
 
 **Setuid** i **setgid** to specjalne flagi uprawnień plików w systemach uniksopodobnych, takich jak Linux. Pozwalają one na uruchamianie plików wykonywalnych z uprawnieniami właściciela lub grupy pliku, a nie z uprawnieniami użytkownika, który uruchamia program.
