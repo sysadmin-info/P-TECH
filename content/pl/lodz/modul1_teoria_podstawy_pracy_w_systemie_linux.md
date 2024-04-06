@@ -122,17 +122,15 @@ Jednak jest specjalna postać, "root" (jak superbohater), który ma uniwersalny 
 ```bash
 [test@localhost test ]$ id
 uid=1000 (test) gid=1000 (test) groups-1000 (test)
-[test@localhost test ]$ ls -1 ./file
+
+[test@localhost test ]$ ls -1 file
 -r--rw-rwx 1 test test
 
-[test@localhost test ]$ cat ./file
+[test@localhost test ]$ cat file
 Adrian
-./file
 
-[test@localhost test ]$ echo ADI > ./file
-bash: /file: Permission denied
-
-[test@localhost test ]$
+[test@localhost test ]$ echo ADI > file
+bash: file: Permission denied
 
 root@localhost:/tmp/test# id
 uid=0(root) gid=0(root) groups-0 (root)
@@ -140,26 +138,22 @@ uid=0(root) gid=0(root) groups-0 (root)
 root@localhost:/tmp/test# ls -la file
 -r--r-- 1 root root
 
-root@localhost:/tmp/test# cat ./file
+root@localhost:/tmp/test# cat file
 Adrian
-file
 
-root@localhost:/tmp/test# echo ADI > ./file
+root@localhost:/tmp/test# echo ADI > file
 
 root@localhost:/tmp/test# cat file
 ADI
 
-root@localhost:/tmp/test# chmod 0000 ./file
+root@localhost:/tmp/test# chmod 0000 file
 
-root@localhost:/tmp/test# chown test ./file
+root@localhost:/tmp/test# chown test file
 
-root@localhost:/tmp/test# chgrp test ./file
+root@localhost:/tmp/test# chgrp test file
 
-root@localhost:/tmp/test# ls -lah ./file
+root@localhost:/tmp/test# ls -lah file
 1 test test
-11.
-III
-./file
 ```
 
 W Linux system uprawnień do plików określa, kto i jak może interagować z danym plikiem lub katalogiem. Uprawnienia są podzielone na trzy kategorie:
