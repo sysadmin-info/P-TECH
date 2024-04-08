@@ -95,7 +95,7 @@ Wiadomości kernela można podzielić na kilka kategorii:
 * Użyj skryptu do automatycznego monitorowania zasobów systemowych i wysyłania alertów w przypadku problemów.
 * Wygeneruj raport z analizą wydajności systemu.
 
-#### 2. **Praktyczne ćwiczenia z tworzenia dokumentracji technicznej**
+#### 2. **Praktyczne ćwiczenia z tworzenia dokumentacji technicznej**
 
 ##### Wprowadzenie do tworzenia dokumentacji technicznej (5 minut)
 
