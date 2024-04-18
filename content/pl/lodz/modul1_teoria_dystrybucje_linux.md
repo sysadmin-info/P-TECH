@@ -197,3 +197,7 @@ sudo apt upgrade
 ### Podsumowanie
 
 Wybór dystrybucji Linux zależy od wielu czynników, w tym od poziomu doświadczenia użytkownika, preferencji dotyczących stabilności vs. najnowszych technologii, a także od specyficznych wymagań dotyczących oprogramowania i sprzętu. Każda z wymienionych dystrybucji ma swoje unikalne cechy i społeczność, co czyni Linux systemem wyjątkowo elastycznym i dostosowującym się do potrzeb użytkowników.
+
+### Quiz
+
+[Quiz - Moduł 1 - dystrybucje Linux - teoria](https://play.kahoot.it/v2/?quizId=ad9cd757-db68-4ffd-bb3e-6a91d1a8df7b&hostId=ff76223a-8f37-446c-9d65-7189c6fe887c)

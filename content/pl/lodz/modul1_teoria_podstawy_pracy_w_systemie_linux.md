@@ -237,3 +237,7 @@ Te dwa elementy — struktura katalogów i system uprawnień — są fundamentem
 ### Zakończenie
 
 Ten moduł daje solidne podstawy do zrozumienia, jak system Linux zarządza użytkownikami i jak można manipulować plikami oraz katalogami. To kluczowe umiejętności dla każdego, kto rozpoczyna pracę z Linuxem, niezależnie od tego, czy jest to użytkownik końcowy, programista, czy administrator systemu. Zrozumienie tych podstaw jest fundamentem do dalszej nauki i pracy z Linuxem.
+
+### Quiz
+
+[Quiz - Moduł 1 - Podstawy pracy w systemie Linux - teoria](https://play.kahoot.it/v2/?quizId=97eb5d9b-b6f2-4498-a396-bd4fa9710c8f&hostId=ff76223a-8f37-446c-9d65-7189c6fe887c)
