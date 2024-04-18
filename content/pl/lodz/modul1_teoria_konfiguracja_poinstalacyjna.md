@@ -91,4 +91,6 @@ Uruchomienie i zarządzanie fail2ban odbywa się za pomocą systemowego menedże
 
 Dzięki fail2ban, administratorzy systemów mogą skutecznie zwiększyć poziom bezpieczeństwa swoich serwerów, dynamicznie reagując na próby nieautoryzowanego dostępu i automatycznie ograniczając potencjalne zagrożenia. Implementacja tego narzędzia jest kluczowym elementem strategii obronnej każdego serwera, zwłaszcza tych narażonych na ataki z Internetu.
 
+### Quiz
+
 [Quiz - Moduł 1 - Konfiguracja poinstalacyjna - teoria](https://play.kahoot.it/v2/?quizId=ce55f94c-d3a5-485f-91b0-377c75b11e23&hostId=ff76223a-8f37-446c-9d65-7189c6fe887c)
