@@ -74,4 +74,8 @@ Wykorzystanie tych narzędzi w praktyce wymaga nie tylko znajomości ich składn
 
 Dodatkowo dla zainteresowanych:
 
-Analiza problemów sieciowych takich jak: zaniżony transfer danych i opóźnienia, za pomocą narzędzi ze statusem deprecated takich jak: `ifconfig`, `netstat`, `nslookup`, `route` jak i nowych, które je zastąpiły: `ss`, `ip address`, `ip route`, `dig`, a także diagnostyka za pomocą: `ethtool`, `iperf3`, przeglądanie logów pod kątem problemów sieciowych celem wstępnej analizy problemu. 
+Analiza problemów sieciowych takich jak: zaniżony transfer danych i opóźnienia, za pomocą narzędzi ze statusem deprecated takich jak: `ifconfig`, `netstat`, `nslookup`, `route` jak i nowych, które je zastąpiły: `ss`, `ip address`, `ip route`, `dig`, a także diagnostyka za pomocą: `ethtool`, `iperf3`, przeglądanie logów pod kątem problemów sieciowych celem wstępnej analizy problemu.
+
+### Quiz
+
+[Quiz - Moduł 2 - Konfiguracja sieciowa - teoria](https://play.kahoot.it/v2/?quizId=05ffec10-d557-40e5-9533-33eb9c361270&hostId=ff76223a-8f37-446c-9d65-7189c6fe887c)
