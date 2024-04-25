@@ -462,3 +462,7 @@ Podsumowując, w kontekście podłączania urządzeń do przechowywania danych, 
 - **Wszechstronność**: M.2 to forma i może obsługiwać zarówno interfejsy SATA, jak i PCIe, w zależności od tego, jak gniazdo jest skonfigurowane przez producenta płyty głównej. Gniazdo M.2 może więc pomieścić zarówno dyski SSD SATA, jak i NVMe, ale ważne jest, aby sprawdzić specyfikacje płyty głównej, aby zrozumieć, co każde gniazdo M.2 obsługuje.
 
 Podsumowując, PCIe i SATA są głównymi interfejsami do łączenia urządzeń do przechowywania danych z płytą główną, z PCIe oferującym wyższe prędkości, a SATA zapewniającym szeroką kompatybilność i opłacalność. Gniazda M.2 dodają wszechstronność, obsługując oba interfejsy, co pozwala na kompaktowe i elastyczne rozwiązania do przechowywania danych, szczególnie w laptopach i komputerach o małej formie.
+
+### Quiz
+
+[Quiz - Moduł 2 - Zarządzanie dyskami - teoria](https://play.kahoot.it/v2/?quizId=048fafab-af69-44e7-8765-dc8031171bfb&hostId=ff76223a-8f37-446c-9d65-7189c6fe887c)
