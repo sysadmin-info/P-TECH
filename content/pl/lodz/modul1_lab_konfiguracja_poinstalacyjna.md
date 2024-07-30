@@ -461,6 +461,10 @@ to see the list
 Polecam przeczytać ten artykuł::
 [Secure Configuration of Ciphers/MACs/Kex available in SSH](https://security.stackexchange.com/questions/39756/secure-configuration-of-ciphers-macs-kex-available-in-ssh "Secure Configuration of Ciphers/MACs/Kex available in SSH")
 
+### Automatyzacja za pomocą skryptu w Bash
+
+[sshd configurator](https://github.com/sysadmin-info/sshd-configurator)
+
 Przeładuj usługę SSH
 
 ```bash

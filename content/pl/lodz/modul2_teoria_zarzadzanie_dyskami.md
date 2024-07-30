@@ -360,6 +360,22 @@ Przed każdą manipulacją partycjami i systemami plików - konieczne jest zrobi
 
 ### Dodatkowa wiedza
 
+#### Jedno z pytań rekrutacyjnych
+
+Masz serwer bare metal serwer, nie masz lvm, skończyło się miejsce, nie masz  opcji na podpięcie dysków, macierzy, nfs share odpada. Nie możesz zrestartować systemu operacyjnego. Nie możesz także zrobić dowiązania symbolicznego, aby aplikacja pisała do innej lokalizacji, bo zapis jest w trybie ciągłym. Co robisz?
+
+Odpowiedź:
+
+W systemach plików opartych na systemie Unix, takich jak ext3 lub ext4, domyślnie zarezerwowane jest 5% przestrzeni dyskowej dla konta superużytkownika (root). Ta zarezerwowana przestrzeń pozwala na działanie systemowych procesów, które wymagają zapisu na dysk, nawet gdy zwykłym użytkownikom kończy się przestrzeń dyskowa. To zapobiega sytuacji, w której system staje się niewykorzystywalny, ponieważ root zawsze ma trochę przestrzeni do działania podstawowych funkcji, takich jak zapisywanie logów systemowych.
+
+W kontekście pytania rekrutacyjnego, gdy dysk jest pełny, jako użytkownik root można wykorzystać tę zarezerwowaną przestrzeń, aby tymczasowo rozwiązać problem. Można to zrobić na przykład przez zmniejszenie procenta przestrzeni zarezerwowanej dla roota za pomocą polecenia `tune2fs` dla systemów plików ext3/ext4. Na przykład, jeśli chcesz zmniejszyć zarezerwowaną przestrzeń do 1% na dysku `/dev/sda1`, możesz użyć polecenia:
+
+```bash
+tune2fs -m 1 /dev/sda1
+```
+
+Ta operacja zwolni dodatkową przestrzeń na dysku, która wcześniej była zarezerwowana wyłącznie dla roota, co może być rozwiązaniem problemu w sytuacji awaryjnej.
+
 #### Dysk
 
 Dysk, w skrócie dysk twardy, to urządzenie do przechowywania danych służące do zapisywania i odczytywania informacji cyfrowych za pomocą jednego lub większej liczby sztywnych, szybko obracających się dysków (talerek) pokrytych materiałem magnetycznym. Dyski mogą być różnych typów, w tym Dysków Twardych (HDD) i Dysków Stanu Stałego (SSD). Ich główne funkcje to:
@@ -446,3 +462,7 @@ Podsumowując, w kontekście podłączania urządzeń do przechowywania danych, 
 - **Wszechstronność**: M.2 to forma i może obsługiwać zarówno interfejsy SATA, jak i PCIe, w zależności od tego, jak gniazdo jest skonfigurowane przez producenta płyty głównej. Gniazdo M.2 może więc pomieścić zarówno dyski SSD SATA, jak i NVMe, ale ważne jest, aby sprawdzić specyfikacje płyty głównej, aby zrozumieć, co każde gniazdo M.2 obsługuje.
 
 Podsumowując, PCIe i SATA są głównymi interfejsami do łączenia urządzeń do przechowywania danych z płytą główną, z PCIe oferującym wyższe prędkości, a SATA zapewniającym szeroką kompatybilność i opłacalność. Gniazda M.2 dodają wszechstronność, obsługując oba interfejsy, co pozwala na kompaktowe i elastyczne rozwiązania do przechowywania danych, szczególnie w laptopach i komputerach o małej formie.
+
+### Quiz
+
+[Quiz - Moduł 2 - Zarządzanie dyskami - teoria](https://play.kahoot.it/v2/?quizId=048fafab-af69-44e7-8765-dc8031171bfb&hostId=ff76223a-8f37-446c-9d65-7189c6fe887c)

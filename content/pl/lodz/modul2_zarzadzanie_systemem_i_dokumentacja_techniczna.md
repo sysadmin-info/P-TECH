@@ -119,6 +119,36 @@ Wiadomości kernela można podzielić na kilka kategorii:
 - Błędy: Informują o problemach, które uniemożliwiają prawidłowe działanie systemu.
 - Krytyczne błędy: Informują o poważnych problemach, które mogą spowodować awarię systemu.
 
+* Co to jest load average?
+
+Load average w systemach operacyjnych typu Unix, takich jak Linux, to miara obciążenia systemu w danym okresie czasu. Jest to średnia ilość procesów czekających na wykonanie lub w stanie wykonywania na procesorze. Load average jest zazwyczaj przedstawiane jako trzy liczby odpowiadające średniemu obciążeniu systemu w ciągu ostatnich 1, 5 i 15 minut.
+
+Load average jest miarą obciążenia systemu, która uwzględnia procesy znajdujące się w kolejce do CPU oraz procesy aktualnie wykonywane przez CPU. Oto szczegółowe wyjaśnienie tych dwóch aspektów:
+
+1. **Procesy czekające na wykonanie (w kolejce):** Są to procesy, które są gotowe do wykonania, ale muszą czekać, ponieważ CPU jest zajęte innymi procesami. Oznacza to, że te procesy są w stanie "runnable", czyli gotowe do uruchomienia, ale nie zostały jeszcze przypisane do procesora.
+
+2. **Procesy w stanie wykonywania:** Są to procesy, które aktualnie korzystają z CPU. Obejmuje to procesy, które faktycznie są przetwarzane przez procesor (w stanie "running") oraz procesy, które są tymczasowo zatrzymane (w stanie "sleeping"), ponieważ czekają na zakończenie jakiejś operacji wejścia-wyjścia, takiej jak odczyt z dysku twardego lub komunikacja przez sieć.
+
+Load average agreguje te dwa rodzaje procesów i przedstawia je jako jedną liczbę dla okresów 1, 5 i 15 minut. Oto jak można to zrozumieć w praktyce:
+
+- **Load average < 1.00 na jednordzeniowym procesorze:** Oznacza, że procesor nie jest w pełni wykorzystany i nie ma procesów oczekujących na wykonanie.
+- **Load average = 1.00 na jednordzeniowym procesorze:** Oznacza, że procesor jest wykorzystywany w 100%, ale bez nadmiaru procesów czekających.
+- **Load average > 1.00 na jednordzeniowym procesorze:** Wskazuje, że procesy muszą czekać na wykonanie, ponieważ jest więcej pracy, niż procesor może obsłużyć w danym momencie. 
+
+Dla systemu wielordzeniowego, wartości load average należy interpretować w kontekście liczby rdzeni. Na przykład, na systemie z 4 rdzeniami, load average wynoszący 4.00 oznacza pełne wykorzystanie wszystkich rdzeni.
+
+Podsumowując, load average daje wgląd w to, ile pracy ma system do wykonania i czy zasoby CPU są wystarczające do obsługi obciążenia. Wartości powyżej liczby rdzeni procesora przez dłuższe okresy czasu mogą wskazywać na konieczność optymalizacji lub dodania zasobów.
+
+Aby zmierzyć load average za pomocą narzędzia `top`, wystarczy uruchomić `top` w terminalu. Po uruchomieniu, na górze ekranu wyświetlane są różne statystyki dotyczące systemu, w tym load average. Przykładowo, linia może wyglądać tak:
+
+```bash
+top - 15:20:43 up  1:22,  2 users,  load average: 0.25, 0.35, 0.33
+```
+
+W tym przypadku `0.25, 0.35, 0.33` to właśnie średnie obciążenie systemu w ciągu ostatnich 1, 5 i 15 minut. Interpretacja tych wartości może się różnić w zależności od liczby rdzeni procesora w systemie. Na przykład, load average `1.00` na jednordzeniowym procesorze oznacza, że procesor jest wykorzystywany w 100%. Natomiast na systemie z 4 rdzeniami, wartość `1.00` oznacza wykorzystanie około 25% mocy obliczeniowej.
+
+W kontekście monitorowania, load average może pomóc określić, czy system jest przeciążony i czy potrzeba więcej zasobów lub optymalizacji. Wartości wyższe niż liczba dostępnych rdzeni procesora przez dłuższy czas mogą wskazywać na przeciążenie systemu.
+
 ##### Wprowadzenie do tworzenia dokumentacji technicznej: praktyczne zastosowanie narzędzi do dokumentacji.
 
 1. Tworzenie dokumentacji technicznej na przykładzie Confluence.

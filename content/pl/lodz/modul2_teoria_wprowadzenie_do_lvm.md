@@ -355,3 +355,7 @@ Kontrolery RAID różnią się szeroko pod względem swoich możliwości, w tym 
 - **Charakterystyka**: Chociaż zazwyczaj nie jest używane bezpośrednio z kontrolerami RAID w samym serwerze, Fibre Channel jest ważne w dużych sieciach przechowywania danych, gdzie konfiguracje RAID są zarządzane na poziomie tablicy przechowywania.
 
 Wybór kontrolera RAID i złączy dysków zależy od konkretnych wymagań systemu przechowywania, w tym wydajności, skalowalności, potrzeb redundancji i budżetu. Wysokiej klasy systemy przechowywania danych przedsiębiorstwa mogą używać kontrolerów RAID opartych na SAS lub NVMe ze względu na ich wydajność i niezawodność, podczas gdy konfiguracje dla konsumentów lub małych firm mogą wybrać kontrolery RAID oparte na SATA ze względu na ich opłacalność i kompatybilność ze standardowymi napędami.
+
+### Quiz
+
+[Quiz - Moduł 2 - Wprowadzenie do LVM - teoria](https://play.kahoot.it/v2/?quizId=4c8680ab-e652-46d5-88d0-5ea84bbd52a4&hostId=ff76223a-8f37-446c-9d65-7189c6fe887c)
