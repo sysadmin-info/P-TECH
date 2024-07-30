@@ -1,17 +1,23 @@
 [[main]]
+  identifier = "p-tech"
+  name = "P-TECH Program"
+  url = "p-tech"
+  weight = 1
+
+[[main]]
   identifier = "lodz"
   name = "Lodz"
   url = "lodz"
-  weight = 1
+  weight = 2
 
 [[main]]
   identifier = "katowice"
   name = "Katowice"
   url = "katowice"
-  weight = 2
+  weight = 3
 
 [[main]]
   identifier = "archive"
   name = "Archive"
   url = "archive"
-  weight = 3
+  weight = 4
