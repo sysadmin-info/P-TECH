@@ -16,7 +16,7 @@ series:
 - Łódź
 categories:
 - Konfiguracja sieciowa
-image: images/2024-thumbs/konfiguracja-sieciowa.webp
+image: images/2024-thumbs/p-tech.webp
 ---
 
 Program P-TECH (Pathways in Technology Early College High School) to rewolucyjna inicjatywa edukacyjna, która integruje szkoły średnie, uczelnie wyższe oraz przedsiębiorstwa technologiczne. Stworzony, aby sprostać rosnącemu zapotrzebowaniu na wykwalifikowanych specjalistów IT, P-TECH oferuje uczniom bezpłatne możliwości zdobycia zarówno dyplomu ukończenia szkoły średniej, jak i stopnia naukowego associate degree w dziedzinach technologicznych.
